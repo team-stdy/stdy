@@ -1,0 +1,6 @@
+framework module Pods_Synapse_SynapseUITests {
+  umbrella header "Pods-Synapse-SynapseUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
