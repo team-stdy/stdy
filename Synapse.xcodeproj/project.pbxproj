@@ -10,7 +10,7 @@
 		14007AA023DFEAA70006B92D /* NeilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14007A9F23DFEAA70006B92D /* NeilViewController.swift */; };
 		14007AA223DFEABA0006B92D /* OliviaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14007AA123DFEABA0006B92D /* OliviaViewController.swift */; };
 		14007AA423DFEACF0006B92D /* AllisonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14007AA323DFEACF0006B92D /* AllisonViewController.swift */; };
-		14007AA623DFEC280006B92D /* GabiZackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14007AA523DFEC280006B92D /* GabiZackViewController.swift */; };
+		1499BCB323DFEFAC00407EA1 /* GabiZackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1499BCB223DFEFAC00407EA1 /* GabiZackViewController.swift */; };
 		35364B675648E24BAB7A0A76 /* Pods_SynapseTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B72B14BE0B95EDD7C7EE109 /* Pods_SynapseTests.framework */; };
 		55070077E3DB99AD9A0BA892 /* Pods_Synapse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C601E6E009D5918F1F886F1F /* Pods_Synapse.framework */; };
 		B57D104323D5527100BCA8C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57D104223D5527100BCA8C6 /* AppDelegate.swift */; };
@@ -48,7 +48,7 @@
 		14007A9F23DFEAA70006B92D /* NeilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeilViewController.swift; sourceTree = "<group>"; };
 		14007AA123DFEABA0006B92D /* OliviaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OliviaViewController.swift; sourceTree = "<group>"; };
 		14007AA323DFEACF0006B92D /* AllisonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllisonViewController.swift; sourceTree = "<group>"; };
-		14007AA523DFEC280006B92D /* GabiZackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GabiZackViewController.swift; path = ../GabiZackViewController.swift; sourceTree = "<group>"; };
+		1499BCB223DFEFAC00407EA1 /* GabiZackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GabiZackViewController.swift; sourceTree = SOURCE_ROOT; };
 		202BD3F886836B73EC355DAF /* Pods_Synapse_SynapseUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Synapse_SynapseUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4498962368F5A0EA1F72F615 /* Pods-Synapse-SynapseUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Synapse-SynapseUITests.release.xcconfig"; path = "Target Support Files/Pods-Synapse-SynapseUITests/Pods-Synapse-SynapseUITests.release.xcconfig"; sourceTree = "<group>"; };
 		5C5FAF5ADD6309255E6F4CE8 /* Pods-SynapseTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SynapseTests.release.xcconfig"; path = "Target Support Files/Pods-SynapseTests/Pods-SynapseTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -155,7 +155,7 @@
 				B57D104423D5527100BCA8C6 /* SceneDelegate.swift */,
 				B57D104623D5527100BCA8C6 /* ViewController.swift */,
 				B57D104823D5527100BCA8C6 /* Main.storyboard */,
-				14007AA523DFEC280006B92D /* GabiZackViewController.swift */,
+				1499BCB223DFEFAC00407EA1 /* GabiZackViewController.swift */,
 				14007A9F23DFEAA70006B92D /* NeilViewController.swift */,
 				14007AA123DFEABA0006B92D /* OliviaViewController.swift */,
 				14007AA323DFEACF0006B92D /* AllisonViewController.swift */,
@@ -433,7 +433,7 @@
 				B57D104723D5527100BCA8C6 /* ViewController.swift in Sources */,
 				B57D104323D5527100BCA8C6 /* AppDelegate.swift in Sources */,
 				B57D104523D5527100BCA8C6 /* SceneDelegate.swift in Sources */,
-				14007AA623DFEC280006B92D /* GabiZackViewController.swift in Sources */,
+				1499BCB323DFEFAC00407EA1 /* GabiZackViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
