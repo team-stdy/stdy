@@ -1,14 +1,14 @@
 //
-//  GZScreenViewController.swift
+//  GabiZackViewController.swift
 //  Synapse
 //
-//  Created by Zack Noble on 1/27/20.
+//  Created by Gabi Gresenz on 1/27/20.
 //  Copyright © 2020 Synapse. All rights reserved.
 //
 
 import UIKit
 
-class GZViewController: UIViewController {
+class GabiZackViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
