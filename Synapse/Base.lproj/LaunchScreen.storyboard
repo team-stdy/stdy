@@ -15,12 +15,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="SynapseSymbol" translatesAutoresizingMaskIntoConstraints="NO" id="iPM-jK-ivh">
-                                <rect key="frame" x="7" y="298" width="400" height="300"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SynapseSymbol" translatesAutoresizingMaskIntoConstraints="NO" id="iPM-jK-ivh">
+                                <rect key="frame" x="-142.5" y="133" width="699" height="630"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="iPM-jK-ivh" firstAttribute="centerY" secondItem="Un8-KN-hKv" secondAttribute="centerY" id="Zh9-Bs-5hp"/>
+                            <constraint firstItem="iPM-jK-ivh" firstAttribute="centerX" secondItem="Un8-KN-hKv" secondAttribute="centerX" id="fa3-8Y-iCB"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Mf9-aA-eiR"/>
                     </view>
                 </viewController>
