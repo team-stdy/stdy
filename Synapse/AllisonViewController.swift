@@ -25,6 +25,10 @@ class AllisonViewController: UIViewController, UITableViewDataSource, UISearchBa
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func menuButtonTapped(_ sender: Any) {
+    }
+    
+    
     private func setUpCourses() {
         coursesArray.append(Course(course: "AADS 1010", teacher: "Taffe"))
         coursesArray.append(Course(course: "AMER 1002", teacher: "Jacobs"))

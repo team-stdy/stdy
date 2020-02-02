@@ -7,6 +7,82 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Tab Bar Controller-->
+        <scene sceneID="XxE-8V-VkM">
+            <objects>
+                <tabBarController id="PzM-Zl-BuQ" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ozz-SJ-rZO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="zFH-E2-kk9" kind="relationship" relationship="viewControllers" id="q14-Gh-Qmh"/>
+                        <segue destination="Of0-9l-gBa" kind="relationship" relationship="viewControllers" id="6zS-9S-jlb"/>
+                        <segue destination="CAH-09-f4l" kind="relationship" relationship="viewControllers" id="4It-TS-RZ1"/>
+                        <segue destination="ndI-ep-aog" kind="relationship" relationship="viewControllers" id="aQI-NI-o1n"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hy2-Pr-Naj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-625" y="-1364"/>
+        </scene>
+        <!--My Classes-->
+        <scene sceneID="HDa-Ht-lub">
+            <objects>
+                <navigationController id="Of0-9l-gBa" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="My Classes" image="pencil.and.outline" catalog="system" id="Lmh-bA-ATf"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xZR-c9-Z2q">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RnT-kQ-xtg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-829" y="-638"/>
+        </scene>
+        <!--Discover-->
+        <scene sceneID="8bt-MG-DDJ">
+            <objects>
+                <navigationController id="CAH-09-f4l" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Discover" image="magnifyingglass" catalog="system" id="cM3-sA-QdW"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="oXb-I5-D3h">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DqG-d1-Juy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-46" y="-638"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="V6i-wz-6rm">
+            <objects>
+                <navigationController id="ndI-ep-aog" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Profile" image="person.fill" catalog="system" id="2ch-hJ-x06"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="x5R-bs-BWS">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tyw-Or-lYZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="755" y="-638"/>
+        </scene>
+        <!--My Events-->
+        <scene sceneID="wPq-Po-bfO">
+            <objects>
+                <navigationController id="zFH-E2-kk9" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="My Events" image="calendar" catalog="system" id="Myl-uf-ecx"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="emH-02-k5B">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="R8I-UI-CWY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1604" y="-638"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -123,9 +199,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="axm-43-4Sg">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="81" width="414" height="732"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <searchBar key="tableHeaderView" contentMode="redraw" showsCancelButton="YES" id="g1V-LH-Rj2">
+                                <searchBar key="tableHeaderView" contentMode="redraw" id="g1V-LH-Rj2">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                     <textInputTraits key="textInputTraits"/>
@@ -153,6 +229,11 @@
                                                     <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AqA-gl-Taf">
+                                                    <rect key="frame" x="351" y="11" width="43" height="35"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Button" image="plus_button"/>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="U2T-Wu-RJb" firstAttribute="leading" secondItem="Q2U-82-FW2" secondAttribute="leading" constant="20" id="ELb-ya-PVZ"/>
@@ -175,16 +256,33 @@
                                     <outlet property="delegate" destination="2g9-zu-ZGq" id="nKg-Wv-gVb"/>
                                 </connections>
                             </tableView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zc3-Br-Zfs">
+                                <rect key="frame" x="0.0" y="37" width="414" height="44"/>
+                                <items>
+                                    <navigationItem title="Synapse" id="01w-E3-hrg">
+                                        <barButtonItem key="rightBarButtonItem" title="Item" image="pencil.and.ellipsis.rectangle" catalog="system" id="owH-4e-GEc">
+                                            <connections>
+                                                <action selector="menuButtonTapped:" destination="2g9-zu-ZGq" id="vss-Gt-Yqc"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="BFJ-Wb-jo4" firstAttribute="bottom" secondItem="axm-43-4Sg" secondAttribute="bottom" id="6jg-Vo-1D7"/>
-                            <constraint firstItem="axm-43-4Sg" firstAttribute="top" secondItem="BFJ-Wb-jo4" secondAttribute="top" id="Dfk-K7-ido"/>
+                            <constraint firstItem="zc3-Br-Zfs" firstAttribute="leading" secondItem="BFJ-Wb-jo4" secondAttribute="leading" id="7kX-bu-1Hr"/>
+                            <constraint firstItem="zc3-Br-Zfs" firstAttribute="trailing" secondItem="BFJ-Wb-jo4" secondAttribute="trailing" id="7yx-sZ-nod"/>
+                            <constraint firstItem="BFJ-Wb-jo4" firstAttribute="top" secondItem="zc3-Br-Zfs" secondAttribute="top" constant="7" id="ISy-Km-oNY"/>
+                            <constraint firstItem="axm-43-4Sg" firstAttribute="top" secondItem="zc3-Br-Zfs" secondAttribute="bottom" id="Ra0-YD-03g"/>
                             <constraint firstItem="axm-43-4Sg" firstAttribute="leading" secondItem="BFJ-Wb-jo4" secondAttribute="leading" id="VRQ-pa-eR4"/>
                             <constraint firstItem="BFJ-Wb-jo4" firstAttribute="trailing" secondItem="axm-43-4Sg" secondAttribute="trailing" id="oi4-iA-hqm"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="BFJ-Wb-jo4"/>
                     </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="searchBar" destination="axm-43-4Sg" id="mpf-H8-ZDY"/>
                         <outlet property="tableView" destination="axm-43-4Sg" id="9Zz-sY-xXw"/>
@@ -195,4 +293,12 @@
             <point key="canvasLocation" x="3063.768115942029" y="126.5625"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="calendar" catalog="system" width="64" height="52"/>
+        <image name="magnifyingglass" catalog="system" width="64" height="56"/>
+        <image name="pencil.and.ellipsis.rectangle" catalog="system" width="64" height="40"/>
+        <image name="pencil.and.outline" catalog="system" width="64" height="58"/>
+        <image name="person.fill" catalog="system" width="64" height="60"/>
+        <image name="plus_button" width="250" height="250"/>
+    </resources>
 </document>
