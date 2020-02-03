@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -224,15 +224,115 @@
                     <view key="view" contentMode="scaleToFill" id="7Ue-LV-yZM">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="axm-43-4Sg">
+                                <rect key="frame" x="0.0" y="81" width="414" height="732"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <searchBar key="tableHeaderView" contentMode="redraw" id="g1V-LH-Rj2">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    <color key="barTintColor" red="0.67273253200000005" green="0.50265145300000003" blue="0.92945235969999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="2g9-zu-ZGq" id="XLm-oK-2dZ"/>
+                                    </connections>
+                                </searchBar>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="63" id="nvH-c1-Xxr" customClass="TableView" customModule="Synapse" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="72" width="414" height="63"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nvH-c1-Xxr" id="Q2U-82-FW2">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="63"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Course" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U2T-Wu-RJb">
+                                                    <rect key="frame" x="20" y="5" width="366" height="26"/>
+                                                    <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Teacher" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fGT-Oh-N6w">
+                                                    <rect key="frame" x="20" y="37" width="366" height="17"/>
+                                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AqA-gl-Taf">
+                                                    <rect key="frame" x="351" y="11" width="43" height="35"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Button" image="plus_button"/>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="U2T-Wu-RJb" firstAttribute="leading" secondItem="Q2U-82-FW2" secondAttribute="leading" constant="20" id="ELb-ya-PVZ"/>
+                                                <constraint firstAttribute="trailing" secondItem="U2T-Wu-RJb" secondAttribute="trailing" constant="28" id="Peo-03-Sez"/>
+                                                <constraint firstItem="fGT-Oh-N6w" firstAttribute="leading" secondItem="Q2U-82-FW2" secondAttribute="leading" constant="20" id="c5w-c9-8X5"/>
+                                                <constraint firstItem="U2T-Wu-RJb" firstAttribute="top" secondItem="Q2U-82-FW2" secondAttribute="top" constant="9" id="fKJ-PQ-qhT"/>
+                                                <constraint firstAttribute="trailing" secondItem="fGT-Oh-N6w" secondAttribute="trailing" constant="28" id="p14-wN-Ejk"/>
+                                                <constraint firstItem="fGT-Oh-N6w" firstAttribute="top" secondItem="U2T-Wu-RJb" secondAttribute="bottom" constant="6" id="txB-tb-IjF"/>
+                                                <constraint firstAttribute="bottom" secondItem="fGT-Oh-N6w" secondAttribute="bottom" constant="9" id="xL7-Uv-T6O"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="courseLabel" destination="U2T-Wu-RJb" id="tM8-Cu-3yI"/>
+                                            <outlet property="teacherLabel" destination="fGT-Oh-N6w" id="0cc-ge-xcT"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="2g9-zu-ZGq" id="831-yE-TdZ"/>
+                                    <outlet property="delegate" destination="2g9-zu-ZGq" id="nKg-Wv-gVb"/>
+                                </connections>
+                            </tableView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zc3-Br-Zfs">
+                                <rect key="frame" x="0.0" y="37" width="414" height="44"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" red="0.1579117179" green="0.01156340074" blue="0.61572426560000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </textAttributes>
+                                <textAttributes key="largeTitleTextAttributes">
+                                    <color key="textColor" red="0.1579117179" green="0.01156340074" blue="0.61572426560000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="Synapse" id="01w-E3-hrg">
+                                        <barButtonItem key="backBarButtonItem" title="Back" id="lDw-lk-mBq"/>
+                                        <barButtonItem key="rightBarButtonItem" title="Item" image="pencil.and.ellipsis.rectangle" catalog="system" id="owH-4e-GEc">
+                                            <color key="tintColor" red="0.1579117179" green="0.01156340074" blue="0.61572426560000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <connections>
+                                                <action selector="menuButtonTapped:" destination="2g9-zu-ZGq" id="vss-Gt-Yqc"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="BFJ-Wb-jo4" firstAttribute="bottom" secondItem="axm-43-4Sg" secondAttribute="bottom" id="6jg-Vo-1D7"/>
+                            <constraint firstItem="zc3-Br-Zfs" firstAttribute="leading" secondItem="BFJ-Wb-jo4" secondAttribute="leading" id="7kX-bu-1Hr"/>
+                            <constraint firstItem="zc3-Br-Zfs" firstAttribute="trailing" secondItem="BFJ-Wb-jo4" secondAttribute="trailing" id="7yx-sZ-nod"/>
+                            <constraint firstItem="BFJ-Wb-jo4" firstAttribute="top" secondItem="zc3-Br-Zfs" secondAttribute="top" constant="7" id="ISy-Km-oNY"/>
+                            <constraint firstItem="axm-43-4Sg" firstAttribute="top" secondItem="zc3-Br-Zfs" secondAttribute="bottom" id="Ra0-YD-03g"/>
+                            <constraint firstItem="axm-43-4Sg" firstAttribute="leading" secondItem="BFJ-Wb-jo4" secondAttribute="leading" id="VRQ-pa-eR4"/>
+                            <constraint firstItem="BFJ-Wb-jo4" firstAttribute="trailing" secondItem="axm-43-4Sg" secondAttribute="trailing" id="oi4-iA-hqm"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="BFJ-Wb-jo4"/>
                     </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="searchBar" destination="axm-43-4Sg" id="mpf-H8-ZDY"/>
+                        <outlet property="tableView" destination="axm-43-4Sg" id="9Zz-sY-xXw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cTM-Do-3DL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3064" y="127"/>
+            <point key="canvasLocation" x="3063.768115942029" y="126.5625"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="pencil.and.ellipsis.rectangle" catalog="system" width="64" height="40"/>
+        <image name="plus_button" width="250" height="250"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="rrZ-54-Gsm"/>
     </inferredMetricsTieBreakers>
