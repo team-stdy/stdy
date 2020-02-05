@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GabiZackViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class GabiZackViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -18,24 +18,6 @@ class GabiZackViewController: UIViewController, UITableViewDelegate, UITableView
         super.viewDidLoad()
         setUpCourses()
     }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return myCoursesArray.count
-    }
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "MyCell") as? MyClassTableViewCell else {
-              return UITableViewCell()
-          }
-          
-          cell.courseLabel.text = myCoursesArray[indexPath.row].course
-          cell.teacherLabel.text = myCoursesArray[indexPath.row].teacher
-          
-          return cell
-    }
-    
-    
-    
-    
     private func setUpCourses() {
         myCoursesArray.append(Course(course: "MATH 1011", teacher: "Stalin"))
         myCoursesArray.append(Course(course: "ARTS 2349", teacher: "Zedong"))
@@ -44,7 +26,22 @@ class GabiZackViewController: UIViewController, UITableViewDelegate, UITableView
         myCoursesArray.append(Course(course: "MGMT 3401", teacher: "Il Sung"))
     }
 }
-
+extension GabiZackViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return myCoursesArray.count
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "MyCell") as? TableViewCell else {
+            return UITableViewCell()
+        }
+        
+        cell.courseLabel.text = myCoursesArray[indexPath.row].course
+        cell.teacherLabel.text = myCoursesArray[indexPath.row].teacher
+        
+        return cell
+    
+    }
+}
 class Course {
     var course: String
     var teacher: String
