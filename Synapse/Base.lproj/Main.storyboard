@@ -209,13 +209,56 @@
                     <view key="view" contentMode="scaleToFill" id="pyd-Ot-vDn">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="gBf-hH-cPw">
+                                <rect key="frame" x="84.5" y="213" width="245" height="470"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Looks like the class you wanted is not found!" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Ae3-Ki-GMZ">
+                                        <rect key="frame" x="0.0" y="0.0" width="245" height="350"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <color key="textColor" red="0.21568627450980393" green="0.0" blue="0.70196078431372544" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="30"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Create Class" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="55w-je-vt4">
+                                        <rect key="frame" x="0.0" y="410" width="245" height="60"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="wSn-W4-tvh"/>
+                                        </constraints>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="30"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="74o-Jh-jpO">
+                                <rect key="frame" x="110" y="691" width="194" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="O6X-An-uCt"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="100"/>
+                                <state key="normal" title="+">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="74o-Jh-jpO" firstAttribute="top" secondItem="gBf-hH-cPw" secondAttribute="bottom" constant="8" id="59j-io-kdB"/>
+                            <constraint firstItem="gBf-hH-cPw" firstAttribute="leading" secondItem="VO8-nF-Eg0" secondAttribute="leading" constant="84.5" id="6Be-ge-Mol"/>
+                            <constraint firstItem="gBf-hH-cPw" firstAttribute="top" secondItem="VO8-nF-Eg0" secondAttribute="top" constant="169" id="EjF-QW-bdc"/>
+                            <constraint firstItem="74o-Jh-jpO" firstAttribute="centerX" secondItem="pyd-Ot-vDn" secondAttribute="centerX" id="IFI-q9-fyF"/>
+                            <constraint firstItem="gBf-hH-cPw" firstAttribute="centerY" secondItem="pyd-Ot-vDn" secondAttribute="centerY" id="j6f-I3-uv9"/>
+                            <constraint firstItem="gBf-hH-cPw" firstAttribute="centerX" secondItem="pyd-Ot-vDn" secondAttribute="centerX" id="rUU-4U-LRw"/>
+                            <constraint firstItem="74o-Jh-jpO" firstAttribute="leading" secondItem="VO8-nF-Eg0" secondAttribute="leading" constant="110" id="xfr-eK-5Pg"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="VO8-nF-Eg0"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B8r-cj-8jP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2280" y="127"/>
+            <point key="canvasLocation" x="2279.7101449275365" y="126.5625"/>
         </scene>
         <!--Allison View Controller-->
         <scene sceneID="2cX-6O-Iqe">
