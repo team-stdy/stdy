@@ -14,13 +14,9 @@
 		1499BCB523DFF23C00407EA1 /* GabiZackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1499BCB423DFF23C00407EA1 /* GabiZackViewController.swift */; };
 		35364B675648E24BAB7A0A76 /* Pods_SynapseTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B72B14BE0B95EDD7C7EE109 /* Pods_SynapseTests.framework */; };
 		55070077E3DB99AD9A0BA892 /* Pods_Synapse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C601E6E009D5918F1F886F1F /* Pods_Synapse.framework */; };
-
-		5BE96A5A23EB565400E4D1A7 /* Screen Shot 2020-02-05 at 10.55.58 AM.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BE96A5923EB565400E4D1A7 /* Screen Shot 2020-02-05 at 10.55.58 AM.png */; };
 		5BE96A5C23EB67CF00E4D1A7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE96A5B23EB67CF00E4D1A7 /* ViewController.swift */; };
 		5BE96A5E23EB68DA00E4D1A7 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE96A5D23EB68DA00E4D1A7 /* ProfileViewController.swift */; };
-
 		B56A013323E244A3007C2193 /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56A013223E244A3007C2193 /* TableView.swift */; };
-
 		B57D104323D5527100BCA8C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57D104223D5527100BCA8C6 /* AppDelegate.swift */; };
 		B57D104523D5527100BCA8C6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57D104423D5527100BCA8C6 /* SceneDelegate.swift */; };
 		B57D104A23D5527100BCA8C6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B57D104823D5527100BCA8C6 /* Main.storyboard */; };
@@ -59,7 +55,6 @@
 		1499BCB423DFF23C00407EA1 /* GabiZackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GabiZackViewController.swift; sourceTree = "<group>"; };
 		202BD3F886836B73EC355DAF /* Pods_Synapse_SynapseUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Synapse_SynapseUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4498962368F5A0EA1F72F615 /* Pods-Synapse-SynapseUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Synapse-SynapseUITests.release.xcconfig"; path = "Target Support Files/Pods-Synapse-SynapseUITests/Pods-Synapse-SynapseUITests.release.xcconfig"; sourceTree = "<group>"; };
-		5BE96A5923EB565400E4D1A7 /* Screen Shot 2020-02-05 at 10.55.58 AM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Screen Shot 2020-02-05 at 10.55.58 AM.png"; path = "../../../Screen Shot 2020-02-05 at 10.55.58 AM.png"; sourceTree = "<group>"; };
 		5BE96A5B23EB67CF00E4D1A7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5BE96A5D23EB68DA00E4D1A7 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		5C5FAF5ADD6309255E6F4CE8 /* Pods-SynapseTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SynapseTests.release.xcconfig"; path = "Target Support Files/Pods-SynapseTests/Pods-SynapseTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -173,7 +168,6 @@
 				14007AA323DFEACF0006B92D /* AllisonViewController.swift */,
 				1499BCB423DFF23C00407EA1 /* GabiZackViewController.swift */,
 				B57D104B23D5527200BCA8C6 /* Assets.xcassets */,
-				5BE96A5923EB565400E4D1A7 /* Screen Shot 2020-02-05 at 10.55.58 AM.png */,
 				B57D104D23D5527200BCA8C6 /* LaunchScreen.storyboard */,
 				B57D105023D5527300BCA8C6 /* Info.plist */,
 				B57D107223D5579400BCA8C6 /* GoogleService-Info.plist */,
@@ -313,7 +307,6 @@
 				B57D107323D5579400BCA8C6 /* GoogleService-Info.plist in Resources */,
 				B57D104C23D5527200BCA8C6 /* Assets.xcassets in Resources */,
 				B57D104A23D5527100BCA8C6 /* Main.storyboard in Resources */,
-				5BE96A5A23EB565400E4D1A7 /* Screen Shot 2020-02-05 at 10.55.58 AM.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -448,11 +441,8 @@
 				14007AA223DFEABA0006B92D /* OliviaViewController.swift in Sources */,
 				14007AA023DFEAA70006B92D /* NeilViewController.swift in Sources */,
 				B57D104323D5527100BCA8C6 /* AppDelegate.swift in Sources */,
-
 				5BE96A5C23EB67CF00E4D1A7 /* ViewController.swift in Sources */,
-
 				B56A013323E244A3007C2193 /* TableView.swift in Sources */,
-
 				B57D104523D5527100BCA8C6 /* SceneDelegate.swift in Sources */,
 				5BE96A5E23EB68DA00E4D1A7 /* ProfileViewController.swift in Sources */,
 				1499BCB523DFF23C00407EA1 /* GabiZackViewController.swift in Sources */,

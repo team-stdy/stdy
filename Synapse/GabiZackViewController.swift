@@ -42,12 +42,4 @@ extension GabiZackViewController: UITableViewDataSource, UITableViewDelegate {
     
     }
 }
-class Course {
-    var course: String
-    var teacher: String
-    
-    init(course: String, teacher: String) {
-        self.course = course
-        self.teacher = teacher
-    }
-}
+
