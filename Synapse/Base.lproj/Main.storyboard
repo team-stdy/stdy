@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -151,14 +151,10 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="Ifm-8l-lBf">
-
-                                <rect key="frame" x="55" y="271" width="304" height="241"/>
-
-                                <rect key="frame" x="54.5" y="281.5" width="305.5" height="333"/>
-
+                                <rect key="frame" x="55" y="271" width="304" height="354"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Department Letter Code" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="VFe-fo-9qq">
-                                        <rect key="frame" x="0.0" y="0.0" width="304" height="34"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Department Letter Code" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="VFe-fo-9qq">
+                                        <rect key="frame" x="0.0" y="0.0" width="304" height="147"/>
                                         <color key="textColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -168,8 +164,8 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Official Course Number" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="20" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="aKX-NQ-WR6">
-                                        <rect key="frame" x="0.0" y="69" width="304" height="34"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Official Course Number" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="20" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="aKX-NQ-WR6">
+                                        <rect key="frame" x="0.0" y="182" width="304" height="34"/>
                                         <color key="textColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -179,8 +175,8 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Section Number (Optional)" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="20" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="xYR-WI-iUr">
-                                        <rect key="frame" x="0.0" y="138" width="304" height="34"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Section Number (Optional)" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="20" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="xYR-WI-iUr">
+                                        <rect key="frame" x="0.0" y="251" width="304" height="34"/>
                                         <color key="textColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -190,8 +186,8 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Professor Last Name" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="20" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="qLy-mu-9xS">
-                                        <rect key="frame" x="0.0" y="207" width="304" height="34"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Professor Last Name" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="20" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="qLy-mu-9xS">
+                                        <rect key="frame" x="0.0" y="320" width="304" height="34"/>
                                         <color key="textColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -214,7 +210,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" adjustsImageSizeForAccessibilityContentSizeCategory="YES" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XFa-lW-oPf">
-                                <rect key="frame" x="82" y="559" width="247" height="38"/>
+                                <rect key="frame" x="82" y="672" width="247" height="38"/>
                                 <color key="backgroundColor" red="0.73333333329999995" green="0.52549019610000003" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" button="YES" adjustable="YES"/>
@@ -237,8 +233,8 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-
                             <constraint firstItem="IYS-TF-cv5" firstAttribute="top" secondItem="Zoa-sE-JD4" secondAttribute="top" constant="110" id="0v1-Lv-fRS"/>
+                            <constraint firstItem="Ifm-8l-lBf" firstAttribute="centerY" secondItem="CVk-uC-M8a" secondAttribute="centerY" id="5YE-6g-bwo"/>
                             <constraint firstItem="IYS-TF-cv5" firstAttribute="leading" secondItem="Zoa-sE-JD4" secondAttribute="leading" constant="116.44444444447299" id="9p6-he-P2z"/>
                             <constraint firstItem="XFa-lW-oPf" firstAttribute="top" secondItem="Ifm-8l-lBf" secondAttribute="bottom" constant="47" id="FGx-tr-Jdq"/>
                             <constraint firstItem="Ifm-8l-lBf" firstAttribute="leading" secondItem="Zoa-sE-JD4" secondAttribute="leading" constant="55" id="KcG-6w-7bq"/>
@@ -246,11 +242,8 @@
                             <constraint firstItem="Ifm-8l-lBf" firstAttribute="centerX" secondItem="IYS-TF-cv5" secondAttribute="centerX" constant="1.5555555555270644" id="b6r-Qx-o8l"/>
                             <constraint firstItem="Zoa-sE-JD4" firstAttribute="trailing" secondItem="XFa-lW-oPf" secondAttribute="trailing" constant="84.999999999972601" id="lXv-Dn-H4Y"/>
                             <constraint firstItem="Ifm-8l-lBf" firstAttribute="top" secondItem="IYS-TF-cv5" secondAttribute="bottom" constant="70" id="o2q-15-c2c"/>
-                            <constraint firstItem="IYS-TF-cv5" firstAttribute="centerX" secondItem="CVk-uC-M8a" secondAttribute="centerX" constant="-1.5555555555270644" id="w9P-KK-QVx"/>
-
-                            <constraint firstItem="Ifm-8l-lBf" firstAttribute="centerY" secondItem="CVk-uC-M8a" secondAttribute="centerY" id="5YE-6g-bwo"/>
                             <constraint firstItem="Ifm-8l-lBf" firstAttribute="centerX" secondItem="CVk-uC-M8a" secondAttribute="centerX" id="qHW-4y-CAe"/>
-
+                            <constraint firstItem="IYS-TF-cv5" firstAttribute="centerX" secondItem="CVk-uC-M8a" secondAttribute="centerX" constant="-1.5555555555270644" id="w9P-KK-QVx"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Zoa-sE-JD4"/>
                     </view>
@@ -497,15 +490,11 @@
         </scene>
     </scenes>
     <resources>
-
         <image name="Screen Shot 2020-02-05 at 10.55.58 AM.png" width="731" height="622"/>
-    </resources>
-
         <image name="pencil.and.ellipsis.rectangle" catalog="system" width="64" height="40"/>
         <image name="plus_button" width="250" height="250"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="rrZ-54-Gsm"/>
     </inferredMetricsTieBreakers>
-
 </document>
