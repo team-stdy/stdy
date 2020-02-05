@@ -1,23 +1,21 @@
 //
-//  OliviaViewController.swift
+//  ProfileViewController.swift
 //  Synapse
 //
-//  Created by Zack Noble on 1/27/20.
+//  Created by Neil Dan on 2/5/20.
 //  Copyright © 2020 Synapse. All rights reserved.
 //
 
 import UIKit
 
-class OliviaViewController: UIViewController {
+class ProfileViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        //test to see if this branch works
     }
     
-
 
     /*
     // MARK: - Navigation
