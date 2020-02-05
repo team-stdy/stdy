@@ -93,26 +93,27 @@
                                     <segue destination="2g9-zu-ZGq" kind="presentation" modalPresentationStyle="fullScreen" id="LNg-ao-ZLq"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Wf0-5r-Cft">
-                                <rect key="frame" x="20" y="135" width="374" height="647"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="YWS-K3-8yQ">
+                                <rect key="frame" x="37" y="157" width="341" height="641"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MyCell" id="kGF-ld-0Pc">
-                                        <rect key="frame" x="0.0" y="28" width="374" height="43.5"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MyCell" id="dSK-F2-Bme" customClass="MyClassTableViewCell" customModule="Synapse" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="341" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kGF-ld-0Pc" id="WXg-aO-6th">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dSK-F2-Bme" id="3a6-uR-QuW">
+                                            <rect key="frame" x="0.0" y="0.0" width="341" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Course" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ib-ii-jEK" userLabel="Course Cell">
-                                                    <rect key="frame" x="53" y="11" width="55" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Teacher" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f7J-mE-ogM" userLabel="Teacher">
+                                                    <rect key="frame" x="47" y="11" width="62" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Teacher" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lOC-Vh-pln" userLabel="Teacher Cell">
-                                                    <rect key="frame" x="270" y="11" width="62" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Course" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TrN-31-i6t" userLabel="Course">
+                                                    <rect key="frame" x="234" y="12" width="55" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -120,17 +121,17 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="courseLabel" destination="TrN-31-i6t" id="NRk-Q9-f3M"/>
+                                            <outlet property="teacherLabel" destination="f7J-mE-ogM" id="mTT-uT-OFe"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="yjW-SL-K0L" firstAttribute="bottom" secondItem="Wf0-5r-Cft" secondAttribute="bottom" constant="80" id="2wk-Dr-xi1"/>
-                            <constraint firstItem="Wf0-5r-Cft" firstAttribute="leading" secondItem="FF7-hu-1gg" secondAttribute="leadingMargin" id="6Hk-Gc-mSj"/>
-                            <constraint firstItem="Wf0-5r-Cft" firstAttribute="centerX" secondItem="FF7-hu-1gg" secondAttribute="centerX" id="AvF-Iz-bgh"/>
                             <constraint firstItem="p5E-WR-NnO" firstAttribute="leading" secondItem="uNK-B3-hme" secondAttribute="trailing" constant="65" id="MLx-fI-JvZ"/>
-                            <constraint firstItem="Wf0-5r-Cft" firstAttribute="top" secondItem="uNK-B3-hme" secondAttribute="bottom" constant="25" id="XUf-4b-TV6"/>
                             <constraint firstItem="uNK-B3-hme" firstAttribute="centerX" secondItem="FF7-hu-1gg" secondAttribute="centerX" id="fBi-W3-I9C"/>
                             <constraint firstItem="p5E-WR-NnO" firstAttribute="top" secondItem="yjW-SL-K0L" secondAttribute="top" constant="25" id="qwM-uZ-s4S"/>
                             <constraint firstItem="uNK-B3-hme" firstAttribute="top" secondItem="yjW-SL-K0L" secondAttribute="top" constant="25" id="rHc-63-E1A"/>
@@ -138,6 +139,9 @@
                         <viewLayoutGuide key="safeArea" id="yjW-SL-K0L"/>
                     </view>
                     <navigationItem key="navigationItem" id="1Bs-Nv-YpA"/>
+                    <connections>
+                        <outlet property="tableView" destination="YWS-K3-8yQ" id="BDi-0x-l4o"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="60i-Kb-UQx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
