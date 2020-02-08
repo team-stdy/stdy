@@ -94,31 +94,38 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Glo-5c-POd">
-                                <rect key="frame" x="36" y="135" width="342" height="647"/>
+                                <rect key="frame" x="0.0" y="118" width="414" height="675"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyCell" id="zdq-iT-In3" customClass="TableViewCell" customModule="Synapse" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="342" height="43.5"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyCell" rowHeight="63" id="zdq-iT-In3" customClass="TableViewCell" customModule="Synapse" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="63"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zdq-iT-In3" id="BLd-Sm-rvl">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="63"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Teacher" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7pu-7E-CSD">
-                                                    <rect key="frame" x="185" y="12" width="149" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Teacher" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7pu-7E-CSD">
+                                                    <rect key="frame" x="20" y="32" width="149" height="24"/>
+                                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Course" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aYR-NN-4yN">
-                                                    <rect key="frame" x="20" y="11" width="149" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Course" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aYR-NN-4yN">
+                                                    <rect key="frame" x="21" y="4" width="364" height="24"/>
+                                                    <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="aYR-NN-4yN" secondAttribute="trailing" constant="30" id="AvF-rg-K7N"/>
+                                                <constraint firstAttribute="trailing" secondItem="7pu-7E-CSD" secondAttribute="trailing" constant="245" id="GHZ-I8-fRb"/>
+                                                <constraint firstItem="7pu-7E-CSD" firstAttribute="leading" secondItem="BLd-Sm-rvl" secondAttribute="leading" constant="20" id="SXi-sG-GVQ"/>
+                                                <constraint firstItem="aYR-NN-4yN" firstAttribute="top" secondItem="BLd-Sm-rvl" secondAttribute="top" constant="9" id="ZiY-Sy-z6l"/>
+                                                <constraint firstItem="7pu-7E-CSD" firstAttribute="top" secondItem="aYR-NN-4yN" secondAttribute="bottom" constant="9" id="kjF-RK-Df0"/>
+                                                <constraint firstItem="aYR-NN-4yN" firstAttribute="leading" secondItem="BLd-Sm-rvl" secondAttribute="leading" constant="20" id="oMJ-SJ-fEu"/>
+                                                <constraint firstAttribute="bottom" secondItem="7pu-7E-CSD" secondAttribute="bottom" constant="8" id="w2j-ib-FDf"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="courseLabel" destination="aYR-NN-4yN" id="Lc9-KX-AA2"/>
@@ -134,13 +141,13 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="Glo-5c-POd" firstAttribute="trailing" secondItem="p5E-WR-NnO" secondAttribute="trailing" id="3KD-Oo-RdO"/>
-                            <constraint firstItem="Glo-5c-POd" firstAttribute="top" secondItem="uNK-B3-hme" secondAttribute="bottom" constant="25" id="CLc-0z-qlP"/>
+                            <constraint firstItem="Glo-5c-POd" firstAttribute="trailing" secondItem="p5E-WR-NnO" secondAttribute="trailing" constant="36" id="3KD-Oo-RdO"/>
+                            <constraint firstItem="Glo-5c-POd" firstAttribute="top" secondItem="uNK-B3-hme" secondAttribute="bottom" constant="8" id="CLc-0z-qlP"/>
                             <constraint firstItem="Glo-5c-POd" firstAttribute="centerX" secondItem="FF7-hu-1gg" secondAttribute="centerX" id="CfY-2M-Txd"/>
                             <constraint firstItem="p5E-WR-NnO" firstAttribute="leading" secondItem="uNK-B3-hme" secondAttribute="trailing" constant="65" id="MLx-fI-JvZ"/>
                             <constraint firstItem="uNK-B3-hme" firstAttribute="centerX" secondItem="FF7-hu-1gg" secondAttribute="centerX" id="fBi-W3-I9C"/>
-                            <constraint firstItem="yjW-SL-K0L" firstAttribute="bottom" secondItem="Glo-5c-POd" secondAttribute="bottom" constant="80" id="nww-Hu-ATJ"/>
-                            <constraint firstItem="Glo-5c-POd" firstAttribute="leading" secondItem="yjW-SL-K0L" secondAttribute="leading" constant="36" id="pby-eR-zXO"/>
+                            <constraint firstItem="yjW-SL-K0L" firstAttribute="bottom" secondItem="Glo-5c-POd" secondAttribute="bottom" constant="69" id="nww-Hu-ATJ"/>
+                            <constraint firstItem="Glo-5c-POd" firstAttribute="leading" secondItem="yjW-SL-K0L" secondAttribute="leading" id="pby-eR-zXO"/>
                             <constraint firstItem="p5E-WR-NnO" firstAttribute="top" secondItem="yjW-SL-K0L" secondAttribute="top" constant="25" id="qwM-uZ-s4S"/>
                             <constraint firstItem="uNK-B3-hme" firstAttribute="top" secondItem="yjW-SL-K0L" secondAttribute="top" constant="25" id="rHc-63-E1A"/>
                         </constraints>
@@ -503,9 +510,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="plus" catalog="system" width="64" height="56"/>
         <image name="Screen Shot 2020-02-05 at 10.55.58 AM.png" width="731" height="622"/>
         <image name="pencil.and.ellipsis.rectangle" catalog="system" width="64" height="40"/>
+        <image name="plus" catalog="system" width="64" height="56"/>
         <image name="plus_button" width="250" height="250"/>
     </resources>
     <inferredMetricsTieBreakers>
