@@ -16,6 +16,9 @@ class AllClassesViewController: UIViewController, UITableViewDataSource, UISearc
     var coursesArray = [Course]()
     var currentCoursesArray = [Course]()
     
+    var newCourseName = ""
+    var newCourseTeacher = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpCourses()

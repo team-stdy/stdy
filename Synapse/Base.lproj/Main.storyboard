@@ -10,7 +10,7 @@
         <!--My Classes-->
         <scene sceneID="Eo2-T5-qD1">
             <objects>
-                <viewController id="8dR-4N-IVP" customClass="MyClassesViewController" customModule="Synapse" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AllClassesViewController" id="8dR-4N-IVP" customClass="MyClassesViewController" customModule="Synapse" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FF7-hu-1gg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -195,6 +195,12 @@
                             <integer key="value" value="5"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
+                    <connections>
+                        <outlet property="letterCodeTextField" destination="VFe-fo-9qq" id="5Il-EY-u90"/>
+                        <outlet property="numberTextField" destination="aKX-NQ-WR6" id="wZv-uD-Eiy"/>
+                        <outlet property="professorTextField" destination="qLy-mu-9xS" id="5ck-14-Z7T"/>
+                        <outlet property="sectionTextField" destination="xYR-WI-iUr" id="5zt-RI-HKK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SJ5-UC-IYO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -261,7 +267,7 @@
         <!--Discover Classes-->
         <scene sceneID="2cX-6O-Iqe">
             <objects>
-                <viewController id="2g9-zu-ZGq" customClass="AllClassesViewController" customModule="Synapse" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AllClassesViewController" id="2g9-zu-ZGq" customClass="AllClassesViewController" customModule="Synapse" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7Ue-LV-yZM">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -379,7 +385,6 @@
         <!--My Events-->
         <scene sceneID="vIR-ii-MoZ">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tmz-D1-b5p" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController id="7UJ-D9-uyV" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="My Events" image="calendar" catalog="system" id="GJg-eC-Imc"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="VCs-zL-04P">
@@ -387,6 +392,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tmz-D1-b5p" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="6593" y="-1150"/>
         </scene>
@@ -424,7 +430,6 @@
         <!--Discover-->
         <scene sceneID="BY6-yA-T2v">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7VE-Aa-EAJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController id="Yvy-oL-iIt" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Discover" image="magnifyingglass" catalog="system" id="wol-7V-miO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Hvu-S4-uMW">
@@ -432,13 +437,13 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7VE-Aa-EAJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="6593" y="366"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="Ljz-zC-73a">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="b5f-4g-Icv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="wrb-m7-P6r" customClass="ProfileViewController" customModule="Synapse" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Q3c-HP-cn1">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -494,6 +499,7 @@
                         <viewLayoutGuide key="safeArea" id="f5S-Nd-YQb"/>
                     </view>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b5f-4g-Icv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2344.9275362318845" y="771.42857142857144"/>
         </scene>

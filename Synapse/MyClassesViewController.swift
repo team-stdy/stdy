@@ -13,6 +13,8 @@ class MyClassesViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var myCoursesArray = [Course]()
+    var newCourseName = ""
+    var newCourseTeacher = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()

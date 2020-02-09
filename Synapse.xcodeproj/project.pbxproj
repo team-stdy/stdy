@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		14007AA023DFEAA70006B92D /* CreateClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14007A9F23DFEAA70006B92D /* CreateClassViewController.swift */; };
 		14007AA223DFEABA0006B92D /* ClassNotFoundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14007AA123DFEABA0006B92D /* ClassNotFoundViewController.swift */; };
-		14007AA423DFEACF0006B92D /* AllisonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14007AA323DFEACF0006B92D /* AllisonViewController.swift */; };
+		14007AA423DFEACF0006B92D /* AllClassesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14007AA323DFEACF0006B92D /* AllClassesViewController.swift */; };
 		1447766A23EAA56500BD21F5 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1447766923EAA56500BD21F5 /* TableViewCell.swift */; };
 		1499BCB523DFF23C00407EA1 /* MyClassesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1499BCB423DFF23C00407EA1 /* MyClassesViewController.swift */; };
 		35364B675648E24BAB7A0A76 /* Pods_SynapseTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B72B14BE0B95EDD7C7EE109 /* Pods_SynapseTests.framework */; };
@@ -50,7 +50,7 @@
 /* Begin PBXFileReference section */
 		14007A9F23DFEAA70006B92D /* CreateClassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateClassViewController.swift; sourceTree = "<group>"; };
 		14007AA123DFEABA0006B92D /* ClassNotFoundViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassNotFoundViewController.swift; sourceTree = "<group>"; };
-		14007AA323DFEACF0006B92D /* AllisonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllisonViewController.swift; sourceTree = "<group>"; };
+		14007AA323DFEACF0006B92D /* AllClassesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllClassesViewController.swift; sourceTree = "<group>"; };
 		1447766923EAA56500BD21F5 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		1499BCB423DFF23C00407EA1 /* MyClassesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyClassesViewController.swift; sourceTree = "<group>"; };
 		202BD3F886836B73EC355DAF /* Pods_Synapse_SynapseUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Synapse_SynapseUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -165,7 +165,7 @@
 				B56A013223E244A3007C2193 /* TableView.swift */,
 				14007A9F23DFEAA70006B92D /* CreateClassViewController.swift */,
 				14007AA123DFEABA0006B92D /* ClassNotFoundViewController.swift */,
-				14007AA323DFEACF0006B92D /* AllisonViewController.swift */,
+				14007AA323DFEACF0006B92D /* AllClassesViewController.swift */,
 				1499BCB423DFF23C00407EA1 /* MyClassesViewController.swift */,
 				B57D104B23D5527200BCA8C6 /* Assets.xcassets */,
 				B57D104D23D5527200BCA8C6 /* LaunchScreen.storyboard */,
@@ -436,7 +436,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				14007AA423DFEACF0006B92D /* AllisonViewController.swift in Sources */,
+				14007AA423DFEACF0006B92D /* AllClassesViewController.swift in Sources */,
 				1447766A23EAA56500BD21F5 /* TableViewCell.swift in Sources */,
 				14007AA223DFEABA0006B92D /* ClassNotFoundViewController.swift in Sources */,
 				14007AA023DFEAA70006B92D /* CreateClassViewController.swift in Sources */,
