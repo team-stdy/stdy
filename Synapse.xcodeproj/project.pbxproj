@@ -132,6 +132,17 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		B502D5D623F0B11900229AEF /* MyClasses */ = {
+			isa = PBXGroup;
+			children = (
+				14007A9F23DFEAA70006B92D /* CreateClassViewController.swift */,
+				14007AA123DFEABA0006B92D /* ClassNotFoundViewController.swift */,
+				14007AA323DFEACF0006B92D /* AllClassesViewController.swift */,
+				1499BCB423DFF23C00407EA1 /* MyClassesViewController.swift */,
+			);
+			path = MyClasses;
+			sourceTree = "<group>";
+		};
 		B57D103623D5527100BCA8C6 = {
 			isa = PBXGroup;
 			children = (
@@ -157,16 +168,13 @@
 		B57D104123D5527100BCA8C6 /* Synapse */ = {
 			isa = PBXGroup;
 			children = (
+				B502D5D623F0B11900229AEF /* MyClasses */,
 				B57D104223D5527100BCA8C6 /* AppDelegate.swift */,
 				B57D104423D5527100BCA8C6 /* SceneDelegate.swift */,
 				B57D104823D5527100BCA8C6 /* Main.storyboard */,
 				5BE96A5D23EB68DA00E4D1A7 /* ProfileViewController.swift */,
 				5BE96A5B23EB67CF00E4D1A7 /* ViewController.swift */,
 				B56A013223E244A3007C2193 /* TableView.swift */,
-				14007A9F23DFEAA70006B92D /* CreateClassViewController.swift */,
-				14007AA123DFEABA0006B92D /* ClassNotFoundViewController.swift */,
-				14007AA323DFEACF0006B92D /* AllClassesViewController.swift */,
-				1499BCB423DFF23C00407EA1 /* MyClassesViewController.swift */,
 				B57D104B23D5527200BCA8C6 /* Assets.xcassets */,
 				B57D104D23D5527200BCA8C6 /* LaunchScreen.storyboard */,
 				B57D105023D5527300BCA8C6 /* Info.plist */,
