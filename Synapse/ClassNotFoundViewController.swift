@@ -8,7 +8,7 @@
 
 import UIKit
 
-class OliviaViewController: UIViewController {
+class ClassNotFoundViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
