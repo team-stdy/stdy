@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AllisonViewController: UIViewController, UITableViewDataSource, UISearchBarDelegate {
+class AllClassesViewController: UIViewController, UITableViewDataSource, UISearchBarDelegate {
     
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!

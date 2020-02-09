@@ -1,5 +1,5 @@
 //
-//  OliviaViewController.swift
+//  NeilViewController.swift
 //  Synapse
 //
 //  Created by Zack Noble on 1/27/20.
@@ -8,16 +8,14 @@
 
 import UIKit
 
-class OliviaViewController: UIViewController {
+class CreateClassViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        //test to see if this branch works
     }
     
-
 
     /*
     // MARK: - Navigation
