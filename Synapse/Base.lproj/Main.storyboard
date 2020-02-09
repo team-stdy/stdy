@@ -72,6 +72,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="My Classes" id="1Bs-Nv-YpA">
                         <barButtonItem key="rightBarButtonItem" title="Item" image="magnifyingglass" catalog="system" id="cbr-ai-02D">
+                            <color key="tintColor" red="0.1579117179" green="0.01156340074" blue="0.61572426560000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
                                 <segue destination="2g9-zu-ZGq" kind="show" id="AGI-ah-ymQ"/>
                             </connections>
@@ -265,7 +266,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B8r-cj-8jP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2279.7101449275365" y="126.5625"/>
+            <point key="canvasLocation" x="3994" y="35"/>
         </scene>
         <!--Discover Classes-->
         <scene sceneID="2cX-6O-Iqe">
@@ -278,10 +279,9 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="axm-43-4Sg">
                                 <rect key="frame" x="0.0" y="81" width="414" height="683"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <searchBar key="tableHeaderView" contentMode="redraw" id="g1V-LH-Rj2">
+                                <searchBar key="tableHeaderView" contentMode="redraw" translucent="NO" id="g1V-LH-Rj2">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                    <color key="barTintColor" red="0.67273253200000005" green="0.50265145300000003" blue="0.92945235969999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <textInputTraits key="textInputTraits"/>
                                     <connections>
                                         <outlet property="delegate" destination="2g9-zu-ZGq" id="XLm-oK-2dZ"/>
@@ -340,7 +340,7 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="BFJ-Wb-jo4" firstAttribute="bottom" secondItem="axm-43-4Sg" secondAttribute="bottom" id="6jg-Vo-1D7"/>
+                            <constraint firstItem="axm-43-4Sg" firstAttribute="bottom" secondItem="BFJ-Wb-jo4" secondAttribute="bottom" id="MIX-IP-vBr"/>
                             <constraint firstItem="axm-43-4Sg" firstAttribute="leading" secondItem="BFJ-Wb-jo4" secondAttribute="leading" id="VRQ-pa-eR4"/>
                             <constraint firstItem="axm-43-4Sg" firstAttribute="top" secondItem="7Ue-LV-yZM" secondAttribute="topMargin" constant="-7" id="e5u-QM-9sj"/>
                             <constraint firstItem="BFJ-Wb-jo4" firstAttribute="trailing" secondItem="axm-43-4Sg" secondAttribute="trailing" id="oi4-iA-hqm"/>
@@ -350,6 +350,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Discover Classes" id="zS7-Uu-JMF">
                         <barButtonItem key="rightBarButtonItem" title="Item" image="pencil.and.ellipsis.rectangle" catalog="system" id="qZk-qn-ZXx">
+                            <color key="tintColor" red="0.1579117179" green="0.01156340074" blue="0.61572426560000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
                                 <segue destination="MVZ-Vh-evm" kind="show" id="goW-2V-NQ3"/>
                             </connections>
@@ -484,10 +485,6 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="24"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Screen Shot 2020-02-05 at 10.55.58 AM.png" id="Doa-pM-npg">
-                                <rect key="frame" x="0.0" y="111" width="414" height="394"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -504,11 +501,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b5f-4g-Icv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2344.9275362318845" y="771.42857142857144"/>
+            <point key="canvasLocation" x="7451" y="1117"/>
         </scene>
     </scenes>
     <resources>
-        <image name="Screen Shot 2020-02-05 at 10.55.58 AM.png" width="731" height="622"/>
         <image name="calendar" catalog="system" width="64" height="52"/>
         <image name="magnifyingglass" catalog="system" width="64" height="56"/>
         <image name="pencil.and.ellipsis.rectangle" catalog="system" width="64" height="40"/>
