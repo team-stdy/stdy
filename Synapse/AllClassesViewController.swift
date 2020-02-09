@@ -16,8 +16,8 @@ class AllClassesViewController: UIViewController, UITableViewDataSource, UISearc
     var coursesArray = [Course]()
     var currentCoursesArray = [Course]()
     
-    var newCourseName = ""
-    var newCourseTeacher = ""
+//    var newCourseName = ""
+//    var newCourseTeacher = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,6 +64,7 @@ class AllClassesViewController: UIViewController, UITableViewDataSource, UISearc
         coursesArray.append(Course(course: "MATH 2300", teacher: "Medri"))
         coursesArray.append(Course(course: "MATH 2600", teacher: "Suvaina"))
         coursesArray.append(Course(course: "MATH 2600", teacher: "Mark"))
+//        coursesArray.append(Course(course: newCourseName, teacher: newCourseTeacher))
         
         currentCoursesArray = coursesArray
         

@@ -35,21 +35,23 @@ class CreateClassViewController: UIViewController {
     }
     */
 
-    @IBAction func createClicked(_ sender: Any) {
-                let vcMyClasses = storyboard?.instantiateViewController(identifier: "MyClassesViewController") as? MyClassesViewController
-                
-            let vcAllClasses = storyboard?.instantiateViewController(identifier: "AllClassesViewController") as? AllClassesViewController
-                
-                var courseName = letterCodeTextField.text! + " " + numberTextField.text!
-                if(!sectionTextField.text!.isEmpty){
-                    courseName = courseName + "-" + sectionTextField.text!
-                }
-                
-                vcAllClasses?.newCourseName = courseName
-                vcAllClasses?.newCourseTeacher = profLastNameTextField.text!
-                vcMyClasses?.newCourseName = courseName
-                vcMyClasses?.newCourseTeacher = professorTextField.text!
-                
-                navigationController?.pushViewController(vcMyClasses!, animated: true)
+    @IBAction func createClassClicked(_ sender: Any) {
+            let vcMyClasses = storyboard?.instantiateViewController(identifier: "MyClassesViewController") as? MyClassesViewController
+            
+        //This part does not work, probably needs database to hold backend
+//        let vcAllClasses = storyboard?.instantiateViewController(identifier: "AllClassesViewController") as? AllClassesViewController
+            
+            var courseName = letterCodeTextField.text! + " " + numberTextField.text!
+            if(!sectionTextField.text!.isEmpty){
+                courseName = courseName + "-" + sectionTextField.text!
+            }
+            
+//            vcAllClasses?.newCourseName = courseName
+//            vcAllClasses?.newCourseTeacher = professorTextField.text!
+            vcMyClasses?.newCourseName = courseName
+            vcMyClasses?.newCourseTeacher = professorTextField.text!
+            
+            navigationController?.pushViewController(vcMyClasses!, animated: true)
     }
+
 }

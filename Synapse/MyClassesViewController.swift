@@ -26,6 +26,7 @@ class MyClassesViewController: UIViewController {
         myCoursesArray.append(Course(course: "CS 3493", teacher: "Mussolini"))
         myCoursesArray.append(Course(course: "SOC 1930", teacher: "Churchill"))
         myCoursesArray.append(Course(course: "MGMT 3401", teacher: "Il Sung"))
+        myCoursesArray.append(Course(course: newCourseName, teacher: newCourseTeacher))
     }
 }
 extension MyClassesViewController: UITableViewDataSource, UITableViewDelegate {
