@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Users/allisontrager/Desktop/Synapse/synapse/Synapse/Storyboards/MyEvents.storyboard">
+   </FileRef>
+   <FileRef
       location = "group:Synapse.xcodeproj">
    </FileRef>
    <FileRef

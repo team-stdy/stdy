@@ -16,6 +16,10 @@
 		55070077E3DB99AD9A0BA892 /* Pods_Synapse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C601E6E009D5918F1F886F1F /* Pods_Synapse.framework */; };
 		5BE96A5C23EB67CF00E4D1A7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE96A5B23EB67CF00E4D1A7 /* ViewController.swift */; };
 		5BE96A5E23EB68DA00E4D1A7 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE96A5D23EB68DA00E4D1A7 /* ProfileViewController.swift */; };
+		B502D5E723F0C0D600229AEF /* MyClasses.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B502D5E623F0C0D600229AEF /* MyClasses.storyboard */; };
+		B502D5EA23F0C0F100229AEF /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B502D5E923F0C0F100229AEF /* Profile.storyboard */; };
+		B502D5EC23F0C10300229AEF /* Discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B502D5EB23F0C10300229AEF /* Discover.storyboard */; };
+		B502D5EE23F0C71E00229AEF /* MyEvents.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B502D5ED23F0C71E00229AEF /* MyEvents.storyboard */; };
 		B56A013323E244A3007C2193 /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56A013223E244A3007C2193 /* TableView.swift */; };
 		B57D104323D5527100BCA8C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57D104223D5527100BCA8C6 /* AppDelegate.swift */; };
 		B57D104523D5527100BCA8C6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57D104423D5527100BCA8C6 /* SceneDelegate.swift */; };
@@ -61,6 +65,10 @@
 		8B72B14BE0B95EDD7C7EE109 /* Pods_SynapseTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SynapseTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B17C2816B183232860BD5A18 /* Pods-Synapse.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Synapse.release.xcconfig"; path = "Target Support Files/Pods-Synapse/Pods-Synapse.release.xcconfig"; sourceTree = "<group>"; };
 		B1E4316BCED5550DD8B2D204 /* Pods-SynapseTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SynapseTests.debug.xcconfig"; path = "Target Support Files/Pods-SynapseTests/Pods-SynapseTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B502D5E623F0C0D600229AEF /* MyClasses.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyClasses.storyboard; sourceTree = "<group>"; };
+		B502D5E923F0C0F100229AEF /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		B502D5EB23F0C10300229AEF /* Discover.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Discover.storyboard; sourceTree = "<group>"; };
+		B502D5ED23F0C71E00229AEF /* MyEvents.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyEvents.storyboard; sourceTree = "<group>"; };
 		B56A013223E244A3007C2193 /* TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
 		B57D103F23D5527100BCA8C6 /* Synapse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Synapse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B57D104223D5527100BCA8C6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -143,6 +151,39 @@
 			path = MyClasses;
 			sourceTree = "<group>";
 		};
+		B502D5E223F0BF0F00229AEF /* MyEvents */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MyEvents;
+			sourceTree = "<group>";
+		};
+		B502D5E323F0BF1900229AEF /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		B502D5E423F0BF2000229AEF /* Discover */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Discover;
+			sourceTree = "<group>";
+		};
+		B502D5E523F0C0BC00229AEF /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				B57D104823D5527100BCA8C6 /* Main.storyboard */,
+				B502D5E623F0C0D600229AEF /* MyClasses.storyboard */,
+				B502D5E923F0C0F100229AEF /* Profile.storyboard */,
+				B502D5EB23F0C10300229AEF /* Discover.storyboard */,
+				B502D5ED23F0C71E00229AEF /* MyEvents.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
 		B57D103623D5527100BCA8C6 = {
 			isa = PBXGroup;
 			children = (
@@ -168,10 +209,13 @@
 		B57D104123D5527100BCA8C6 /* Synapse */ = {
 			isa = PBXGroup;
 			children = (
+				B502D5E523F0C0BC00229AEF /* Storyboards */,
+				B502D5E423F0BF2000229AEF /* Discover */,
+				B502D5E323F0BF1900229AEF /* Profile */,
+				B502D5E223F0BF0F00229AEF /* MyEvents */,
 				B502D5D623F0B11900229AEF /* MyClasses */,
 				B57D104223D5527100BCA8C6 /* AppDelegate.swift */,
 				B57D104423D5527100BCA8C6 /* SceneDelegate.swift */,
-				B57D104823D5527100BCA8C6 /* Main.storyboard */,
 				5BE96A5D23EB68DA00E4D1A7 /* ProfileViewController.swift */,
 				5BE96A5B23EB67CF00E4D1A7 /* ViewController.swift */,
 				B56A013223E244A3007C2193 /* TableView.swift */,
@@ -311,9 +355,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B502D5EA23F0C0F100229AEF /* Profile.storyboard in Resources */,
 				B57D104F23D5527200BCA8C6 /* LaunchScreen.storyboard in Resources */,
 				B57D107323D5579400BCA8C6 /* GoogleService-Info.plist in Resources */,
+				B502D5E723F0C0D600229AEF /* MyClasses.storyboard in Resources */,
 				B57D104C23D5527200BCA8C6 /* Assets.xcassets in Resources */,
+				B502D5EE23F0C71E00229AEF /* MyEvents.storyboard in Resources */,
+				B502D5EC23F0C10300229AEF /* Discover.storyboard in Resources */,
 				B57D104A23D5527100BCA8C6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
