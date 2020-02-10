@@ -25,7 +25,7 @@
             </objects>
             <point key="canvasLocation" x="-83" y="-190"/>
         </scene>
-        <!--Discover Classes View Controller-->
+        <!--Discover-->
         <scene sceneID="lvU-Te-MfY">
             <objects>
                 <viewController id="5C3-ya-fBI" customClass="DiscoverClassesViewController" customModule="Synapse" customModuleProvider="target" sceneMemberID="viewController">
@@ -36,17 +36,9 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CwI-yn-HrS">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <searchBar key="tableHeaderView" contentMode="redraw" id="L60-3n-xnn">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                    <textInputTraits key="textInputTraits"/>
-                                    <connections>
-                                        <outlet property="delegate" destination="5C3-ya-fBI" id="wdE-KF-bwU"/>
-                                    </connections>
-                                </searchBar>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="97" id="36U-nY-UKv" customClass="DiscoverTableViewCell" customModule="Synapse" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="72" width="414" height="97"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="97"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="36U-nY-UKv" id="jff-2t-Aeq">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="97"/>
@@ -121,7 +113,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Zqe-G6-ZXB"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Qns-DQ-fM4"/>
+                    <navigationItem key="navigationItem" title="Discover" id="Qns-DQ-fM4">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="plus" catalog="system" id="WjC-zs-XyP"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="searchBar" destination="CwI-yn-HrS" id="NxG-ay-3V1"/>
                         <outlet property="tableView" destination="CwI-yn-HrS" id="rjo-Ly-nJN"/>
@@ -134,5 +128,6 @@
     </scenes>
     <resources>
         <image name="magnifyingglass" catalog="system" width="64" height="56"/>
+        <image name="plus" catalog="system" width="64" height="56"/>
     </resources>
 </document>
