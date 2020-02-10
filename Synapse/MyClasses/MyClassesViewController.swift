@@ -34,7 +34,8 @@ extension MyClassesViewController: UITableViewDataSource, UITableViewDelegate {
         return myCoursesArray.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "MyCell") as? TableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "MyCell") as? TableViewCell
+            else {
             return UITableViewCell()
         }
         

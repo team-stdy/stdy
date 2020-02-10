@@ -31,6 +31,8 @@
 		B57D107323D5579400BCA8C6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B57D107223D5579400BCA8C6 /* GoogleService-Info.plist */; };
 		B57D107423D5579400BCA8C6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B57D107223D5579400BCA8C6 /* GoogleService-Info.plist */; };
 		B57D107523D5579400BCA8C6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B57D107223D5579400BCA8C6 /* GoogleService-Info.plist */; };
+		B5B0B7D123F1BE2E0074F026 /* DiscoverClassesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B0B7D023F1BE2E0074F026 /* DiscoverClassesViewController.swift */; };
+		B5B0B7D323F1BE700074F026 /* DiscoverTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B0B7D223F1BE700074F026 /* DiscoverTableViewCell.swift */; };
 		EB1838E5EF873C52FC02B6AC /* Pods_Synapse_SynapseUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 202BD3F886836B73EC355DAF /* Pods_Synapse_SynapseUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -84,6 +86,8 @@
 		B57D106423D5527300BCA8C6 /* SynapseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SynapseUITests.swift; sourceTree = "<group>"; };
 		B57D106623D5527300BCA8C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B57D107223D5579400BCA8C6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B5B0B7D023F1BE2E0074F026 /* DiscoverClassesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverClassesViewController.swift; sourceTree = "<group>"; tabWidth = 5; wrapsLines = 0; };
+		B5B0B7D223F1BE700074F026 /* DiscoverTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverTableViewCell.swift; sourceTree = "<group>"; };
 		B82934CBE9BDAECEB1674ECC /* Pods-Synapse.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Synapse.debug.xcconfig"; path = "Target Support Files/Pods-Synapse/Pods-Synapse.debug.xcconfig"; sourceTree = "<group>"; };
 		C601E6E009D5918F1F886F1F /* Pods_Synapse.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Synapse.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA1D2CF039C91B2993DE3829 /* Pods-Synapse-SynapseUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Synapse-SynapseUITests.debug.xcconfig"; path = "Target Support Files/Pods-Synapse-SynapseUITests/Pods-Synapse-SynapseUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -168,13 +172,6 @@
 			path = Profile;
 			sourceTree = "<group>";
 		};
-		B502D5E423F0BF2000229AEF /* Discover */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Discover;
-			sourceTree = "<group>";
-		};
 		B502D5E523F0C0BC00229AEF /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
@@ -212,8 +209,8 @@
 		B57D104123D5527100BCA8C6 /* Synapse */ = {
 			isa = PBXGroup;
 			children = (
+				B5B0B7CF23F1BD800074F026 /* Discover */,
 				B502D5E523F0C0BC00229AEF /* Storyboards */,
-				B502D5E423F0BF2000229AEF /* Discover */,
 				B502D5E323F0BF1900229AEF /* Profile */,
 				B502D5E223F0BF0F00229AEF /* MyEvents */,
 				B502D5D623F0B11900229AEF /* MyClasses */,
@@ -244,6 +241,15 @@
 				B57D106623D5527300BCA8C6 /* Info.plist */,
 			);
 			path = SynapseUITests;
+			sourceTree = "<group>";
+		};
+		B5B0B7CF23F1BD800074F026 /* Discover */ = {
+			isa = PBXGroup;
+			children = (
+				B5B0B7D023F1BE2E0074F026 /* DiscoverClassesViewController.swift */,
+				B5B0B7D223F1BE700074F026 /* DiscoverTableViewCell.swift */,
+			);
+			path = Discover;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -495,10 +501,12 @@
 				14007AA423DFEACF0006B92D /* AllClassesViewController.swift in Sources */,
 				1447766A23EAA56500BD21F5 /* TableViewCell.swift in Sources */,
 				14007AA223DFEABA0006B92D /* ClassNotFoundViewController.swift in Sources */,
+				B5B0B7D123F1BE2E0074F026 /* DiscoverClassesViewController.swift in Sources */,
 				14007AA023DFEAA70006B92D /* CreateClassViewController.swift in Sources */,
 				B57D104323D5527100BCA8C6 /* AppDelegate.swift in Sources */,
 				5BE96A5C23EB67CF00E4D1A7 /* ViewController.swift in Sources */,
 				B56A013323E244A3007C2193 /* TableView.swift in Sources */,
+				B5B0B7D323F1BE700074F026 /* DiscoverTableViewCell.swift in Sources */,
 				B57D104523D5527100BCA8C6 /* SceneDelegate.swift in Sources */,
 				5BE96A5E23EB68DA00E4D1A7 /* ProfileViewController.swift in Sources */,
 				1499BCB523DFF23C00407EA1 /* MyClassesViewController.swift in Sources */,
