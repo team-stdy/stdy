@@ -126,7 +126,9 @@ class AllClassesViewController: UIViewController, UITableViewDataSource, UISearc
         tableView.reloadData()
     }
     
-//    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+    @IBAction func addClassButtonClick(_ sender: Any) {
+    }
+    //    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
 //        searchBar.showsCancelButton = true
 //    }
 //    

@@ -53,5 +53,11 @@ extension MyClassesViewController: UITableViewDataSource, UITableViewDelegate {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
         }
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = storyboard?.instantiateViewController(withIdentifier: "ClassEventsViewController") as? ClassEventsViewController
+        
+        self.navigationController?.pushViewController(vc!, animated: true)
+    }
 }
 

@@ -132,6 +132,10 @@ class DiscoverClassesViewController: UIViewController, UITableViewDataSource, UI
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
+    }
+    
     //Search Bar
     // called when text changes (including clear)
 //    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
@@ -147,6 +151,7 @@ class DiscoverClassesViewController: UIViewController, UITableViewDataSource, UI
 //        })
 //        tableView.reloadData()
 //    }
+    
 }
 
 class Event {
