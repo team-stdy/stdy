@@ -126,7 +126,16 @@ class AllClassesViewController: UIViewController, UITableViewDataSource, UISearc
         tableView.reloadData()
     }
     
-    @IBAction func addClassButtonClick(_ sender: Any) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+            let vcMyClasses = storyboard?.instantiateViewController(identifier: "MyClassesViewController") as? MyClassesViewController
+            
+            let courseName = currentCoursesArray[indexPath.row].course
+            let teacherName = currentCoursesArray[indexPath.row].teacher
+
+            vcMyClasses?.courseName = courseName
+            vcMyClasses?.courseTeacher = teacherName
+            
+            navigationController?.pushViewController(vcMyClasses!, animated: true)
     }
     //    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
 //        searchBar.showsCancelButton = true

@@ -15,6 +15,8 @@ class MyClassesViewController: UIViewController {
     var myCoursesArray = [Course]()
     var newCourseName = ""
     var newCourseTeacher = ""
+    var courseName = ""
+    var courseTeacher = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +28,7 @@ class MyClassesViewController: UIViewController {
         myCoursesArray.append(Course(course: "CS 3493", teacher: "Mussolini"))
         myCoursesArray.append(Course(course: "SOC 1930", teacher: "Churchill"))
         myCoursesArray.append(Course(course: "MGMT 3401", teacher: "Il Sung"))
+        myCoursesArray.append(Course(course: courseName, teacher: courseTeacher))
         myCoursesArray.append(Course(course: newCourseName, teacher: newCourseTeacher))
     }
 }
