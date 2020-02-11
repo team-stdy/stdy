@@ -55,7 +55,7 @@ extension MyClassesViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vcClassEvents = storyboard?.instantiateViewController(identifier: "DummyViewController") as? DummyViewController
+        let vcClassEvents = storyboard?.instantiateViewController(identifier: "ClassEventViewController") as? ClassEventViewController
         
         let courseName = myCoursesArray[indexPath.row].course
         let teacherName = myCoursesArray[indexPath.row].teacher

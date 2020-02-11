@@ -399,109 +399,9 @@
             <point key="canvasLocation" x="7238" y="481"/>
         </scene>
         <!--Class Events-->
-        <scene sceneID="XuS-Ey-Fas">
-            <objects>
-                <viewController storyboardIdentifier="ClassEventsViewController" id="dh7-j0-Ylp" customClass="ClassEventsViewController" customModule="Synapse" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="MTA-s9-8IZ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ye9-rh-JEb">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ClassCell" rowHeight="97" id="JlG-DE-WO6" customClass="ClassEventsTableViewCell" customModule="Synapse" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="97"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="JlG-DE-WO6" id="Xn4-nG-QkE">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="97"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Purpose" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T1x-zE-keh">
-                                                    <rect key="frame" x="34" y="6" width="249" height="41"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="01j-61-i2D">
-                                                    <rect key="frame" x="34" y="49.5" width="31.5" height="17.5"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
-                                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="51g-8Z-YRB">
-                                                    <rect key="frame" x="34" y="69" width="34" height="18"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Jp-gx-jUc">
-                                                    <rect key="frame" x="310" y="21" width="70" height="55"/>
-                                                    <color key="backgroundColor" red="0.67273253200000005" green="0.50265145300000003" blue="0.92945235969999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="70" id="CL7-XR-Lbi"/>
-                                                        <constraint firstAttribute="height" constant="50" id="JWB-wI-adQ"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
-                                                    <size key="titleShadowOffset" width="4" height="0.0"/>
-                                                    <state key="normal" title="RSVP">
-                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    </state>
-                                                </button>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="01j-61-i2D" firstAttribute="top" secondItem="T1x-zE-keh" secondAttribute="bottom" constant="2.5" id="0BT-DD-abd"/>
-                                                <constraint firstAttribute="bottom" secondItem="51g-8Z-YRB" secondAttribute="bottom" constant="10" id="0Lk-5j-Xw1"/>
-                                                <constraint firstItem="8Jp-gx-jUc" firstAttribute="leading" secondItem="T1x-zE-keh" secondAttribute="trailing" constant="27" id="5zm-8Q-JTy"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="8Jp-gx-jUc" secondAttribute="bottom" constant="10" id="EBH-LB-Apk"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="8Jp-gx-jUc" secondAttribute="trailing" constant="14" id="Zp0-3K-S0C"/>
-                                                <constraint firstItem="51g-8Z-YRB" firstAttribute="leading" secondItem="Xn4-nG-QkE" secondAttribute="leading" constant="34" id="dyv-iX-Kk5"/>
-                                                <constraint firstItem="8Jp-gx-jUc" firstAttribute="top" secondItem="Xn4-nG-QkE" secondAttribute="topMargin" constant="10" id="fWA-aG-RDH"/>
-                                                <constraint firstItem="01j-61-i2D" firstAttribute="leading" secondItem="Xn4-nG-QkE" secondAttribute="leading" constant="34" id="gK6-XR-gsm"/>
-                                                <constraint firstItem="51g-8Z-YRB" firstAttribute="top" secondItem="01j-61-i2D" secondAttribute="bottom" constant="2" id="kmr-1u-5cB"/>
-                                                <constraint firstItem="T1x-zE-keh" firstAttribute="leading" secondItem="Xn4-nG-QkE" secondAttribute="leading" constant="34" id="odJ-TI-KZh"/>
-                                                <constraint firstItem="T1x-zE-keh" firstAttribute="top" secondItem="Xn4-nG-QkE" secondAttribute="top" constant="6" id="xKg-G2-9xf"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="RSVPButton" destination="8Jp-gx-jUc" id="EXX-dS-QDU"/>
-                                            <outlet property="dateLabel" destination="01j-61-i2D" id="SdD-O0-02H"/>
-                                            <outlet property="purposeLabel" destination="T1x-zE-keh" id="SO4-cv-6RT"/>
-                                            <outlet property="timeLabel" destination="51g-8Z-YRB" id="xhH-OG-DLE"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="dh7-j0-Ylp" id="67I-2Q-Leb"/>
-                                    <outlet property="delegate" destination="dh7-j0-Ylp" id="PBs-bl-vPb"/>
-                                </connections>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="hlr-GD-YP0" firstAttribute="bottom" secondItem="Ye9-rh-JEb" secondAttribute="bottom" id="7rU-53-ITI"/>
-                            <constraint firstItem="Ye9-rh-JEb" firstAttribute="leading" secondItem="hlr-GD-YP0" secondAttribute="leading" id="HsM-SD-dAy"/>
-                            <constraint firstItem="hlr-GD-YP0" firstAttribute="trailing" secondItem="Ye9-rh-JEb" secondAttribute="trailing" id="o1I-HV-vKj"/>
-                            <constraint firstItem="Ye9-rh-JEb" firstAttribute="top" secondItem="hlr-GD-YP0" secondAttribute="top" id="uHG-AM-hgT"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="hlr-GD-YP0"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Class Events" id="CbJ-b8-1ue">
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="plus" catalog="system" id="p6G-WO-f7k"/>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="searchBar" destination="Ye9-rh-JEb" id="Fd2-Ts-yrm"/>
-                        <outlet property="tableView" destination="Ye9-rh-JEb" id="GyR-c9-yxt"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jfD-dt-Xgh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="7943" y="625"/>
-        </scene>
-        <!--Class Events-->
         <scene sceneID="anr-4o-PFD">
             <objects>
-                <viewController storyboardIdentifier="DummyViewController" id="Hft-f6-WEr" customClass="DummyViewController" customModule="Synapse" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ClassEventViewController" id="Hft-f6-WEr" customClass="ClassEventViewController" customModule="Synapse" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VQH-3G-9AQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -542,7 +442,8 @@
                                                         <constraint firstAttribute="width" constant="70" id="2r7-pw-tdH"/>
                                                         <constraint firstAttribute="height" constant="50" id="Dcr-NJ-POD"/>
                                                     </constraints>
-                                                    <state key="normal" title="Button">
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                                    <state key="normal" title="RSVP">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
                                                 </button>
