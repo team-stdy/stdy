@@ -36,14 +36,14 @@ extension MyClassesViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "MyCell") as? TableViewCell
             else {
-            return UITableViewCell()
+                return UITableViewCell()
         }
         
         cell.courseLabel.text = myCoursesArray[indexPath.row].course
         cell.teacherLabel.text = myCoursesArray[indexPath.row].teacher
         
         return cell
-    
+        
     }
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
@@ -55,9 +55,15 @@ extension MyClassesViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = storyboard?.instantiateViewController(withIdentifier: "ClassEventsViewController") as? ClassEventsViewController
+        let vcClassEvents = storyboard?.instantiateViewController(identifier: "DummyViewController") as? DummyViewController
         
-        self.navigationController?.pushViewController(vc!, animated: true)
+        let courseName = myCoursesArray[indexPath.row].course
+        let teacherName = myCoursesArray[indexPath.row].teacher
+
+        vcClassEvents?.courseName = courseName
+        vcClassEvents?.courseTeacher = teacherName
+        
+        navigationController?.pushViewController(vcClassEvents!, animated: true)
     }
 }
 

@@ -12,7 +12,6 @@ class ClassEventsTableViewCell: UITableViewCell {
 
     @IBOutlet weak var purposeLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var RSVPButton: UIButton!
     @IBOutlet weak var timeLabel: UILabel!
-    
+    @IBOutlet weak var RSVPButton: UIButton!
 }
