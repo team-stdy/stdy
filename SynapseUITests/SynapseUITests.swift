@@ -6,6 +6,7 @@
 //  Copyright © 2020 Synapse. All rights reserved.
 //
 
+//comment just to commit branch to github
 import XCTest
 
 class SynapseUITests: XCTestCase {
