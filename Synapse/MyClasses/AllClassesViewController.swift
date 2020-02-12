@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AllClassesViewController: UIViewController, UITableViewDataSource, UISearchBarDelegate {
+class AllClassesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
     
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
@@ -98,6 +98,20 @@ class AllClassesViewController: UIViewController, UITableViewDataSource, UISearc
         return cell
     }
     
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vcMyClasses = storyboard?.instantiateViewController(identifier: "MyClassesViewController") as? MyClassesViewController
+        
+        let courseName = currentCoursesArray[indexPath.row].course
+        let teacherName = currentCoursesArray[indexPath.row].teacher
+
+        vcMyClasses?.courseName = courseName
+        vcMyClasses?.courseTeacher = teacherName
+        
+        navigationController?.pushViewController(vcMyClasses!, animated: true)
+    }
+    
+    
     // This two functions can be used if you want to show the search bar in the section header
 //    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
 //        return searchBar
@@ -126,20 +140,8 @@ class AllClassesViewController: UIViewController, UITableViewDataSource, UISearc
         tableView.reloadData()
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-            let vcMyClasses = storyboard?.instantiateViewController(identifier: "MyClassesViewController") as? MyClassesViewController
-            
-            let courseName = currentCoursesArray[indexPath.row].course
-            let teacherName = currentCoursesArray[indexPath.row].teacher
+    
 
-            vcMyClasses?.courseName = courseName
-            vcMyClasses?.courseTeacher = teacherName
-            
-            navigationController?.pushViewController(vcMyClasses!, animated: true)
-    }
-    //    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-//        searchBar.showsCancelButton = true
-//    }
 //    
 //    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
 //        // Stop doing the search stuff

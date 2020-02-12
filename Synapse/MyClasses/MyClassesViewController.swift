@@ -15,6 +15,7 @@ class MyClassesViewController: UIViewController {
     var myCoursesArray = [Course]()
     var newCourseName = ""
     var newCourseTeacher = ""
+    
     var courseName = ""
     var courseTeacher = ""
     
