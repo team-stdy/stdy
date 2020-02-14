@@ -23,12 +23,16 @@ class ClassEventViewController: UIViewController, UITableViewDataSource, UITable
     }
     
     private func setUpEvents() {
-        eventsArray.append(Event(purpose: "Go over homework 1", date: "10/10/20", time: "10:00 AM"))
-        eventsArray.append(Event(purpose: "Study for test", date: "10/11/20", time: "10:00 AM"))
-        eventsArray.append(Event(purpose: "Work on programming assignment 4 with study team", date: "10/12/20", time: "10:00 AM"))
-        eventsArray.append(Event(purpose: "Go to office hours", date: "10/13/20", time: "10:00 AM"))
-        eventsArray.append(Event(purpose: "Go over homework 5", date: "10/14/20", time: "10:00 AM"))
-        eventsArray.append(Event(purpose: "Check answers for problem set", date: "10/15/20", time: "10:00 AM"))
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy/MM/dd"
+        let date1 = formatter.date(from: "2020/02/13")!;
+        
+        eventsArray.append(Event(purpose: "Go over homework 1", date: date1, time: "10:00 AM"))
+        eventsArray.append(Event(purpose: "Study for test", date: date1, time: "10:00 AM"))
+        eventsArray.append(Event(purpose: "Work on programming assignment 4 with study team", date: date1, time: "10:00 AM"))
+        eventsArray.append(Event(purpose: "Go to office hours", date: date1, time: "10:00 AM"))
+        eventsArray.append(Event(purpose: "Go over homework 5", date: date1, time: "10:00 AM"))
+        eventsArray.append(Event(purpose: "Check answers for problem set", date: date1, time: "10:00 AM"))
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -49,7 +53,7 @@ class ClassEventViewController: UIViewController, UITableViewDataSource, UITable
         cell.RSVPButton.layer.masksToBounds = false
 
         cell.purposeLabel.text = eventsArray[indexPath.row].purpose
-        cell.dateLabel.text = eventsArray[indexPath.row].date
+        cell.dateLabel.text = eventsArray[indexPath.row].date.description
         cell.timeLabel.text = eventsArray[indexPath.row].time
 
         return cell

@@ -23,11 +23,9 @@ class DiscoverClassesViewController: UIViewController, UITableViewDataSource, UI
         var sectionEvents = [Event]()
     }
     
+    var receivedEventArray = [Event]()
     var eventsArray = [Events]()
     var currentEventsArray = [Events]()
-    
-//    var eventsArray = [Event]()
-//    var currentEventsArray = [Event]()
     
     
     override func viewDidLoad() {
@@ -37,54 +35,52 @@ class DiscoverClassesViewController: UIViewController, UITableViewDataSource, UI
     }
     
     private func setUpEvents(){
-        eventsArray = [Events(sectionHeader: "CS 1101", sectionEvents:[
-        Event(purpose: "Go over homework 1", date: "10/10/20", time: "10:00 AM"),
-        Event(purpose: "Study for test", date: "10/11/20", time: "10:00 AM"),
-        Event(purpose: "Work on programming assignment 4 with study team", date: "10/12/20", time: "10:00 AM"),
-        Event(purpose: "Go to office hours", date: "10/13/20", time: "10:00 AM"),
-        Event(purpose: "Make studyguide", date: "10/16/20", time: "10:00 AM"),
-        Event(purpose: "Quiz each other with flashcards", date: "10/17/20", time: "10:00 AM")
-        ]),
-                       
-        Events(sectionHeader: "MATH 2300", sectionEvents:[
-        Event(purpose: "Go over homework 1", date: "10/10/20", time: "10:00 AM"),
-        Event(purpose: "Study for test", date: "10/11/20", time: "10:00 AM"),
-        Event(purpose: "Work on programming assignment 4 with study team", date: "10/12/20", time: "10:00 AM"),
-        Event(purpose: "Go to office hours", date: "10/13/20", time: "10:00 AM"),
-        Event(purpose: "Make studyguide", date: "10/16/20", time: "10:00 AM"),
-        Event(purpose: "Quiz each other with flashcards", date: "10/17/20", time: "10:00 AM")
-        ]),
-            
-        Events(sectionHeader: "EECE 2116", sectionEvents:[
-        Event(purpose: "Go over homework 1", date: "10/10/20", time: "10:00 AM"),
-        Event(purpose: "Study for test", date: "10/11/20", time: "10:00 AM"),
-        Event(purpose: "Work on programming assignment 4 with study team", date: "10/12/20", time: "10:00 AM"),
-        Event(purpose: "Go to office hours", date: "10/13/20", time: "10:00 AM"),
-        Event(purpose: "Make studyguide", date: "10/16/20", time: "10:00 AM"),
-        Event(purpose: "Quiz each other with flashcards", date: "10/17/20", time: "10:00 AM")
-        ])]
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy/MM/dd"
+        let date1 = formatter.date(from: "2020/02/13")!;
+        let date2 = formatter.date(from: "2020/02/14")!;
+        let date3 = formatter.date(from: "2020/02/15")!;
+        let date4 = formatter.date(from: "2020/02/16")!;
+        let date5 = formatter.date(from: "2020/02/17")!;
+        let date6 = formatter.date(from: "2020/02/18")!;
+        let date7 = formatter.date(from: "2020/02/19")!;
+        
+        receivedEventArray.append(Event(purpose: "Go over homework 1", date: date4, time: "10:00 AM"));
+        receivedEventArray.append(Event(purpose: "Study for test", date: date3, time: "10:00 AM"));
+        receivedEventArray.append(Event(purpose: "Work on programming assignment 4 with study team", date: date6, time: "10:00 AM"));
+        receivedEventArray.append(Event(purpose: "Go to office hours", date: date7, time: "10:00 AM"));
+        receivedEventArray.append(Event(purpose: "Make studyguide", date: date2, time: "10:00 AM"));
+        receivedEventArray.append(Event(purpose: "Quiz each other with flashcards", date: date6, time: "10:00 AM"));
+        receivedEventArray.append(Event(purpose: "Go over homework 1", date: date2, time: "10:00 AM"));
+        receivedEventArray.append(Event(purpose: "Study for test", date: date2, time: "10:00 AM"));
+        receivedEventArray.append(Event(purpose: "Go over homework 1", date: date5, time: "10:00 AM"));
+        receivedEventArray.append(Event(purpose: "Study for test", date: date1, time: "10:00 AM"));
+        receivedEventArray.append(Event(purpose: "Go over homework 1", date: date3, time: "10:00 AM"));
+        receivedEventArray.append(Event(purpose: "Quiz each other with flashcards", date: date1, time: "10:00 AM"));
+        receivedEventArray.append(Event(purpose: "Go to office hours", date: date7, time: "10:00 AM"));
+        receivedEventArray.append(Event(purpose: "Make studyguide", date: date3, time: "10:00 AM"));
+        receivedEventArray.append(Event(purpose: "Quiz each other with flashcards", date: date4, time: "10:00 AM"));
+        
+        //Current date and time
+        
+        eventsArray = [Events(sectionHeader: "Today", sectionEvents:[]),
+                       Events(sectionHeader: "Tomorrow", sectionEvents:[]),
+                       Events(sectionHeader: "The Day After Tomorrow", sectionEvents:[]),
+                       Events(sectionHeader: "The Next Day", sectionEvents:[]),
+                       Events(sectionHeader: "New Day", sectionEvents:[]),
+                       Events(sectionHeader: "Later Day", sectionEvents:[]),
+                       Events(sectionHeader: "Someday", sectionEvents:[])];
+        
+        let today = Date();
+        for eventObject in receivedEventArray{
+            let dt = eventObject.date;
+            let diffInDays = Calendar.current.dateComponents([.day], from: today, to: dt).day;
+            eventsArray[diffInDays!].sectionEvents.append(eventObject);
+        }
         
         currentEventsArray = eventsArray
         
     }
-
-//    private func setUpEvents() {
-//        eventsArray.append(Event(purpose: "Go over homework 1", date: "10/10/20", time: "10:00 AM"))
-//        eventsArray.append(Event(purpose: "Study for test", date: "10/11/20", time: "10:00 AM"))
-//        eventsArray.append(Event(purpose: "Work on programming assignment 4 with study team", date: "10/12/20", time: "10:00 AM"))
-//        eventsArray.append(Event(purpose: "Go to office hours", date: "10/13/20", time: "10:00 AM"))
-//        eventsArray.append(Event(purpose: "Go over homework 5", date: "10/14/20", time: "10:00 AM"))
-//        eventsArray.append(Event(purpose: "Check answers for problem set", date: "10/15/20", time: "10:00 AM"))
-//        eventsArray.append(Event(purpose: "Make studyguide", date: "10/16/20", time: "10:00 AM"))
-//        eventsArray.append(Event(purpose: "Quiz each other with flashcards", date: "10/17/20", time: "10:00 AM"))
-//        eventsArray.append(Event(purpose: "Rehearse lines", date: "10/18/20", time: "10:00 AM"))
-//        eventsArray.append(Event(purpose: "Review and edit essays", date: "10/19/20", time: "10:00 AM"))
-//        eventsArray.append(Event(purpose: "Go over homework 11", date: "10/20/20", time: "10:00 AM"))
-//        eventsArray.append(Event(purpose: "Study for test 2", date: "10/21/20", time: "10:00 AM"))
-//        eventsArray.append(Event(purpose: "Go over review sheet", date: "10/10/20", time: "10:00 AM"))
-//
-//        currentEventsArray = eventsArray
-//    }
     
     private func setUpSearchBar() {
         searchBar.delegate = self
@@ -126,7 +122,7 @@ class DiscoverClassesViewController: UIViewController, UITableViewDataSource, UI
         cell.RSVPButton.layer.masksToBounds = false
         
         cell.purposeLabel.text = eventsArray[indexPath.section].sectionEvents[indexPath.row].purpose
-        cell.dateLabel.text = eventsArray[indexPath.section].sectionEvents[indexPath.row].date
+        cell.dateLabel.text = eventsArray[indexPath.section].sectionEvents[indexPath.row].date.description
         cell.timeLabel.text = eventsArray[indexPath.section].sectionEvents[indexPath.row].time
         
         return cell
@@ -156,10 +152,10 @@ class DiscoverClassesViewController: UIViewController, UITableViewDataSource, UI
 
 class Event {
     let purpose: String
-    let date: String //may need to change later to accomodate dates
-    let time: String //may need to change later to accomodate dates
+    let date: Date
+    let time: String //FIXME
     
-    init(purpose: String, date: String, time: String) {
+    init(purpose: String, date: Date, time: String) {
         self.purpose = purpose
         self.date = date
         self.time = time
