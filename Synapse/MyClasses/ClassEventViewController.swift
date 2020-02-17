@@ -27,12 +27,12 @@ class ClassEventViewController: UIViewController, UITableViewDataSource, UITable
         formatter.dateFormat = "yyyy/MM/dd"
         let date1 = formatter.date(from: "2020/02/13")!;
         
-        eventsArray.append(Event(purpose: "Go over homework 1", date: date1, time: "10:00 AM"))
-        eventsArray.append(Event(purpose: "Study for test", date: date1, time: "10:00 AM"))
-        eventsArray.append(Event(purpose: "Work on programming assignment 4 with study team", date: date1, time: "10:00 AM"))
-        eventsArray.append(Event(purpose: "Go to office hours", date: date1, time: "10:00 AM"))
-        eventsArray.append(Event(purpose: "Go over homework 5", date: date1, time: "10:00 AM"))
-        eventsArray.append(Event(purpose: "Check answers for problem set", date: date1, time: "10:00 AM"))
+        eventsArray.append(Event(purpose: "Go over homework 1", date: date1, time: "10:00 AM", classCode: "CS3250"))
+        eventsArray.append(Event(purpose: "Study for test", date: date1, time: "10:00 AM", classCode: "CS3250"))
+        eventsArray.append(Event(purpose: "Work on programming assignment 4 with study team", date: date1, time: "10:00 AM", classCode: "CS3250"))
+        eventsArray.append(Event(purpose: "Go to office hours", date: date1, time: "10:00 AM", classCode: "CS3250"))
+        eventsArray.append(Event(purpose: "Go over homework 5", date: date1, time: "10:00 AM", classCode: "CS3250"))
+        eventsArray.append(Event(purpose: "Check answers for problem set", date: date1, time: "10:00 AM", classCode: "CS3250"))
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -51,9 +51,14 @@ class ClassEventViewController: UIViewController, UITableViewDataSource, UITable
         cell.RSVPButton.layer.shadowRadius = 4
         cell.RSVPButton.layer.shadowOpacity = 0.5
         cell.RSVPButton.layer.masksToBounds = false
-
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .medium
+        dateFormatter.timeStyle = .none
+        dateFormatter.locale = Locale(identifier: "en_US")
+        
         cell.purposeLabel.text = eventsArray[indexPath.row].purpose
-        cell.dateLabel.text = eventsArray[indexPath.row].date.description
+        cell.dateLabel.text = dateFormatter.string(from: eventsArray[indexPath.row].date)
         cell.timeLabel.text = eventsArray[indexPath.row].time
 
         return cell

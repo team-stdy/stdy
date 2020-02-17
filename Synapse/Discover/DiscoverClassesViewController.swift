@@ -35,46 +35,58 @@ class DiscoverClassesViewController: UIViewController, UITableViewDataSource, UI
     }
     
     private func setUpEvents(){
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy/MM/dd"
-        let date1 = formatter.date(from: "2020/02/13")!;
-        let date2 = formatter.date(from: "2020/02/14")!;
-        let date3 = formatter.date(from: "2020/02/15")!;
-        let date4 = formatter.date(from: "2020/02/16")!;
-        let date5 = formatter.date(from: "2020/02/17")!;
-        let date6 = formatter.date(from: "2020/02/18")!;
-        let date7 = formatter.date(from: "2020/02/19")!;
+        //Create a Date with the current calendar date with the time set to midnight
+        let date1 = Calendar.current.date(bySettingHour: 0, minute: 0, second: 0, of: Date())!
         
-        receivedEventArray.append(Event(purpose: "Go over homework 1", date: date4, time: "10:00 AM"));
-        receivedEventArray.append(Event(purpose: "Study for test", date: date3, time: "10:00 AM"));
-        receivedEventArray.append(Event(purpose: "Work on programming assignment 4 with study team", date: date6, time: "10:00 AM"));
-        receivedEventArray.append(Event(purpose: "Go to office hours", date: date7, time: "10:00 AM"));
-        receivedEventArray.append(Event(purpose: "Make studyguide", date: date2, time: "10:00 AM"));
-        receivedEventArray.append(Event(purpose: "Quiz each other with flashcards", date: date6, time: "10:00 AM"));
-        receivedEventArray.append(Event(purpose: "Go over homework 1", date: date2, time: "10:00 AM"));
-        receivedEventArray.append(Event(purpose: "Study for test", date: date2, time: "10:00 AM"));
-        receivedEventArray.append(Event(purpose: "Go over homework 1", date: date5, time: "10:00 AM"));
-        receivedEventArray.append(Event(purpose: "Study for test", date: date1, time: "10:00 AM"));
-        receivedEventArray.append(Event(purpose: "Go over homework 1", date: date3, time: "10:00 AM"));
-        receivedEventArray.append(Event(purpose: "Quiz each other with flashcards", date: date1, time: "10:00 AM"));
-        receivedEventArray.append(Event(purpose: "Go to office hours", date: date7, time: "10:00 AM"));
-        receivedEventArray.append(Event(purpose: "Make studyguide", date: date3, time: "10:00 AM"));
-        receivedEventArray.append(Event(purpose: "Quiz each other with flashcards", date: date4, time: "10:00 AM"));
+        //Calculate the Date objects for the next week
+        let date2 = date1.addingTimeInterval(86400);
+        let date3 = date2.addingTimeInterval(86400);
+        let date4 = date3.addingTimeInterval(86400);
+        let date5 = date4.addingTimeInterval(86400);
+        let date6 = date5.addingTimeInterval(86400);
+        let date7 = date6.addingTimeInterval(86400);
+        
+        //Create Strings for the week's dates
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .medium
+        dateFormatter.timeStyle = .none
+        dateFormatter.locale = Locale(identifier: "en_US")
+        
+        let day3String = dateFormatter.string(from: date3)
+        let day4String = dateFormatter.string(from: date4)
+        let day5String = dateFormatter.string(from: date5)
+        let day6String = dateFormatter.string(from: date6)
+        let day7String = dateFormatter.string(from: date7)
+        
+        receivedEventArray.append(Event(purpose: "Go over homework 1", date: date4, time: "10:00 AM", classCode: "MATH2800"));
+        receivedEventArray.append(Event(purpose: "Study for test", date: date3, time: "10:00 AM", classCode: "CS3250"));
+        receivedEventArray.append(Event(purpose: "Work on programming assignment 4 with study team", date: date6, time: "10:00 AM", classCode: "CS3251"));
+        receivedEventArray.append(Event(purpose: "Go to office hours", date: date7, time: "10:00 AM", classCode: "MATH1200"));
+        receivedEventArray.append(Event(purpose: "Make studyguide", date: date2, time: "10:00 AM", classCode: "HIST1501"));
+        receivedEventArray.append(Event(purpose: "Quiz each other with flashcards", date: date6, time: "10:00 AM", classCode: "MATH2800"));
+        receivedEventArray.append(Event(purpose: "Go over homework 1", date: date2, time: "10:00 AM", classCode: "CS3250"));
+        receivedEventArray.append(Event(purpose: "Study for test", date: date2, time: "10:00 AM", classCode: "CS3251"));
+        receivedEventArray.append(Event(purpose: "Go over homework 1", date: date5, time: "10:00 AM", classCode: "MATH1200"));
+        receivedEventArray.append(Event(purpose: "Study for test", date: date1, time: "10:00 AM", classCode: "ENGL1602"));
+        receivedEventArray.append(Event(purpose: "Go over homework 1", date: date3, time: "10:00 AM", classCode: "HIST1501"));
+        receivedEventArray.append(Event(purpose: "Quiz each other with flashcards", date: date1, time: "10:00 AM", classCode: "ENGL1602"));
+        receivedEventArray.append(Event(purpose: "Go to office hours", date: date7, time: "10:00 AM", classCode:"CS3250"));
+        receivedEventArray.append(Event(purpose: "Make studyguide", date: date3, time: "10:00 AM", classCode: "CS3250"));
+        receivedEventArray.append(Event(purpose: "Quiz each other with flashcards", date: date4, time: "10:00 AM", classCode: "PSCI1802"));
         
         //Current date and time
         
         eventsArray = [Events(sectionHeader: "Today", sectionEvents:[]),
                        Events(sectionHeader: "Tomorrow", sectionEvents:[]),
-                       Events(sectionHeader: "The Day After Tomorrow", sectionEvents:[]),
-                       Events(sectionHeader: "The Next Day", sectionEvents:[]),
-                       Events(sectionHeader: "New Day", sectionEvents:[]),
-                       Events(sectionHeader: "Later Day", sectionEvents:[]),
-                       Events(sectionHeader: "Someday", sectionEvents:[])];
+                       Events(sectionHeader: day3String, sectionEvents:[]),
+                       Events(sectionHeader: day4String, sectionEvents:[]),
+                       Events(sectionHeader: day5String, sectionEvents:[]),
+                       Events(sectionHeader: day6String, sectionEvents:[]),
+                       Events(sectionHeader: day7String, sectionEvents:[])];
         
-        let today = Date();
         for eventObject in receivedEventArray{
             let dt = eventObject.date;
-            let diffInDays = Calendar.current.dateComponents([.day], from: today, to: dt).day;
+            let diffInDays = Calendar.current.dateComponents([.day], from: date1, to: dt).day;
             eventsArray[diffInDays!].sectionEvents.append(eventObject);
         }
         
@@ -121,8 +133,16 @@ class DiscoverClassesViewController: UIViewController, UITableViewDataSource, UI
         cell.RSVPButton.layer.shadowOpacity = 0.5
         cell.RSVPButton.layer.masksToBounds = false
         
-        cell.purposeLabel.text = eventsArray[indexPath.section].sectionEvents[indexPath.row].purpose
-        cell.dateLabel.text = eventsArray[indexPath.section].sectionEvents[indexPath.row].date.description
+        //Create the DateFormatter for the date field within a table cell
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .medium
+        dateFormatter.timeStyle = .none
+        dateFormatter.locale = Locale(identifier: "en_US")
+        
+        //Change the names of these labels to reflect the new content they hold (i.e. the header is the
+        //  class instead of the purpose, the the place where the date was now holds the purpose)
+        cell.purposeLabel.text = eventsArray[indexPath.section].sectionEvents[indexPath.row].classCode
+        cell.dateLabel.text = eventsArray[indexPath.section].sectionEvents[indexPath.row].purpose
         cell.timeLabel.text = eventsArray[indexPath.section].sectionEvents[indexPath.row].time
         
         return cell
@@ -151,13 +171,15 @@ class DiscoverClassesViewController: UIViewController, UITableViewDataSource, UI
 }
 
 class Event {
+    let classCode: String
     let purpose: String
     let date: Date
     let time: String //FIXME
     
-    init(purpose: String, date: Date, time: String) {
+    init(purpose: String, date: Date, time: String, classCode: String) {
         self.purpose = purpose
         self.date = date
         self.time = time
+        self.classCode = classCode
     }
 }
