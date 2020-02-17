@@ -13,6 +13,8 @@
 		1447766A23EAA56500BD21F5 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1447766923EAA56500BD21F5 /* TableViewCell.swift */; };
 		1499BCB523DFF23C00407EA1 /* MyClassesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1499BCB423DFF23C00407EA1 /* MyClassesViewController.swift */; };
 		35364B675648E24BAB7A0A76 /* Pods_SynapseTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B72B14BE0B95EDD7C7EE109 /* Pods_SynapseTests.framework */; };
+		4F270EBC23FA557000EEDABD /* NewEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F270EBB23FA557000EEDABD /* NewEventViewController.swift */; };
+		4F56E5DF23F5A7F9009436C5 /* CreateEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F56E5DE23F5A7F9009436C5 /* CreateEventViewController.swift */; };
 		55070077E3DB99AD9A0BA892 /* Pods_Synapse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C601E6E009D5918F1F886F1F /* Pods_Synapse.framework */; };
 		5BE96A5C23EB67CF00E4D1A7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE96A5B23EB67CF00E4D1A7 /* ViewController.swift */; };
 		5BE96A5E23EB68DA00E4D1A7 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE96A5D23EB68DA00E4D1A7 /* ProfileViewController.swift */; };
@@ -61,6 +63,8 @@
 		1499BCB423DFF23C00407EA1 /* MyClassesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyClassesViewController.swift; sourceTree = "<group>"; };
 		202BD3F886836B73EC355DAF /* Pods_Synapse_SynapseUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Synapse_SynapseUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4498962368F5A0EA1F72F615 /* Pods-Synapse-SynapseUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Synapse-SynapseUITests.release.xcconfig"; path = "Target Support Files/Pods-Synapse-SynapseUITests/Pods-Synapse-SynapseUITests.release.xcconfig"; sourceTree = "<group>"; };
+		4F270EBB23FA557000EEDABD /* NewEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEventViewController.swift; sourceTree = "<group>"; };
+		4F56E5DE23F5A7F9009436C5 /* CreateEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEventViewController.swift; sourceTree = "<group>"; };
 		5BE96A5B23EB67CF00E4D1A7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5BE96A5D23EB68DA00E4D1A7 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		5C5FAF5ADD6309255E6F4CE8 /* Pods-SynapseTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SynapseTests.release.xcconfig"; path = "Target Support Files/Pods-SynapseTests/Pods-SynapseTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -147,6 +151,7 @@
 		B502D5D623F0B11900229AEF /* MyClasses */ = {
 			isa = PBXGroup;
 			children = (
+				4F56E5DE23F5A7F9009436C5 /* CreateEventViewController.swift */,
 				1447766923EAA56500BD21F5 /* TableViewCell.swift */,
 				14007A9F23DFEAA70006B92D /* CreateClassViewController.swift */,
 				14007AA123DFEABA0006B92D /* ClassNotFoundViewController.swift */,
@@ -248,6 +253,7 @@
 			children = (
 				B5B0B7D023F1BE2E0074F026 /* DiscoverClassesViewController.swift */,
 				B5B0B7D223F1BE700074F026 /* DiscoverTableViewCell.swift */,
+				4F270EBB23FA557000EEDABD /* NewEventViewController.swift */,
 			);
 			path = Discover;
 			sourceTree = "<group>";
@@ -500,7 +506,9 @@
 			files = (
 				14007AA423DFEACF0006B92D /* AllClassesViewController.swift in Sources */,
 				1447766A23EAA56500BD21F5 /* TableViewCell.swift in Sources */,
+				4F56E5DF23F5A7F9009436C5 /* CreateEventViewController.swift in Sources */,
 				14007AA223DFEABA0006B92D /* ClassNotFoundViewController.swift in Sources */,
+				4F270EBC23FA557000EEDABD /* NewEventViewController.swift in Sources */,
 				B5B0B7D123F1BE2E0074F026 /* DiscoverClassesViewController.swift in Sources */,
 				14007AA023DFEAA70006B92D /* CreateClassViewController.swift in Sources */,
 				B57D104323D5527100BCA8C6 /* AppDelegate.swift in Sources */,

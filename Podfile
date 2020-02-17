@@ -7,6 +7,7 @@ target 'Synapse' do
 
   # Pods for Synapse
 	pod 'Firebase/Analytics'
+        pod 'DateTimePicker'
 
   target 'SynapseTests' do
     inherit! :search_paths
@@ -16,5 +17,7 @@ target 'Synapse' do
   target 'SynapseUITests' do
     # Pods for testing
   end
+
+
 
 end
