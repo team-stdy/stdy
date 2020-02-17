@@ -15,6 +15,7 @@
 		35364B675648E24BAB7A0A76 /* Pods_SynapseTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B72B14BE0B95EDD7C7EE109 /* Pods_SynapseTests.framework */; };
 		4F270EC223FB427200EEDABD /* CreateEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F270EC123FB427200EEDABD /* CreateEventViewController.swift */; };
 		4F270EC423FB435100EEDABD /* NewEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F270EC323FB435100EEDABD /* NewEventViewController.swift */; };
+		4F270EC623FB582B00EEDABD /* EditEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F270EC523FB582B00EEDABD /* EditEventViewController.swift */; };
 		55070077E3DB99AD9A0BA892 /* Pods_Synapse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C601E6E009D5918F1F886F1F /* Pods_Synapse.framework */; };
 		5BE96A5C23EB67CF00E4D1A7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE96A5B23EB67CF00E4D1A7 /* ViewController.swift */; };
 		5BE96A5E23EB68DA00E4D1A7 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE96A5D23EB68DA00E4D1A7 /* ProfileViewController.swift */; };
@@ -67,6 +68,7 @@
 		4498962368F5A0EA1F72F615 /* Pods-Synapse-SynapseUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Synapse-SynapseUITests.release.xcconfig"; path = "Target Support Files/Pods-Synapse-SynapseUITests/Pods-Synapse-SynapseUITests.release.xcconfig"; sourceTree = "<group>"; };
 		4F270EC123FB427200EEDABD /* CreateEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEventViewController.swift; sourceTree = "<group>"; };
 		4F270EC323FB435100EEDABD /* NewEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEventViewController.swift; sourceTree = "<group>"; };
+		4F270EC523FB582B00EEDABD /* EditEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EditEventViewController.swift; path = Synapse/Discover/EditEventViewController.swift; sourceTree = SOURCE_ROOT; };
 		5BE96A5B23EB67CF00E4D1A7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5BE96A5D23EB68DA00E4D1A7 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		5C5FAF5ADD6309255E6F4CE8 /* Pods-SynapseTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SynapseTests.release.xcconfig"; path = "Target Support Files/Pods-SynapseTests/Pods-SynapseTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 		B502D5E223F0BF0F00229AEF /* MyEvents */ = {
 			isa = PBXGroup;
 			children = (
+				4F270EC523FB582B00EEDABD /* EditEventViewController.swift */,
 			);
 			path = MyEvents;
 			sourceTree = "<group>";
@@ -514,6 +517,7 @@
 				1447766A23EAA56500BD21F5 /* TableViewCell.swift in Sources */,
 				4F270EC423FB435100EEDABD /* NewEventViewController.swift in Sources */,
 				14007AA223DFEABA0006B92D /* ClassNotFoundViewController.swift in Sources */,
+				4F270EC623FB582B00EEDABD /* EditEventViewController.swift in Sources */,
 				B5B0B7D123F1BE2E0074F026 /* DiscoverClassesViewController.swift in Sources */,
 				14007AA023DFEAA70006B92D /* CreateClassViewController.swift in Sources */,
 				B57D104323D5527100BCA8C6 /* AppDelegate.swift in Sources */,
