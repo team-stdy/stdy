@@ -104,11 +104,11 @@ class CreateEventViewController: UIViewController {
     @IBAction func CreateTapped(_ sender: Any) {
         //think this is right! but need to be merged so that it can access the ClassEventsViewController so it is unclear right now but will discuss at meeting
         
-        // let vcMyClasses = storyboard?.instantiateViewController(identifier: "ClassEventsViewController") as? ClassEventsViewController
+         //let vcMyClasses = storyboard?.instantiateViewController(identifier: "ClassEventsViewController") as? ClassEventsViewController
                                     
         
        // vcMyClasses?.courseName  = classNameTextField.text!
-        // vcMyClasses?.currentEventsArray = {descriptionTextField; dateTextField; timeTextField}
+       // vcMyClasses?.currentEventsArray = {descriptionTextField; dateTextField; timeTextField}
                     
         //          navigationController?.pushViewController(vcMyClasses!, animated: true)
         

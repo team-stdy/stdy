@@ -128,7 +128,7 @@
         <!--Create Event-->
         <scene sceneID="t9X-OI-mDM">
             <objects>
-                <viewController id="U0s-4M-S12" userLabel="Create Event" sceneMemberID="viewController">
+                <viewController id="U0s-4M-S12" userLabel="Create Event" customClass="NewEventViewController" customModule="Synapse" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Z6B-qE-LDg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
