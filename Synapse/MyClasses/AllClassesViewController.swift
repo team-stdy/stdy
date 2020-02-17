@@ -166,6 +166,8 @@ class AllClassesViewController: UIViewController, UITableViewDataSource, UITable
         }
     }
     
+    //https://stackoverflow.com/questions/50778968/passing-data-through-tableview-using-the-button-clicked
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "viewMyClasses" {
             let myClassesVC = segue.destination as! MyClassesViewController
@@ -176,8 +178,6 @@ class AllClassesViewController: UIViewController, UITableViewDataSource, UITable
             }
         }
     }
-    
-    
     
 }
 
