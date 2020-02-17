@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AllClassesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
+class AllClassesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, TableViewNew {
     
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
@@ -95,21 +95,24 @@ class AllClassesViewController: UIViewController, UITableViewDataSource, UITable
         cell.courseLabel.text = currentCoursesArray[indexPath.row].course
         cell.teacherLabel.text = currentCoursesArray[indexPath.row].teacher
         
+        cell.setCourse(course: currentCoursesArray[indexPath.row])
+        cell.cellDelegate = (self as TableViewNew)
+        
         return cell
     }
     
 
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vcMyClasses = storyboard?.instantiateViewController(identifier: "MyClassesViewController") as? MyClassesViewController
-        
-        let courseName = currentCoursesArray[indexPath.row].course
-        let teacherName = currentCoursesArray[indexPath.row].teacher
-
-        vcMyClasses?.courseName = courseName
-        vcMyClasses?.courseTeacher = teacherName
-        
-        navigationController?.pushViewController(vcMyClasses!, animated: true)
-    }
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        let vcMyClasses = storyboard?.instantiateViewController(identifier: "MyClassesViewController") as? MyClassesViewController
+//        
+//        let courseName = currentCoursesArray[indexPath.row].course
+//        let teacherName = currentCoursesArray[indexPath.row].teacher
+//        
+//        vcMyClasses?.courseName = courseName
+//        vcMyClasses?.courseTeacher = teacherName
+//        
+//        navigationController?.pushViewController(vcMyClasses!, animated: true)
+//    }
     
     
     // This two functions can be used if you want to show the search bar in the section header
@@ -153,6 +156,28 @@ class AllClassesViewController: UIViewController, UITableViewDataSource, UITable
 //        // Remove focus from the search bar.
 //        searchBar.endEditing(true)
 //    }
+    
+    var clickedPath: IndexPath? = nil
+    
+    func cellClicked(_ cell: TableView) {
+            if let indexPath = self.tableView.indexPath(for: cell) {
+            clickedPath = indexPath
+            performSegue(withIdentifier: "viewMyClasses", sender: self)
+        }
+    }
+    
+    //https://stackoverflow.com/questions/50778968/passing-data-through-tableview-using-the-button-clicked
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "viewMyClasses" {
+            let myClassesVC = segue.destination as! MyClassesViewController
+            if let indexPath = clickedPath {
+                let selectedIndex = currentCoursesArray[indexPath.row]
+                myClassesVC.courseName = selectedIndex.course
+                myClassesVC.courseTeacher = selectedIndex.teacher
+            }
+        }
+    }
     
 }
 

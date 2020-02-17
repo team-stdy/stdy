@@ -8,19 +8,29 @@
 
 import UIKit
 
+protocol TableViewNew {
+    func cellClicked(_ cell: TableView)
+}
+
 class TableView: UITableViewCell {
 
     @IBOutlet weak var courseLabel: UILabel!
     @IBOutlet weak var teacherLabel: UILabel!
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+
+
+    var cellDelegate: TableViewNew?
+    var courseName: String!
+    var teacherName: String!
+    
+    var course: Course!
+    
+    func setCourse(course: Course) {
+        courseLabel.text = course.course
+        teacherLabel.text = course.teacher
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    @IBAction func addButtonTapped(_ sender: Any) {
+        self.cellDelegate!.cellClicked(self)
     }
 
 }
