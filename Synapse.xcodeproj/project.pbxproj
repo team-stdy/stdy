@@ -10,6 +10,8 @@
 		14007AA023DFEAA70006B92D /* CreateClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14007A9F23DFEAA70006B92D /* CreateClassViewController.swift */; };
 		14007AA223DFEABA0006B92D /* ClassNotFoundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14007AA123DFEABA0006B92D /* ClassNotFoundViewController.swift */; };
 		14007AA423DFEACF0006B92D /* AllClassesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14007AA323DFEACF0006B92D /* AllClassesViewController.swift */; };
+		1437035523FB4FAB00FA3CD5 /* MyEventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1437035423FB4FAB00FA3CD5 /* MyEventsViewController.swift */; };
+		1437035723FB519100FA3CD5 /* MyEventsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1437035623FB519100FA3CD5 /* MyEventsTableViewCell.swift */; };
 		1447766A23EAA56500BD21F5 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1447766923EAA56500BD21F5 /* TableViewCell.swift */; };
 		1499BCB523DFF23C00407EA1 /* MyClassesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1499BCB423DFF23C00407EA1 /* MyClassesViewController.swift */; };
 		35364B675648E24BAB7A0A76 /* Pods_SynapseTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B72B14BE0B95EDD7C7EE109 /* Pods_SynapseTests.framework */; };
@@ -62,6 +64,8 @@
 		14007A9F23DFEAA70006B92D /* CreateClassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateClassViewController.swift; sourceTree = "<group>"; };
 		14007AA123DFEABA0006B92D /* ClassNotFoundViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassNotFoundViewController.swift; sourceTree = "<group>"; };
 		14007AA323DFEACF0006B92D /* AllClassesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllClassesViewController.swift; sourceTree = "<group>"; };
+		1437035423FB4FAB00FA3CD5 /* MyEventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyEventsViewController.swift; sourceTree = SOURCE_ROOT; };
+		1437035623FB519100FA3CD5 /* MyEventsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyEventsTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		1447766923EAA56500BD21F5 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		1499BCB423DFF23C00407EA1 /* MyClassesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyClassesViewController.swift; sourceTree = "<group>"; };
 		202BD3F886836B73EC355DAF /* Pods_Synapse_SynapseUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Synapse_SynapseUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -173,6 +177,9 @@
 		B502D5E223F0BF0F00229AEF /* MyEvents */ = {
 			isa = PBXGroup;
 			children = (
+
+				1437035423FB4FAB00FA3CD5 /* MyEventsViewController.swift */,
+				1437035623FB519100FA3CD5 /* MyEventsTableViewCell.swift */,
 				4F270EC523FB582B00EEDABD /* EditEventViewController.swift */,
 			);
 			path = MyEvents;
@@ -522,6 +529,7 @@
 				14007AA023DFEAA70006B92D /* CreateClassViewController.swift in Sources */,
 				B57D104323D5527100BCA8C6 /* AppDelegate.swift in Sources */,
 				5BE96A5C23EB67CF00E4D1A7 /* ViewController.swift in Sources */,
+				1437035723FB519100FA3CD5 /* MyEventsTableViewCell.swift in Sources */,
 				B56A013323E244A3007C2193 /* TableView.swift in Sources */,
 				B5B0B7D323F1BE700074F026 /* DiscoverTableViewCell.swift in Sources */,
 				B57D104523D5527100BCA8C6 /* SceneDelegate.swift in Sources */,
@@ -529,6 +537,7 @@
 				1499BCB523DFF23C00407EA1 /* MyClassesViewController.swift in Sources */,
 				B51E36D123F322090087C813 /* ClassEventViewController.swift in Sources */,
 				B51E36CF23F312170087C813 /* ClassEventsTableViewCell.swift in Sources */,
+				1437035523FB4FAB00FA3CD5 /* MyEventsViewController.swift in Sources */,
 				4F270EC223FB427200EEDABD /* CreateEventViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
