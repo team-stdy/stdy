@@ -7,6 +7,10 @@ target 'Synapse' do
 
   # Pods for Synapse
 	pod 'Firebase/Analytics'
+	pod 'Firebase/Auth'
+	pod 'Firebase/Firestore'
+	pod 'Firebase/Storage'
+	pod 'Firebase/Database'
 
   target 'SynapseTests' do
     inherit! :search_paths
