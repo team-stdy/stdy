@@ -28,33 +28,33 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
         view.addVerticalGradientLayer(topColor: primaryColor!, bottomColor: secondaryColor!)
         
-        checkIfUserIsLoggedIn()
-        setUpProfile()
+//        checkIfUserIsLoggedIn()
+//        setUpProfile()
         setUpImage()
         
         
     }
     
-    func checkIfUserIsLoggedIn(){
-        if Auth.auth().currentUser?.uid == nil {
-            perform(#selector(handleLogout), with: nil, afterDelay: 0)
-        } else {
-            let uid = Auth.auth().currentUser?.uid
-            Database.database().reference().child("users").child(uid!).observeSingleEvent(of: .value, with: { (snapshot) in
-                print(snapshot)
-                if let dictionary = snapshot.value as? [String: AnyObject]{
-                    self.firstNameLabel.text! = "First Name: "
-                    self.firstNameLabel.text! += (dictionary["firstName"] as? String)!
-                    
-                    self.lastNameLabel.text! = "Last Name: "
-                    self.lastNameLabel.text! += (dictionary["lastName"] as? String)!
-                    
-                    self.lastNameLabel.text! = "University: "
-                    self.universityLabel.text! += (dictionary["university"] as? String)!
-                }
-            }, withCancel: nil)
-        }
-    }
+//    func checkIfUserIsLoggedIn(){
+//        if Auth.auth().currentUser?.uid == nil {
+//            perform(#selector(handleLogout), with: nil, afterDelay: 0)
+//        } else {
+//            let uid = Auth.auth().currentUser?.uid
+//            Database.database().reference().child("users").child(uid!).observeSingleEvent(of: .value, with: { (snapshot) in
+//                print(snapshot)
+//                if let dictionary = snapshot.value as? [String: AnyObject]{
+//                    self.firstNameLabel.text! = "First Name: "
+//                    self.firstNameLabel.text! += (dictionary["firstName"] as? String)!
+//
+//                    self.lastNameLabel.text! = "Last Name: "
+//                    self.lastNameLabel.text! += (dictionary["lastName"] as? String)!
+//
+//                    self.lastNameLabel.text! = "University: "
+//                    self.universityLabel.text! += (dictionary["university"] as? String)!
+//                }
+//            }, withCancel: nil)
+//        }
+//    }
     
     func setUpProfile(){
 //        let uid = Auth.auth().currentUser?.uid
