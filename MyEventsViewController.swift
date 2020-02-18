@@ -50,14 +50,14 @@ class MyEventsViewController: UIViewController, UITableViewDataSource, UITableVi
         let day6String = dateFormatter.string(from: date6)
         let day7String = dateFormatter.string(from: date7)
         
-        receivedEventArray.append(Event(purpose: "Go over homework 1", date: date4, time: "10:00 AM", classCode: "MATH2800"));
-        receivedEventArray.append(Event(purpose: "Study for test", date: date3, time: "10:00 AM", classCode: "CS3250"));
-        receivedEventArray.append(Event(purpose: "Work on programming assignment 4 with study team", date: date6, time: "10:00 AM", classCode: "CS3251"));
-        receivedEventArray.append(Event(purpose: "Make studyguide", date: date2, time: "10:00 AM", classCode: "HIST1501"));
-        receivedEventArray.append(Event(purpose: "Go over homework 1", date: date5, time: "10:00 AM", classCode: "MATH1200"));
-        receivedEventArray.append(Event(purpose: "Study for test", date: date1, time: "10:00 AM", classCode: "ENGL1602"));
-        receivedEventArray.append(Event(purpose: "Quiz each other with flashcards", date: date1, time: "10:00 AM", classCode: "ENGL1602"));
-        receivedEventArray.append(Event(purpose: "Go to office hours", date: date7, time: "10:00 AM", classCode:"CS3250"));
+        receivedEventArray.append(Event(purpose: "Go over homework 1", date: date4, time: "10:00 AM", classCode: "MATH2800", location: "Stevenson", rsvpCount: 9));
+        receivedEventArray.append(Event(purpose: "Study for test", date: date3, time: "10:00 AM", classCode: "CS3250", location: "FGH", rsvpCount: 26));
+        receivedEventArray.append(Event(purpose: "Work on programming assignment 4 with study team", date: date6, time: "10:00 AM", classCode: "CS3251", location: "Normandy", rsvpCount: 3));
+        receivedEventArray.append(Event(purpose: "Make studyguide", date: date2, time: "10:00 AM", classCode: "HIST1501", location: "West London", rsvpCount: 58));
+        receivedEventArray.append(Event(purpose: "Go over homework 1", date: date5, time: "10:00 AM", classCode: "MATH1200", location: "Trump Tower", rsvpCount: 2));
+        receivedEventArray.append(Event(purpose: "Study for test", date: date1, time: "10:00 AM", classCode: "ENGL1602", location: "Rand", rsvpCount: 27));
+        receivedEventArray.append(Event(purpose: "Quiz each other with flashcards", date: date1, time: "10:00 AM", classCode: "ENGL1602", location: "A Mass Grave in France", rsvpCount: 3));
+        receivedEventArray.append(Event(purpose: "Go to office hours", date: date7, time: "10:00 AM", classCode:"CS3250", location: "FGH 323", rsvpCount: 85));
         
         //Current date and time
         
@@ -69,7 +69,7 @@ class MyEventsViewController: UIViewController, UITableViewDataSource, UITableVi
                        Events(sectionHeader: day6String, sectionEvents:[]),
                        Events(sectionHeader: day7String, sectionEvents:[])];
         
-        for eventObject in receivedEventArray{
+        for eventObject in receivedEventArray {
             let dt = eventObject.date;
             let diffInDays = Calendar.current.dateComponents([.day], from: date1, to: dt).day;
             eventsArray[diffInDays!].sectionEvents.append(eventObject);
@@ -117,8 +117,10 @@ class MyEventsViewController: UIViewController, UITableViewDataSource, UITableVi
         //Change the names of these labels to reflect the new content they hold (i.e. the header is the
         //  class instead of the purpose, the the place where the date was now holds the purpose)
         cell.classLabel.text = eventsArray[indexPath.section].sectionEvents[indexPath.row].classCode
-        cell.dateLabel.text = eventsArray[indexPath.section].sectionEvents[indexPath.row].purpose
+        cell.descriptionLabel.text = eventsArray[indexPath.section].sectionEvents[indexPath.row].purpose
         cell.timeLabel.text = eventsArray[indexPath.section].sectionEvents[indexPath.row].time
+        cell.locationLabel.text = eventsArray[indexPath.section].sectionEvents[indexPath.row].location
+        cell.rsvpLabel.text = "RSVP Count: " + String(eventsArray[indexPath.section].sectionEvents[indexPath.row].rsvpCount)
         
         return cell
     }
@@ -127,6 +129,14 @@ class MyEventsViewController: UIViewController, UITableViewDataSource, UITableVi
 
     }
     
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            currentEventsArray.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        } else if editingStyle == .insert {
+            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
+        }
+    }
     /*
     // MARK: - Navigation
 
