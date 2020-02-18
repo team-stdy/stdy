@@ -58,21 +58,21 @@ class DiscoverClassesViewController: UIViewController, UITableViewDataSource, UI
         let day6String = dateFormatter.string(from: date6)
         let day7String = dateFormatter.string(from: date7)
         
-        receivedEventArray.append(Event(purpose: "Go over homework 1", date: date4, time: "10:00 AM", classCode: "MATH2800"));
-        receivedEventArray.append(Event(purpose: "Study for test", date: date3, time: "10:00 AM", classCode: "CS3250"));
-        receivedEventArray.append(Event(purpose: "Work on programming assignment 4 with study team", date: date6, time: "10:00 AM", classCode: "CS3251"));
-        receivedEventArray.append(Event(purpose: "Go to office hours", date: date7, time: "10:00 AM", classCode: "MATH1200"));
-        receivedEventArray.append(Event(purpose: "Make studyguide", date: date2, time: "10:00 AM", classCode: "HIST1501"));
-        receivedEventArray.append(Event(purpose: "Quiz each other with flashcards", date: date6, time: "10:00 AM", classCode: "MATH2800"));
-        receivedEventArray.append(Event(purpose: "Go over homework 1", date: date2, time: "10:00 AM", classCode: "CS3250"));
-        receivedEventArray.append(Event(purpose: "Study for test", date: date2, time: "10:00 AM", classCode: "CS3251"));
-        receivedEventArray.append(Event(purpose: "Go over homework 1", date: date5, time: "10:00 AM", classCode: "MATH1200"));
-        receivedEventArray.append(Event(purpose: "Study for test", date: date1, time: "10:00 AM", classCode: "ENGL1602"));
-        receivedEventArray.append(Event(purpose: "Go over homework 1", date: date3, time: "10:00 AM", classCode: "HIST1501"));
-        receivedEventArray.append(Event(purpose: "Quiz each other with flashcards", date: date1, time: "10:00 AM", classCode: "ENGL1602"));
-        receivedEventArray.append(Event(purpose: "Go to office hours", date: date7, time: "10:00 AM", classCode:"CS3250"));
-        receivedEventArray.append(Event(purpose: "Make studyguide", date: date3, time: "10:00 AM", classCode: "CS3250"));
-        receivedEventArray.append(Event(purpose: "Quiz each other with flashcards", date: date4, time: "10:00 AM", classCode: "PSCI1802"));
+        receivedEventArray.append(Event(purpose: "Go over homework 1", date: date4, time: "10:00 AM", classCode: "MATH2800", location: "Featheringhill", rsvpCount: 15));
+        receivedEventArray.append(Event(purpose: "Study for test", date: date3, time: "10:00 AM", classCode: "CS3250", location: "Mars", rsvpCount: 10));
+        receivedEventArray.append(Event(purpose: "Work on programming assignment 4 with study team", date: date6, time: "10:00 AM", classCode: "CS3251", location: "Stevenson", rsvpCount: 8));
+        receivedEventArray.append(Event(purpose: "Go to office hours", date: date7, time: "10:00 AM", classCode: "MATH1200", location: "Rand", rsvpCount: 12));
+        receivedEventArray.append(Event(purpose: "Make studyguide", date: date2, time: "10:00 AM", classCode: "HIST1501", location: "Stevenson", rsvpCount: 32));
+        receivedEventArray.append(Event(purpose: "Quiz each other with flashcards", date: date6, time: "10:00 AM", classCode: "MATH2800", location: "MGM Resort & Casino", rsvpCount: 7));
+        receivedEventArray.append(Event(purpose: "Go over homework 1", date: date2, time: "10:00 AM", classCode: "CS3250", location: "Disney", rsvpCount: 42));
+        receivedEventArray.append(Event(purpose: "Study for test", date: date2, time: "10:00 AM", classCode: "CS3251", location: "CIA Headquarters", rsvpCount: 69));
+        receivedEventArray.append(Event(purpose: "Go over homework 1", date: date5, time: "10:00 AM", classCode: "MATH1200", location: "Rand", rsvpCount: 420));
+        receivedEventArray.append(Event(purpose: "Study for test", date: date1, time: "10:00 AM", classCode: "ENGL1602", location: "Buttrick", rsvpCount: 888));
+        receivedEventArray.append(Event(purpose: "Go over homework 1", date: date3, time: "10:00 AM", classCode: "HIST1501", location: "Stevenson", rsvpCount: 2));
+        receivedEventArray.append(Event(purpose: "Quiz each other with flashcards", date: date1, time: "10:00 AM", classCode: "ENGL1602", location: "Calhoun", rsvpCount: 1));
+        receivedEventArray.append(Event(purpose: "Go to office hours", date: date7, time: "10:00 AM", classCode:"CS3250", location: "North House", rsvpCount: 1));
+        receivedEventArray.append(Event(purpose: "Make studyguide", date: date3, time: "10:00 AM", classCode: "CS3250", location: "Stairwell", rsvpCount: 13));
+        receivedEventArray.append(Event(purpose: "Quiz each other with flashcards", date: date4, time: "10:00 AM", classCode: "PSCI1802", location: "North Korea", rsvpCount: 666));
         
         //Current date and time
         
@@ -174,12 +174,16 @@ class Event {
     let classCode: String
     let purpose: String
     let date: Date
-    let time: String //FIXME
+    let time: String
+    let location: String
+    let rsvpCount: Int
     
-    init(purpose: String, date: Date, time: String, classCode: String) {
+    init(purpose: String, date: Date, time: String, classCode: String, location: String, rsvpCount: Int) {
         self.purpose = purpose
         self.date = date
         self.time = time
         self.classCode = classCode
+        self.location = location
+        self.rsvpCount = rsvpCount
     }
 }
