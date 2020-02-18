@@ -35,6 +35,8 @@
 		B561EE8423FB69FE00EA5CE6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B561EE7C23FB69FE00EA5CE6 /* LoginViewController.swift */; };
 		B561EE8523FB69FE00EA5CE6 /* UniversityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B561EE7D23FB69FE00EA5CE6 /* UniversityTableViewCell.swift */; };
 		B561EE8623FB69FE00EA5CE6 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B561EE7E23FB69FE00EA5CE6 /* MenuViewController.swift */; };
+		B561EE8A23FB6B6000EA5CE6 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = B561EE8823FB6B6000EA5CE6 /* Utilities.swift */; };
+		B561EE8B23FB6B6000EA5CE6 /* RoundedWhiteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B561EE8923FB6B6000EA5CE6 /* RoundedWhiteButton.swift */; };
 		B56A013323E244A3007C2193 /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56A013223E244A3007C2193 /* TableView.swift */; };
 		B57D104323D5527100BCA8C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57D104223D5527100BCA8C6 /* AppDelegate.swift */; };
 		B57D104523D5527100BCA8C6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57D104423D5527100BCA8C6 /* SceneDelegate.swift */; };
@@ -101,6 +103,8 @@
 		B561EE7C23FB69FE00EA5CE6 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B561EE7D23FB69FE00EA5CE6 /* UniversityTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniversityTableViewCell.swift; sourceTree = "<group>"; };
 		B561EE7E23FB69FE00EA5CE6 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		B561EE8823FB6B6000EA5CE6 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		B561EE8923FB6B6000EA5CE6 /* RoundedWhiteButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedWhiteButton.swift; sourceTree = "<group>"; };
 		B56A013223E244A3007C2193 /* TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
 		B57D103F23D5527100BCA8C6 /* Synapse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Synapse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B57D104223D5527100BCA8C6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -235,6 +239,15 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		B561EE8723FB6B6000EA5CE6 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				B561EE8823FB6B6000EA5CE6 /* Utilities.swift */,
+				B561EE8923FB6B6000EA5CE6 /* RoundedWhiteButton.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		B57D103623D5527100BCA8C6 = {
 			isa = PBXGroup;
 			children = (
@@ -260,6 +273,7 @@
 		B57D104123D5527100BCA8C6 /* Synapse */ = {
 			isa = PBXGroup;
 			children = (
+				B561EE8723FB6B6000EA5CE6 /* Helpers */,
 				B561EE7623FB69FE00EA5CE6 /* Login */,
 				B5B0B7CF23F1BD800074F026 /* Discover */,
 				B502D5E523F0C0BC00229AEF /* Storyboards */,
@@ -553,6 +567,7 @@
 			files = (
 				14007AA423DFEACF0006B92D /* AllClassesViewController.swift in Sources */,
 				B561EE8323FB69FE00EA5CE6 /* HelperExtensions.swift in Sources */,
+				B561EE8A23FB6B6000EA5CE6 /* Utilities.swift in Sources */,
 				1447766A23EAA56500BD21F5 /* TableViewCell.swift in Sources */,
 				4F270EC423FB435100EEDABD /* NewEventViewController.swift in Sources */,
 				14007AA223DFEABA0006B92D /* ClassNotFoundViewController.swift in Sources */,
@@ -571,6 +586,7 @@
 				5BE96A5E23EB68DA00E4D1A7 /* ProfileViewController.swift in Sources */,
 				B561EE8223FB69FE00EA5CE6 /* LogViewController.swift in Sources */,
 				B561EE7F23FB69FE00EA5CE6 /* SignUpViewController.swift in Sources */,
+				B561EE8B23FB6B6000EA5CE6 /* RoundedWhiteButton.swift in Sources */,
 				B561EE8023FB69FE00EA5CE6 /* InitialViewController.swift in Sources */,
 				1499BCB523DFF23C00407EA1 /* MyClassesViewController.swift in Sources */,
 				B561EE8623FB69FE00EA5CE6 /* MenuViewController.swift in Sources */,
