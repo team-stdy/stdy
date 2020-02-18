@@ -266,7 +266,6 @@
                                                     </state>
                                                     <connections>
                                                         <action selector="addButtonTapped:" destination="i7Z-O7-Lzo" eventType="touchUpInside" id="sKg-Px-bkf"/>
-                                                        <segue destination="RHk-V5-g8O" kind="show" identifier="viewMyClasses" id="dtL-9P-LwR"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -317,6 +316,7 @@
                     <connections>
                         <outlet property="searchBar" destination="HtU-6A-q99" id="JtO-UR-uy7"/>
                         <outlet property="tableView" destination="HtU-6A-q99" id="pxZ-tN-Pne"/>
+                        <segue destination="RHk-V5-g8O" kind="show" identifier="viewMyClasses" id="ma2-av-d6a"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Efn-QD-dla" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -666,6 +666,6 @@
         <image name="plus" catalog="system" width="64" height="56"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="dtL-9P-LwR"/>
+        <segue reference="ma2-av-d6a"/>
     </inferredMetricsTieBreakers>
 </document>
