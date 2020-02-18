@@ -43,6 +43,7 @@
 		B561EE8A23FB6B6000EA5CE6 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = B561EE8823FB6B6000EA5CE6 /* Utilities.swift */; };
 		B561EE8B23FB6B6000EA5CE6 /* RoundedWhiteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B561EE8923FB6B6000EA5CE6 /* RoundedWhiteButton.swift */; };
 		B56A013323E244A3007C2193 /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56A013223E244A3007C2193 /* TableView.swift */; };
+		B574219323FC88FA00503278 /* AuthenticationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B574219223FC88FA00503278 /* AuthenticationServices.framework */; };
 		B57D104323D5527100BCA8C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57D104223D5527100BCA8C6 /* AppDelegate.swift */; };
 		B57D104523D5527100BCA8C6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57D104423D5527100BCA8C6 /* SceneDelegate.swift */; };
 		B57D104A23D5527100BCA8C6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B57D104823D5527100BCA8C6 /* Main.storyboard */; };
@@ -116,6 +117,8 @@
 		B561EE8823FB6B6000EA5CE6 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		B561EE8923FB6B6000EA5CE6 /* RoundedWhiteButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedWhiteButton.swift; sourceTree = "<group>"; };
 		B56A013223E244A3007C2193 /* TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
+		B574219123FC88F900503278 /* Synapse.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Synapse.entitlements; sourceTree = "<group>"; };
+		B574219223FC88FA00503278 /* AuthenticationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AuthenticationServices.framework; path = System/Library/Frameworks/AuthenticationServices.framework; sourceTree = SDKROOT; };
 		B57D103F23D5527100BCA8C6 /* Synapse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Synapse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B57D104223D5527100BCA8C6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B57D104423D5527100BCA8C6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -142,6 +145,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B574219323FC88FA00503278 /* AuthenticationServices.framework in Frameworks */,
 				55070077E3DB99AD9A0BA892 /* Pods_Synapse.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -168,6 +172,7 @@
 		18631995696D6C615BD5AC26 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B574219223FC88FA00503278 /* AuthenticationServices.framework */,
 				C601E6E009D5918F1F886F1F /* Pods_Synapse.framework */,
 				202BD3F886836B73EC355DAF /* Pods_Synapse_SynapseUITests.framework */,
 				8B72B14BE0B95EDD7C7EE109 /* Pods_SynapseTests.framework */,
@@ -286,6 +291,7 @@
 		B57D104123D5527100BCA8C6 /* Synapse */ = {
 			isa = PBXGroup;
 			children = (
+				B574219123FC88F900503278 /* Synapse.entitlements */,
 				B561EE8723FB6B6000EA5CE6 /* Helpers */,
 				B561EE7623FB69FE00EA5CE6 /* Login */,
 				B5B0B7CF23F1BD800074F026 /* Discover */,
@@ -787,6 +793,7 @@
 			baseConfigurationReference = B82934CBE9BDAECEB1674ECC /* Pods-Synapse.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Synapse/Synapse.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Synapse/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -805,6 +812,7 @@
 			baseConfigurationReference = B17C2816B183232860BD5A18 /* Pods-Synapse.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Synapse/Synapse.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Synapse/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

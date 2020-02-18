@@ -7,24 +7,93 @@
 //
 
 import UIKit
+import FirebaseAuth
+import Firebase
+import FirebaseDatabase
 
 class ProfileViewController: UIViewController {
+    
+    @IBOutlet weak var profileImage: UIImageView!
+    
+    @IBOutlet weak var firstNameLabel: UILabel!
+    @IBOutlet weak var lastNameLabel: UILabel!
+    @IBOutlet weak var emailLabel: UILabel!
+    @IBOutlet weak var universityLabel: UILabel!
+    
+   // let storage =  Storage.storage()
 
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        view.addVerticalGradientLayer(topColor: primaryColor!, bottomColor: secondaryColor!)
+        
+        checkIfUserIsLoggedIn()
+        setUpProfile()
+        setUpImage()
+        
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func checkIfUserIsLoggedIn(){
+        if Auth.auth().currentUser?.uid == nil {
+            perform(#selector(handleLogout), with: nil, afterDelay: 0)
+        } else {
+            let uid = Auth.auth().currentUser?.uid
+            Database.database().reference().child("users").child(uid!).observeSingleEvent(of: .value, with: { (snapshot) in
+                print(snapshot)
+                if let dictionary = snapshot.value as? [String: AnyObject]{
+                    self.firstNameLabel.text! = "First Name: "
+                    self.firstNameLabel.text! += (dictionary["firstName"] as? String)!
+                    
+                    self.lastNameLabel.text! = "Last Name: "
+                    self.lastNameLabel.text! += (dictionary["lastName"] as? String)!
+                    
+                    self.lastNameLabel.text! = "University: "
+                    self.universityLabel.text! += (dictionary["university"] as? String)!
+                }
+            }, withCancel: nil)
+        }
     }
-    */
-
+    
+    func setUpProfile(){
+//        let uid = Auth.auth().currentUser?.uid
+//        db.child("users").child(uid!).observeSingleEvent(of: .value, with: { (snapshot)
+//            in
+//            if let dict = snapshot.value as? (AnyObject) {
+//                self.firstNameLabel.text = dict["firstName" as NSString] as? [String : Any]
+//                self.lastNameLabel.text = dict["lastName" as NSString] as? [String : Any]
+//                self.emailLabel.text = dict["email" as NSString] as? [String : Any]
+//                self.universityLabel.text = dict["university" as NSString] as? [String : Any]
+//            }
+//        })
+    }
+    
+    func setUpImage(){
+        profileImage.layer.masksToBounds = true
+        profileImage.layer.cornerRadius = profileImage.bounds.width / 2
+        profileImage.layer.borderColor = UIColor.black.cgColor
+        profileImage.layer.borderWidth = 1
+        
+    }
+    
+    
+    //started this but it needs to transition to the login page after a user signs out so please update this method
+    @IBAction func logOutTapped(_ sender: Any) {
+        handleLogout()
+    }
+    
+    //started this but it needs to transition to the login page after a user signs out so please update this method
+    @objc func handleLogout() {
+                let firebaseAuth = Auth.auth()
+        do {
+            try firebaseAuth.signOut()
+        } catch let signOutError as NSError {
+            print ("Error signing out: %@", signOutError)
+        }
+        
+    }
+    
 }
+
+
