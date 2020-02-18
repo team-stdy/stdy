@@ -27,6 +27,14 @@
 		B502D5EE23F0C71E00229AEF /* MyEvents.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B502D5ED23F0C71E00229AEF /* MyEvents.storyboard */; };
 		B51E36CF23F312170087C813 /* ClassEventsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51E36CE23F312170087C813 /* ClassEventsTableViewCell.swift */; };
 		B51E36D123F322090087C813 /* ClassEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51E36D023F322090087C813 /* ClassEventViewController.swift */; };
+		B561EE7F23FB69FE00EA5CE6 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B561EE7723FB69FE00EA5CE6 /* SignUpViewController.swift */; };
+		B561EE8023FB69FE00EA5CE6 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B561EE7823FB69FE00EA5CE6 /* InitialViewController.swift */; };
+		B561EE8123FB69FE00EA5CE6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B561EE7923FB69FE00EA5CE6 /* HomeViewController.swift */; };
+		B561EE8223FB69FE00EA5CE6 /* LogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B561EE7A23FB69FE00EA5CE6 /* LogViewController.swift */; };
+		B561EE8323FB69FE00EA5CE6 /* HelperExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B561EE7B23FB69FE00EA5CE6 /* HelperExtensions.swift */; };
+		B561EE8423FB69FE00EA5CE6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B561EE7C23FB69FE00EA5CE6 /* LoginViewController.swift */; };
+		B561EE8523FB69FE00EA5CE6 /* UniversityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B561EE7D23FB69FE00EA5CE6 /* UniversityTableViewCell.swift */; };
+		B561EE8623FB69FE00EA5CE6 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B561EE7E23FB69FE00EA5CE6 /* MenuViewController.swift */; };
 		B56A013323E244A3007C2193 /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56A013223E244A3007C2193 /* TableView.swift */; };
 		B57D104323D5527100BCA8C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57D104223D5527100BCA8C6 /* AppDelegate.swift */; };
 		B57D104523D5527100BCA8C6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57D104423D5527100BCA8C6 /* SceneDelegate.swift */; };
@@ -85,6 +93,14 @@
 		B502D5ED23F0C71E00229AEF /* MyEvents.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyEvents.storyboard; sourceTree = "<group>"; };
 		B51E36CE23F312170087C813 /* ClassEventsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassEventsTableViewCell.swift; sourceTree = "<group>"; };
 		B51E36D023F322090087C813 /* ClassEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassEventViewController.swift; sourceTree = "<group>"; };
+		B561EE7723FB69FE00EA5CE6 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		B561EE7823FB69FE00EA5CE6 /* InitialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
+		B561EE7923FB69FE00EA5CE6 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		B561EE7A23FB69FE00EA5CE6 /* LogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogViewController.swift; sourceTree = "<group>"; };
+		B561EE7B23FB69FE00EA5CE6 /* HelperExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelperExtensions.swift; sourceTree = "<group>"; };
+		B561EE7C23FB69FE00EA5CE6 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		B561EE7D23FB69FE00EA5CE6 /* UniversityTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniversityTableViewCell.swift; sourceTree = "<group>"; };
+		B561EE7E23FB69FE00EA5CE6 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		B56A013223E244A3007C2193 /* TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
 		B57D103F23D5527100BCA8C6 /* Synapse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Synapse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B57D104223D5527100BCA8C6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -177,7 +193,6 @@
 		B502D5E223F0BF0F00229AEF /* MyEvents */ = {
 			isa = PBXGroup;
 			children = (
-
 				1437035423FB4FAB00FA3CD5 /* MyEventsViewController.swift */,
 				1437035623FB519100FA3CD5 /* MyEventsTableViewCell.swift */,
 				4F270EC523FB582B00EEDABD /* EditEventViewController.swift */,
@@ -205,6 +220,21 @@
 			path = Storyboards;
 			sourceTree = "<group>";
 		};
+		B561EE7623FB69FE00EA5CE6 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				B561EE7723FB69FE00EA5CE6 /* SignUpViewController.swift */,
+				B561EE7823FB69FE00EA5CE6 /* InitialViewController.swift */,
+				B561EE7923FB69FE00EA5CE6 /* HomeViewController.swift */,
+				B561EE7A23FB69FE00EA5CE6 /* LogViewController.swift */,
+				B561EE7B23FB69FE00EA5CE6 /* HelperExtensions.swift */,
+				B561EE7C23FB69FE00EA5CE6 /* LoginViewController.swift */,
+				B561EE7D23FB69FE00EA5CE6 /* UniversityTableViewCell.swift */,
+				B561EE7E23FB69FE00EA5CE6 /* MenuViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		B57D103623D5527100BCA8C6 = {
 			isa = PBXGroup;
 			children = (
@@ -230,6 +260,7 @@
 		B57D104123D5527100BCA8C6 /* Synapse */ = {
 			isa = PBXGroup;
 			children = (
+				B561EE7623FB69FE00EA5CE6 /* Login */,
 				B5B0B7CF23F1BD800074F026 /* Discover */,
 				B502D5E523F0C0BC00229AEF /* Storyboards */,
 				B502D5E323F0BF1900229AEF /* Profile */,
@@ -521,20 +552,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				14007AA423DFEACF0006B92D /* AllClassesViewController.swift in Sources */,
+				B561EE8323FB69FE00EA5CE6 /* HelperExtensions.swift in Sources */,
 				1447766A23EAA56500BD21F5 /* TableViewCell.swift in Sources */,
 				4F270EC423FB435100EEDABD /* NewEventViewController.swift in Sources */,
 				14007AA223DFEABA0006B92D /* ClassNotFoundViewController.swift in Sources */,
 				4F270EC623FB582B00EEDABD /* EditEventViewController.swift in Sources */,
 				B5B0B7D123F1BE2E0074F026 /* DiscoverClassesViewController.swift in Sources */,
 				14007AA023DFEAA70006B92D /* CreateClassViewController.swift in Sources */,
+				B561EE8123FB69FE00EA5CE6 /* HomeViewController.swift in Sources */,
 				B57D104323D5527100BCA8C6 /* AppDelegate.swift in Sources */,
 				5BE96A5C23EB67CF00E4D1A7 /* ViewController.swift in Sources */,
 				1437035723FB519100FA3CD5 /* MyEventsTableViewCell.swift in Sources */,
 				B56A013323E244A3007C2193 /* TableView.swift in Sources */,
+				B561EE8523FB69FE00EA5CE6 /* UniversityTableViewCell.swift in Sources */,
+				B561EE8423FB69FE00EA5CE6 /* LoginViewController.swift in Sources */,
 				B5B0B7D323F1BE700074F026 /* DiscoverTableViewCell.swift in Sources */,
 				B57D104523D5527100BCA8C6 /* SceneDelegate.swift in Sources */,
 				5BE96A5E23EB68DA00E4D1A7 /* ProfileViewController.swift in Sources */,
+				B561EE8223FB69FE00EA5CE6 /* LogViewController.swift in Sources */,
+				B561EE7F23FB69FE00EA5CE6 /* SignUpViewController.swift in Sources */,
+				B561EE8023FB69FE00EA5CE6 /* InitialViewController.swift in Sources */,
 				1499BCB523DFF23C00407EA1 /* MyClassesViewController.swift in Sources */,
+				B561EE8623FB69FE00EA5CE6 /* MenuViewController.swift in Sources */,
 				B51E36D123F322090087C813 /* ClassEventViewController.swift in Sources */,
 				B51E36CF23F312170087C813 /* ClassEventsTableViewCell.swift in Sources */,
 				1437035523FB4FAB00FA3CD5 /* MyEventsViewController.swift in Sources */,
