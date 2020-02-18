@@ -99,6 +99,163 @@
             </objects>
             <point key="canvasLocation" x="-152" y="46"/>
         </scene>
+        <!--Edit my Event-->
+        <scene sceneID="uAS-fy-ZT2">
+            <objects>
+                <viewController id="LdV-Zl-ZGh" userLabel="Edit my Event" customClass="EditEventViewController" customModule="Synapse" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6QM-5G-bIq">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Edit My Event" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="UNj-wg-zbG">
+                                <rect key="frame" x="101" y="150" width="209" height="47"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="47" id="B6P-Bg-oiY"/>
+                                </constraints>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="30"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" adjustsImageSizeForAccessibilityContentSizeCategory="YES" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KhZ-2r-i4h">
+                                <rect key="frame" x="74.5" y="723" width="265" height="38"/>
+                                <color key="backgroundColor" red="0.73333333329999995" green="0.52549019610000003" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" button="YES" adjustable="YES"/>
+                                </accessibility>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="38" id="4rb-xN-uW2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
+                                <inset key="imageEdgeInsets" minX="42" minY="70" maxX="-19" maxY="105"/>
+                                <state key="normal" title="Create">
+                                    <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                    <color key="titleShadowColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="CreateTapped:" destination="cIF-Sy-bZT" eventType="touchDown" id="JXl-1O-HH3"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="EXP-ba-Dt0">
+                                <rect key="frame" x="74.5" y="228" width="265" height="449"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Class Name" borderStyle="roundedRect" placeholder="Department Letter Code" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="BBs-KC-M5i">
+                                        <rect key="frame" x="0.0" y="0.0" width="265" height="35"/>
+                                        <color key="textColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="12"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Event Title" borderStyle="roundedRect" placeholder="Official Course Number" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="20" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="CrA-mp-PNJ">
+                                        <rect key="frame" x="0.0" y="70" width="265" height="34"/>
+                                        <color key="textColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="12"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="Description" borderStyle="roundedRect" placeholder="Section Number (Optional)" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="20" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="pUT-y9-t6e">
+                                        <rect key="frame" x="0.0" y="139" width="265" height="34"/>
+                                        <color key="textColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="12"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="Date" borderStyle="roundedRect" placeholder="Section Number (Optional)" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="20" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ypM-Va-qYh">
+                                        <rect key="frame" x="0.0" y="208" width="265" height="34"/>
+                                        <color key="textColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="12"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="Time" borderStyle="roundedRect" placeholder="Section Number (Optional)" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="20" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Tg3-aE-oF1">
+                                        <rect key="frame" x="0.0" y="277" width="265" height="34"/>
+                                        <color key="textColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="12"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Duration (Optional)" borderStyle="roundedRect" placeholder="Official Course Number" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="20" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="haK-2h-Ilp">
+                                        <rect key="frame" x="0.0" y="346" width="265" height="34"/>
+                                        <color key="textColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="12"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Location" borderStyle="roundedRect" placeholder="Department Letter Code" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="61R-lQ-3D3">
+                                        <rect key="frame" x="0.0" y="415" width="265" height="34"/>
+                                        <color key="textColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="12"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="265" id="SG1-sn-4cS"/>
+                                    <constraint firstAttribute="height" constant="449" id="ml2-D2-mvK"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="UNj-wg-zbG" firstAttribute="top" secondItem="HRF-UC-nA6" secondAttribute="top" constant="106" id="2eL-tx-ecr"/>
+                            <constraint firstItem="UNj-wg-zbG" firstAttribute="leading" secondItem="HRF-UC-nA6" secondAttribute="leading" constant="101.04048582913401" id="4vR-lL-gqQ"/>
+                            <constraint firstItem="EXP-ba-Dt0" firstAttribute="trailing" secondItem="KhZ-2r-i4h" secondAttribute="trailing" id="FvH-pe-LXP"/>
+                            <constraint firstItem="EXP-ba-Dt0" firstAttribute="top" secondItem="UNj-wg-zbG" secondAttribute="bottom" constant="31" id="Mz5-Ol-t5K"/>
+                            <constraint firstItem="EXP-ba-Dt0" firstAttribute="centerX" secondItem="UNj-wg-zbG" secondAttribute="centerX" constant="1.4595141708659867" id="RjC-LT-i4a"/>
+                            <constraint firstItem="EXP-ba-Dt0" firstAttribute="leading" secondItem="KhZ-2r-i4h" secondAttribute="leading" id="YMt-2Z-xgq"/>
+                            <constraint firstItem="UNj-wg-zbG" firstAttribute="centerX" secondItem="6QM-5G-bIq" secondAttribute="centerX" constant="-1.4595141708659867" id="j9M-Rc-Hlv"/>
+                            <constraint firstItem="KhZ-2r-i4h" firstAttribute="top" secondItem="EXP-ba-Dt0" secondAttribute="bottom" constant="46" id="wXC-QP-fpD"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="HRF-UC-nA6"/>
+                    </view>
+                    <connections>
+                        <outlet property="classNameTextField" destination="BBs-KC-M5i" id="LkV-WC-nIw"/>
+                        <outlet property="dateTextField" destination="ypM-Va-qYh" id="qmM-dh-un3"/>
+                        <outlet property="descriptionTextField" destination="pUT-y9-t6e" id="Vog-kx-ccp"/>
+                        <outlet property="durationTextField" destination="haK-2h-Ilp" id="BKL-0j-lxV"/>
+                        <outlet property="eventNameTextField" destination="CrA-mp-PNJ" id="zUK-BG-DGD"/>
+                        <outlet property="locationTextField" destination="61R-lQ-3D3" id="aRh-hQ-M3l"/>
+                        <outlet property="timeTextField" destination="Tg3-aE-oF1" id="BQG-G4-n86"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="516-0w-nDq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="cIF-Sy-bZT" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1587" y="46"/>
+        </scene>
     </scenes>
     <resources>
         <image name="calendar" catalog="system" width="64" height="52"/>
