@@ -19,6 +19,11 @@
 		4F270EC423FB435100EEDABD /* NewEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F270EC323FB435100EEDABD /* NewEventViewController.swift */; };
 		4F270EC623FB582B00EEDABD /* EditEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F270EC523FB582B00EEDABD /* EditEventViewController.swift */; };
 		55070077E3DB99AD9A0BA892 /* Pods_Synapse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C601E6E009D5918F1F886F1F /* Pods_Synapse.framework */; };
+		5B6D7EE623FB78DB005E2CE9 /* DiscoverEventTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6D7EE523FB78DB005E2CE9 /* DiscoverEventTable.swift */; };
+		5B6D7EE823FB790F005E2CE9 /* DiscoverEventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6D7EE723FB790F005E2CE9 /* DiscoverEventCell.swift */; };
+		5B6D7EEC23FB7977005E2CE9 /* UsersAttendingEventTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6D7EEB23FB7977005E2CE9 /* UsersAttendingEventTable.swift */; };
+		5B6D7EEE23FB7998005E2CE9 /* SpecificEventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6D7EED23FB7998005E2CE9 /* SpecificEventCell.swift */; };
+		5B6D7EF023FB79B6005E2CE9 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6D7EEF23FB79B6005E2CE9 /* Users.swift */; };
 		5BE96A5C23EB67CF00E4D1A7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE96A5B23EB67CF00E4D1A7 /* ViewController.swift */; };
 		5BE96A5E23EB68DA00E4D1A7 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE96A5D23EB68DA00E4D1A7 /* ProfileViewController.swift */; };
 		B502D5E723F0C0D600229AEF /* MyClasses.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B502D5E623F0C0D600229AEF /* MyClasses.storyboard */; };
@@ -73,6 +78,11 @@
 		4F270EC123FB427200EEDABD /* CreateEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEventViewController.swift; sourceTree = "<group>"; };
 		4F270EC323FB435100EEDABD /* NewEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEventViewController.swift; sourceTree = "<group>"; };
 		4F270EC523FB582B00EEDABD /* EditEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EditEventViewController.swift; path = Synapse/Discover/EditEventViewController.swift; sourceTree = SOURCE_ROOT; };
+		5B6D7EE523FB78DB005E2CE9 /* DiscoverEventTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverEventTable.swift; sourceTree = "<group>"; };
+		5B6D7EE723FB790F005E2CE9 /* DiscoverEventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverEventCell.swift; sourceTree = "<group>"; };
+		5B6D7EEB23FB7977005E2CE9 /* UsersAttendingEventTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UsersAttendingEventTable.swift; path = Synapse/Discover/UsersAttendingEventTable.swift; sourceTree = SOURCE_ROOT; };
+		5B6D7EED23FB7998005E2CE9 /* SpecificEventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SpecificEventCell.swift; path = Synapse/Discover/SpecificEventCell.swift; sourceTree = SOURCE_ROOT; };
+		5B6D7EEF23FB79B6005E2CE9 /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Users.swift; path = Synapse/Discover/Users.swift; sourceTree = SOURCE_ROOT; };
 		5BE96A5B23EB67CF00E4D1A7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5BE96A5D23EB68DA00E4D1A7 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		5C5FAF5ADD6309255E6F4CE8 /* Pods-SynapseTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SynapseTests.release.xcconfig"; path = "Target Support Files/Pods-SynapseTests/Pods-SynapseTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -177,10 +187,12 @@
 		B502D5E223F0BF0F00229AEF /* MyEvents */ = {
 			isa = PBXGroup;
 			children = (
-
 				1437035423FB4FAB00FA3CD5 /* MyEventsViewController.swift */,
 				1437035623FB519100FA3CD5 /* MyEventsTableViewCell.swift */,
 				4F270EC523FB582B00EEDABD /* EditEventViewController.swift */,
+				5B6D7EEB23FB7977005E2CE9 /* UsersAttendingEventTable.swift */,
+				5B6D7EED23FB7998005E2CE9 /* SpecificEventCell.swift */,
+				5B6D7EEF23FB79B6005E2CE9 /* Users.swift */,
 			);
 			path = MyEvents;
 			sourceTree = "<group>";
@@ -270,6 +282,8 @@
 				B5B0B7D023F1BE2E0074F026 /* DiscoverClassesViewController.swift */,
 				B5B0B7D223F1BE700074F026 /* DiscoverTableViewCell.swift */,
 				4F270EC323FB435100EEDABD /* NewEventViewController.swift */,
+				5B6D7EE523FB78DB005E2CE9 /* DiscoverEventTable.swift */,
+				5B6D7EE723FB790F005E2CE9 /* DiscoverEventCell.swift */,
 			);
 			path = Discover;
 			sourceTree = "<group>";
@@ -523,7 +537,10 @@
 				14007AA423DFEACF0006B92D /* AllClassesViewController.swift in Sources */,
 				1447766A23EAA56500BD21F5 /* TableViewCell.swift in Sources */,
 				4F270EC423FB435100EEDABD /* NewEventViewController.swift in Sources */,
+				5B6D7EEC23FB7977005E2CE9 /* UsersAttendingEventTable.swift in Sources */,
 				14007AA223DFEABA0006B92D /* ClassNotFoundViewController.swift in Sources */,
+				5B6D7EEE23FB7998005E2CE9 /* SpecificEventCell.swift in Sources */,
+				5B6D7EE623FB78DB005E2CE9 /* DiscoverEventTable.swift in Sources */,
 				4F270EC623FB582B00EEDABD /* EditEventViewController.swift in Sources */,
 				B5B0B7D123F1BE2E0074F026 /* DiscoverClassesViewController.swift in Sources */,
 				14007AA023DFEAA70006B92D /* CreateClassViewController.swift in Sources */,
@@ -533,10 +550,12 @@
 				B56A013323E244A3007C2193 /* TableView.swift in Sources */,
 				B5B0B7D323F1BE700074F026 /* DiscoverTableViewCell.swift in Sources */,
 				B57D104523D5527100BCA8C6 /* SceneDelegate.swift in Sources */,
+				5B6D7EF023FB79B6005E2CE9 /* Users.swift in Sources */,
 				5BE96A5E23EB68DA00E4D1A7 /* ProfileViewController.swift in Sources */,
 				1499BCB523DFF23C00407EA1 /* MyClassesViewController.swift in Sources */,
 				B51E36D123F322090087C813 /* ClassEventViewController.swift in Sources */,
 				B51E36CF23F312170087C813 /* ClassEventsTableViewCell.swift in Sources */,
+				5B6D7EE823FB790F005E2CE9 /* DiscoverEventCell.swift in Sources */,
 				1437035523FB4FAB00FA3CD5 /* MyEventsViewController.swift in Sources */,
 				4F270EC223FB427200EEDABD /* CreateEventViewController.swift in Sources */,
 			);
