@@ -280,7 +280,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MLj-66-rOv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="AH3-cc-s1u" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1523" y="-190"/>
+            <point key="canvasLocation" x="1839" y="-33"/>
         </scene>
         <!--Discover Event Table-->
         <scene sceneID="Xst-BF-66I">

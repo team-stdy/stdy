@@ -16,133 +16,80 @@
 
 import UIKit
 
-class EditEventViewController: UIViewController {
+class EditEventViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+   
+    
 
-    private var datePicker: UIDatePicker?
+    @IBOutlet weak var tableView: UITableView!
     
-    private var timePicker: UIDatePicker?
+    struct Events {
+        var sectionHeader: String!
+        var sectionEvents = [Event]()
+    }
     
-    @IBOutlet weak var classNameTextField: UITextField!
+    var receivedEventArray = [Event]()
+    var eventsArray = [Events]()
+    var currentEventsArray = [Events]()
     
-    @IBOutlet weak var eventNameTextField: UITextField!
     
-    @IBOutlet weak var descriptionTextField: UITextField!
-    
-    @IBOutlet weak var dateTextField: UITextField!
-    
-    @IBOutlet weak var timeTextField: UITextField!
-    
-    @IBOutlet weak var durationTextField: UITextField!
-    
-    @IBOutlet weak var locationTextField: UITextField!
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //add a date to the date textfield here
-        datePicker = UIDatePicker()
-        datePicker?.datePickerMode = .date
-        datePicker?.addTarget(self, action: #selector(EditEventViewController.dateChanged(datePicker:)), for: .valueChanged)
-        
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(EditEventViewController.viewTapped(gestureRecognizer:)))
-        
-        view.addGestureRecognizer(tapGesture)
-        
-        dateTextField.inputView = datePicker
-        
-        // add a time to the time textfield here
-        timePicker = UIDatePicker()
-        timePicker?.datePickerMode = .time
-        timePicker?.addTarget(self, action: #selector(EditEventViewController.timeChanged(timePicker:)), for: .valueChanged)
-        
-        let tapGesture1 = UITapGestureRecognizer(target: self, action: #selector(EditEventViewController.viewTapped1(gestureRecognizer:)))
-        
-        view.addGestureRecognizer(tapGesture1)
-        
-        timeTextField.inputView = timePicker
-    
-        configureTextFields()
-    }
-    //function when the date function is clicked on
-    @objc func viewTapped(gestureRecognizer: UITapGestureRecognizer){
-        view.endEditing(true)
-    }
-    //function for when the date is changed
-    @objc func dateChanged(datePicker: UIDatePicker) {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MM/dd/yyyy"
-        
-        dateTextField.text = dateFormatter.string(from: datePicker.date)
-        view.endEditing(true)
-    }
-    
-    //function when the time function is clicked on
-    @objc func viewTapped1(gestureRecognizer: UITapGestureRecognizer){
-        view.endEditing(true)
-    }
-    //function for when the time is changed
-    @objc func timeChanged(timePicker: UIDatePicker) {
-        let timeFormatter = DateFormatter()
-        timeFormatter.dateFormat = "HH:MM"
-        
-        timeTextField.text = timeFormatter.string(from: timePicker.date)
-        view.endEditing(true)
-    }
-    
-    //configure the textfields
-    private func configureTextFields() {
-        classNameTextField.delegate = self
-        eventNameTextField.delegate = self
-        descriptionTextField.delegate = self
-        dateTextField.delegate = self
-        timeTextField.delegate = self
-        durationTextField.delegate = self
-        locationTextField.delegate = self
-    }
-    
-    //make sure that the user taps within the textfields
-    private func configureTapGesture(){
-        let tapGesture = UITapGestureRecognizer(target: self , action: #selector(EditEventViewController.handleTap))
-        view.addGestureRecognizer(tapGesture)
-    }
-    
-    @objc func handleTap(){
-        view.endEditing(true)
-    }
-    
-    //when they click the create button
-    @IBAction func CreateTapped(_ sender: Any) {
-        //think this is right! but need to be merged so that it can access the ClassEventsViewController so it is unclear right now but will discuss at meeting
-        
-         //let vcMyClasses = storyboard?.instantiateViewController(identifier: "ClassEventsViewController") as? ClassEventsViewController
-                                    
-        
-       // vcMyClasses?.courseName  = classNameTextField.text!
-       // vcMyClasses?.currentEventsArray = {descriptionTextField; dateTextField; timeTextField}
-                    
-        //          navigationController?.pushViewController(vcMyClasses!, animated: true)
-        
-        
-        
-    }
-    
-    
-    /*
-    // MARK: - Navigation
+       
+            
+        }
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+        //7 rows of information
+         func numberOfSections(in tableView: UITableView) -> Int {
+               return 7
+           }
+           
+            //Table
+           func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+               return currentEventsArray[section].sectionEvents.count
+           }
+    
+        //Table Section Header
+        func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+            let view = UIView(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
+            let label = UILabel(frame: CGRect(x: 15, y: 5, width: 265, height: 449))
+            
+            label.text = eventsArray[section].sectionHeader
+            view.backgroundColor = UIColor(hexString: "6200EE")
+            label.textColor = UIColor.white
+            
+            label.font = UIFont(name: "Helvetica Neue", size: 20)
+            view.addSubview(label)
+            return view
+        }
+        
+     
+        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "MyEventsTableViewCell") as? MyEventsTableViewCell else {
+                return UITableViewCell()
+            }
+            
+            
+            //Create the DateFormatter for the date field within a table cell
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateStyle = .medium
+            dateFormatter.timeStyle = .none
+            dateFormatter.locale = Locale(identifier: "en_US")
+            
+            //Change the names of these labels to reflect the new content they hold (i.e. the header is the
+            //  class instead of the purpose, the the place where the date was now holds the purpose)
+            cell.classLabel.text = eventsArray[indexPath.section].sectionEvents[indexPath.row].classCode
+            cell.descriptionLabel.text = eventsArray[indexPath.section].sectionEvents[indexPath.row].purpose
+            cell.timeLabel.text = eventsArray[indexPath.section].sectionEvents[indexPath.row].time
+            cell.locationLabel.text = eventsArray[indexPath.section].sectionEvents[indexPath.row].location
+            cell.rsvpLabel.text = "RSVP Count: " + String(eventsArray[indexPath.section].sectionEvents[indexPath.row].rsvpCount)
+            
+            return cell
+        }
+        
+        func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
+        }
+        
 
 }
-extension EditEventViewController: UITextFieldDelegate{
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
-    }
-}
-
