@@ -104,8 +104,7 @@ class CreateEventViewController: UIViewController {
     
     //when they click the create button
     @IBAction func CreateTapped(_ sender: Any) {
-        //think this is right! but need to be merged so that it can access the ClassEventsViewController so it is unclear right now but will discuss at meeting
-        
+    
          let vcMyEvents = storyboard?.instantiateViewController(identifier: "ClassEventViewController") as? ClassEventViewController
                                     
     
@@ -119,7 +118,6 @@ class CreateEventViewController: UIViewController {
         
         navigationController?.pushViewController(vcMyEvents!, animated: true)
      
-    
     }
     
     
