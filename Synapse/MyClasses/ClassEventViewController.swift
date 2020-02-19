@@ -14,6 +14,12 @@ class ClassEventViewController: UIViewController, UITableViewDataSource, UITable
     
     var courseName = ""
     var courseTeacher = ""
+    var purpose = ""
+    var date = ""
+    var time = ""
+    var classCode = ""
+    var location = ""
+    var rsvp = 0
 
     var eventsArray = [Event]()
     
@@ -26,6 +32,8 @@ class ClassEventViewController: UIViewController, UITableViewDataSource, UITable
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy/MM/dd"
         let date1 = formatter.date(from: "2020/02/13")!;
+        
+        eventsArray.append(Event(purpose: purpose, date: date1, time: time, classCode: classCode, location: location, rsvpCount: rsvp))
         
         eventsArray.append(Event(purpose: "Go over homework 1", date: date1, time: "10:00 AM", classCode: "CS3250", location: "Taylor Swift's Apartment", rsvpCount: 112))
         eventsArray.append(Event(purpose: "Study for test", date: date1, time: "10:00 AM", classCode: "CS3250", location: "A basement in Georgia", rsvpCount: 66))
