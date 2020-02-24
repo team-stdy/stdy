@@ -27,12 +27,12 @@ class ClassEventViewController: UIViewController, UITableViewDataSource, UITable
         formatter.dateFormat = "yyyy/MM/dd"
         let date1 = formatter.date(from: "2020/02/13")!;
         
-        eventsArray.append(Event(purpose: "Go over homework 1", date: date1, time: "10:00 AM", classCode: "CS3250", location: "Taylor Swift's Apartment", rsvpCount: 112))
-        eventsArray.append(Event(purpose: "Study for test", date: date1, time: "10:00 AM", classCode: "CS3250", location: "A basement in Georgia", rsvpCount: 66))
-        eventsArray.append(Event(purpose: "Work on programming assignment 4 with study team", date: date1, time: "10:00 AM", classCode: "CS3250", location: "Rand", rsvpCount: 55))
-        eventsArray.append(Event(purpose: "Go to office hours", date: date1, time: "10:00 AM", classCode: "CS3250", location: "Stevenson", rsvpCount: 22))
-        eventsArray.append(Event(purpose: "Go over homework 5", date: date1, time: "10:00 AM", classCode: "CS3250", location: "FGH", rsvpCount: 12))
-        eventsArray.append(Event(purpose: "Check answers for problem set", date: date1, time: "10:00 AM", classCode: "CS3250", location: "Marine One", rsvpCount: 2))
+        eventsArray.append(Event(purpose: "Go over homework 1", date: date1, location: "Taylor Swift's Apartment"))
+        eventsArray.append(Event(purpose: "Study for test", date: date1, location: "A basement in Georgia"))
+        eventsArray.append(Event(purpose: "Work on programming assignment 4 with study team", date: date1, location: "Rand"))
+        eventsArray.append(Event(purpose: "Go to office hours", date: date1, location: "Stevenson"))
+        eventsArray.append(Event(purpose: "Go over homework 5", date: date1, location: "FGH"))
+        eventsArray.append(Event(purpose: "Check answers for problem set", date: date1, location: "Marine One"))
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -57,9 +57,14 @@ class ClassEventViewController: UIViewController, UITableViewDataSource, UITable
         dateFormatter.timeStyle = .none
         dateFormatter.locale = Locale(identifier: "en_US")
         
+        let timeFormatter = DateFormatter()
+        timeFormatter.dateStyle = .none
+        timeFormatter.timeStyle = .short
+        timeFormatter.locale = Locale(identifier: "en_US")
+        
         cell.purposeLabel.text = eventsArray[indexPath.row].purpose
         cell.dateLabel.text = dateFormatter.string(from: eventsArray[indexPath.row].date)
-        cell.timeLabel.text = eventsArray[indexPath.row].time
+        cell.timeLabel.text = timeFormatter.string(from: eventsArray[indexPath.row].date)
 
         return cell
     }
