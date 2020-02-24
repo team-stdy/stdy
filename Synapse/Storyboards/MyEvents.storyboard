@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Mao-MR-OFP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Mao-MR-OFP">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -70,10 +70,6 @@
                                                     </constraints>
                                                     <color key="tintColor" red="0.67273253200000005" green="0.50265145300000003" blue="0.92945235969999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <state key="normal" image="gear" catalog="system"/>
-                                                    <connections>
-                                                        <action selector="myEventsButton:" destination="v68-CN-0pa" eventType="touchUpInside" id="sd6-OR-Thi"/>
-                                                        <segue destination="LdV-Zl-ZGh" kind="show" id="fGW-vR-P6i"/>
-                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -299,10 +295,25 @@
             </objects>
             <point key="canvasLocation" x="1587" y="46"/>
         </scene>
+        <!--Event Details View Controller-->
+        <scene sceneID="zBp-AV-H0f">
+            <objects>
+                <viewController storyboardIdentifier="EventDetailsViewController" id="f2h-dZ-Zcg" customClass="EventDetailsViewController" customModule="Synapse" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1kL-lZ-NWC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="6Ym-sK-dEc"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZH9-xV-7zG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2362" y="46"/>
+        </scene>
         <!--Users Attending Event Table-->
         <scene sceneID="hoY-n5-QdT">
             <objects>
-                <viewController id="4gp-fn-I8T" customClass="UsersAttendingEventTable" customModule="Synapse" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UsersAttendingEventTable" id="4gp-fn-I8T" customClass="UsersAttendingEventTable" customModule="Synapse" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Xw8-Rm-RjV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -477,7 +488,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuU-Tb-A3C" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="854" y="-658"/>
+            <point key="canvasLocation" x="461" y="-796"/>
         </scene>
     </scenes>
     <resources>

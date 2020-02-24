@@ -132,11 +132,14 @@ class MyEventsViewController: UIViewController, UITableViewDataSource, UITableVi
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vcEventDetails = storyboard?.instantiateViewController(identifier: "EventDetailsViewController") as? EventDetailsViewController
+        
+        navigationController?.pushViewController(vcEventDetails!, animated: true)
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            currentEventsArray.remove(at: indexPath.row)
+            currentEventsArray[indexPath.section].sectionEvents.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.

@@ -16,6 +16,7 @@
 		1464014724036B99005EB0F4 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1464014624036B99005EB0F4 /* Event.swift */; };
 		1464014924036BED005EB0F4 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1464014824036BED005EB0F4 /* Course.swift */; };
 		1464014B24036DE9005EB0F4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1464014A24036DE9005EB0F4 /* User.swift */; };
+		1480432B2404976900E8CB12 /* EventDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1480432A2404976900E8CB12 /* EventDetailsViewController.swift */; };
 		1499BCB523DFF23C00407EA1 /* MyClassesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1499BCB423DFF23C00407EA1 /* MyClassesViewController.swift */; };
 		35364B675648E24BAB7A0A76 /* Pods_SynapseTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B72B14BE0B95EDD7C7EE109 /* Pods_SynapseTests.framework */; };
 		4F270EC223FB427200EEDABD /* CreateEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F270EC123FB427200EEDABD /* CreateEventViewController.swift */; };
@@ -88,6 +89,7 @@
 		1464014624036B99005EB0F4 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		1464014824036BED005EB0F4 /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 		1464014A24036DE9005EB0F4 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		1480432A2404976900E8CB12 /* EventDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsViewController.swift; sourceTree = SOURCE_ROOT; };
 		1499BCB423DFF23C00407EA1 /* MyClassesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyClassesViewController.swift; sourceTree = "<group>"; };
 		202BD3F886836B73EC355DAF /* Pods_Synapse_SynapseUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Synapse_SynapseUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4498962368F5A0EA1F72F615 /* Pods-Synapse-SynapseUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Synapse-SynapseUITests.release.xcconfig"; path = "Target Support Files/Pods-Synapse-SynapseUITests/Pods-Synapse-SynapseUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -231,6 +233,7 @@
 				4F270EC523FB582B00EEDABD /* EditEventViewController.swift */,
 				5B6D7EEB23FB7977005E2CE9 /* UsersAttendingEventTable.swift */,
 				5B6D7EED23FB7998005E2CE9 /* SpecificEventCell.swift */,
+				1480432A2404976900E8CB12 /* EventDetailsViewController.swift */,
 			);
 			path = MyEvents;
 			sourceTree = "<group>";
@@ -627,6 +630,7 @@
 				5BE96A5E23EB68DA00E4D1A7 /* ProfileViewController.swift in Sources */,
 				B561EE8223FB69FE00EA5CE6 /* LogViewController.swift in Sources */,
 				B561EE7F23FB69FE00EA5CE6 /* SignUpViewController.swift in Sources */,
+				1480432B2404976900E8CB12 /* EventDetailsViewController.swift in Sources */,
 				B561EE8B23FB6B6000EA5CE6 /* RoundedWhiteButton.swift in Sources */,
 				B561EE8023FB69FE00EA5CE6 /* InitialViewController.swift in Sources */,
 				1499BCB523DFF23C00407EA1 /* MyClassesViewController.swift in Sources */,
