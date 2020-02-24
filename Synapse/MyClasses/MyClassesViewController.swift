@@ -43,7 +43,7 @@ extension MyClassesViewController: UITableViewDataSource, UITableViewDelegate {
                 return UITableViewCell()
         }
         
-        cell.courseLabel.text = myCoursesArray[indexPath.row].course
+        cell.courseLabel.text = myCoursesArray[indexPath.row].courseCode
         cell.teacherLabel.text = myCoursesArray[indexPath.row].teacher
         
         return cell
@@ -61,7 +61,7 @@ extension MyClassesViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vcClassEvents = storyboard?.instantiateViewController(identifier: "ClassEventViewController") as? ClassEventViewController
         
-        let courseName = myCoursesArray[indexPath.row].course
+        let courseName = myCoursesArray[indexPath.row].courseCode
         let teacherName = myCoursesArray[indexPath.row].teacher
 
         vcClassEvents?.courseName = courseName

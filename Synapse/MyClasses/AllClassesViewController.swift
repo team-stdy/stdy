@@ -92,7 +92,7 @@ class AllClassesViewController: UIViewController, UITableViewDataSource, UITable
             return UITableViewCell()
         }
         
-        cell.courseLabel.text = currentCoursesArray[indexPath.row].course
+        cell.courseLabel.text = currentCoursesArray[indexPath.row].courseCode
         cell.teacherLabel.text = currentCoursesArray[indexPath.row].teacher
         
         cell.setCourse(course: currentCoursesArray[indexPath.row])
@@ -138,7 +138,7 @@ class AllClassesViewController: UIViewController, UITableViewDataSource, UITable
         }
         currentCoursesArray = coursesArray.filter({ courseNow -> Bool in
             guard let text = searchBar.text else { return false }
-            return courseNow.course.localizedCaseInsensitiveContains(text) || courseNow.teacher.localizedCaseInsensitiveContains(text)
+            return courseNow.courseCode.localizedCaseInsensitiveContains(text) || courseNow.teacher.localizedCaseInsensitiveContains(text)
         })
         tableView.reloadData()
     }
@@ -173,20 +173,10 @@ class AllClassesViewController: UIViewController, UITableViewDataSource, UITable
             let myClassesVC = segue.destination as! MyClassesViewController
             if let indexPath = clickedPath {
                 let selectedIndex = currentCoursesArray[indexPath.row]
-                myClassesVC.courseName = selectedIndex.course
+                myClassesVC.courseName = selectedIndex.courseCode
                 myClassesVC.courseTeacher = selectedIndex.teacher
             }
         }
     }
     
-}
-
-class Course {
-    let course: String
-    let teacher: String
-    
-    init(course: String, teacher: String) {
-        self.course = course
-        self.teacher = teacher
-    }
 }

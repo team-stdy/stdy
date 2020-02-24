@@ -50,14 +50,14 @@ class MyEventsViewController: UIViewController, UITableViewDataSource, UITableVi
         let day6String = dateFormatter.string(from: date6)
         let day7String = dateFormatter.string(from: date7)
         
-        receivedEventArray.append(Event(purpose: "Go over homework 1", date: date4, time: "10:00 AM", classCode: "MATH2800", location: "Stevenson", rsvpCount: 9));
-        receivedEventArray.append(Event(purpose: "Study for test", date: date3, time: "10:00 AM", classCode: "CS3250", location: "FGH", rsvpCount: 26));
-        receivedEventArray.append(Event(purpose: "Work on programming assignment 4 with study team", date: date6, time: "10:00 AM", classCode: "CS3251", location: "Normandy", rsvpCount: 3));
-        receivedEventArray.append(Event(purpose: "Make studyguide", date: date2, time: "10:00 AM", classCode: "HIST1501", location: "West London", rsvpCount: 58));
-        receivedEventArray.append(Event(purpose: "Go over homework 1", date: date5, time: "10:00 AM", classCode: "MATH1200", location: "Trump Tower", rsvpCount: 2));
-        receivedEventArray.append(Event(purpose: "Study for test", date: date1, time: "10:00 AM", classCode: "ENGL1602", location: "Rand", rsvpCount: 27));
-        receivedEventArray.append(Event(purpose: "Quiz each other with flashcards", date: date1, time: "10:00 AM", classCode: "ENGL1602", location: "A Mass Grave in France", rsvpCount: 3));
-        receivedEventArray.append(Event(purpose: "Go to office hours", date: date7, time: "10:00 AM", classCode:"CS3250", location: "FGH 323", rsvpCount: 85));
+        receivedEventArray.append(Event(purpose: "Go over homework 1", date: date4, location: "Stevenson"));
+        receivedEventArray.append(Event(purpose: "Study for test", date: date3, location: "FGH"));
+        receivedEventArray.append(Event(purpose: "Work on programming assignment 4 with study team", date: date6, location: "Normandy"));
+        receivedEventArray.append(Event(purpose: "Make studyguide", date: date2, location: "West London"));
+        receivedEventArray.append(Event(purpose: "Go over homework 1", date: date5, location: "Trump Tower"));
+        receivedEventArray.append(Event(purpose: "Study for test", date: date1, location: "Rand"));
+        receivedEventArray.append(Event(purpose: "Quiz each other with flashcards", date: date1, location: "A Mass Grave in France"));
+        receivedEventArray.append(Event(purpose: "Go to office hours", date: date7, location: "FGH 323"));
         
         //Current date and time
         
@@ -114,11 +114,16 @@ class MyEventsViewController: UIViewController, UITableViewDataSource, UITableVi
         dateFormatter.timeStyle = .none
         dateFormatter.locale = Locale(identifier: "en_US")
         
+        let timeFormatter = DateFormatter()
+        timeFormatter.dateStyle = .none
+        timeFormatter.timeStyle = .short
+        timeFormatter.locale = Locale(identifier: "en_US")
+        
         //Change the names of these labels to reflect the new content they hold (i.e. the header is the
         //  class instead of the purpose, the the place where the date was now holds the purpose)
-        cell.classLabel.text = eventsArray[indexPath.section].sectionEvents[indexPath.row].classCode
+        cell.classLabel.text = eventsArray[indexPath.section].sectionEvents[indexPath.row].course.courseCode
         cell.descriptionLabel.text = eventsArray[indexPath.section].sectionEvents[indexPath.row].purpose
-        cell.timeLabel.text = eventsArray[indexPath.section].sectionEvents[indexPath.row].time
+        cell.timeLabel.text = timeFormatter.string(from: eventsArray[indexPath.section].sectionEvents[indexPath.row].date)
         cell.locationLabel.text = eventsArray[indexPath.section].sectionEvents[indexPath.row].location
         cell.rsvpLabel.text = "RSVP Count: " + String(eventsArray[indexPath.section].sectionEvents[indexPath.row].rsvpCount)
         

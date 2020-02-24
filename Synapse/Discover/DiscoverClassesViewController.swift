@@ -58,24 +58,6 @@ class DiscoverClassesViewController: UIViewController, UITableViewDataSource, UI
         let day6String = dateFormatter.string(from: date6)
         let day7String = dateFormatter.string(from: date7)
         
-        receivedEventArray.append(Event(purpose: "Go over homework 1", date: date4, time: "10:00 AM", classCode: "MATH2800", location: "Featheringhill", rsvpCount: 15));
-        receivedEventArray.append(Event(purpose: "Study for test", date: date3, time: "10:00 AM", classCode: "CS3250", location: "Mars", rsvpCount: 10));
-        receivedEventArray.append(Event(purpose: "Work on programming assignment 4 with study team", date: date6, time: "10:00 AM", classCode: "CS3251", location: "Stevenson", rsvpCount: 8));
-        receivedEventArray.append(Event(purpose: "Go to office hours", date: date7, time: "10:00 AM", classCode: "MATH1200", location: "Rand", rsvpCount: 12));
-        receivedEventArray.append(Event(purpose: "Make studyguide", date: date2, time: "10:00 AM", classCode: "HIST1501", location: "Stevenson", rsvpCount: 32));
-        receivedEventArray.append(Event(purpose: "Quiz each other with flashcards", date: date6, time: "10:00 AM", classCode: "MATH2800", location: "MGM Resort & Casino", rsvpCount: 7));
-        receivedEventArray.append(Event(purpose: "Go over homework 1", date: date2, time: "10:00 AM", classCode: "CS3250", location: "Disney", rsvpCount: 42));
-        receivedEventArray.append(Event(purpose: "Study for test", date: date2, time: "10:00 AM", classCode: "CS3251", location: "CIA Headquarters", rsvpCount: 69));
-        receivedEventArray.append(Event(purpose: "Go over homework 1", date: date5, time: "10:00 AM", classCode: "MATH1200", location: "Rand", rsvpCount: 420));
-        receivedEventArray.append(Event(purpose: "Study for test", date: date1, time: "10:00 AM", classCode: "ENGL1602", location: "Buttrick", rsvpCount: 888));
-        receivedEventArray.append(Event(purpose: "Go over homework 1", date: date3, time: "10:00 AM", classCode: "HIST1501", location: "Stevenson", rsvpCount: 2));
-        receivedEventArray.append(Event(purpose: "Quiz each other with flashcards", date: date1, time: "10:00 AM", classCode: "ENGL1602", location: "Calhoun", rsvpCount: 1));
-        receivedEventArray.append(Event(purpose: "Go to office hours", date: date7, time: "10:00 AM", classCode:"CS3250", location: "North House", rsvpCount: 1));
-        receivedEventArray.append(Event(purpose: "Make studyguide", date: date3, time: "10:00 AM", classCode: "CS3250", location: "Stairwell", rsvpCount: 13));
-        receivedEventArray.append(Event(purpose: "Quiz each other with flashcards", date: date4, time: "10:00 AM", classCode: "PSCI1802", location: "North Korea", rsvpCount: 666));
-        
-        //Current date and time
-        
         eventsArray = [Events(sectionHeader: "Today", sectionEvents:[]),
                        Events(sectionHeader: "Tomorrow", sectionEvents:[]),
                        Events(sectionHeader: day3String, sectionEvents:[]),
@@ -84,7 +66,26 @@ class DiscoverClassesViewController: UIViewController, UITableViewDataSource, UI
                        Events(sectionHeader: day6String, sectionEvents:[]),
                        Events(sectionHeader: day7String, sectionEvents:[])];
         
+        receivedEventArray.append(Event(purpose: "Go over homework 1", date: date4, location: "Featheringhill"));
+        receivedEventArray.append(Event(purpose: "Study for test", date: date3, location: "Mars"));
+        receivedEventArray.append(Event(purpose: "Work on programming assignment 4 with study team", date: date6, location: "Stevenson"));
+        receivedEventArray.append(Event(purpose: "Go to office hours", date: date7, location: "Rand"));
+        receivedEventArray.append(Event(purpose: "Make studyguide", date: date2, location: "Stevenson"));
+        receivedEventArray.append(Event(purpose: "Quiz each other with flashcards", date: date6, location: "MGM Resort & Casino"));
+        receivedEventArray.append(Event(purpose: "Go over homework 1", date: date2, location: "Disney"));
+        receivedEventArray.append(Event(purpose: "Study for test", date: date2, location: "CIA Headquarters"));
+        receivedEventArray.append(Event(purpose: "Go over homework 1", date: date5, location: "Rand"));
+        receivedEventArray.append(Event(purpose: "Study for test", date: date1, location: "Buttrick"));
+        receivedEventArray.append(Event(purpose: "Go over homework 1", date: date3, location: "Stevenson"));
+        receivedEventArray.append(Event(purpose: "Quiz each other with flashcards", date: date1, location: "Calhoun"));
+        receivedEventArray.append(Event(purpose: "Go to office hours", date: date7, location: "North House"));
+        receivedEventArray.append(Event(purpose: "Make studyguide", date: date3, location: "Stairwell"));
+        receivedEventArray.append(Event(purpose: "Quiz each other with flashcards", date: date4, location: "North Korea"));
+        
+        //Current date and time
+        
         for eventObject in receivedEventArray{
+            eventObject.assignRandomCourse();
             let dt = eventObject.date;
             let diffInDays = Calendar.current.dateComponents([.day], from: date1, to: dt).day;
             eventsArray[diffInDays!].sectionEvents.append(eventObject);
@@ -139,11 +140,16 @@ class DiscoverClassesViewController: UIViewController, UITableViewDataSource, UI
         dateFormatter.timeStyle = .none
         dateFormatter.locale = Locale(identifier: "en_US")
         
+        let timeFormatter = DateFormatter()
+        timeFormatter.dateStyle = .none
+        timeFormatter.timeStyle = .short
+        timeFormatter.locale = Locale(identifier: "en_US")
+        
         //Change the names of these labels to reflect the new content they hold (i.e. the header is the
         //  class instead of the purpose, the the place where the date was now holds the purpose)
-        cell.purposeLabel.text = eventsArray[indexPath.section].sectionEvents[indexPath.row].classCode
+        cell.purposeLabel.text = eventsArray[indexPath.section].sectionEvents[indexPath.row].course.courseCode
         cell.dateLabel.text = eventsArray[indexPath.section].sectionEvents[indexPath.row].purpose
-        cell.timeLabel.text = eventsArray[indexPath.section].sectionEvents[indexPath.row].time
+        cell.timeLabel.text = timeFormatter.string(from: eventsArray[indexPath.section].sectionEvents[indexPath.row].date)
         
         return cell
     }
@@ -168,22 +174,4 @@ class DiscoverClassesViewController: UIViewController, UITableViewDataSource, UI
 //        tableView.reloadData()
 //    }
     
-}
-
-class Event {
-    let classCode: String
-    let purpose: String
-    let date: Date
-    let time: String
-    let location: String
-    let rsvpCount: Int
-    
-    init(purpose: String, date: Date, time: String, classCode: String, location: String, rsvpCount: Int) {
-        self.purpose = purpose
-        self.date = date
-        self.time = time
-        self.classCode = classCode
-        self.location = location
-        self.rsvpCount = rsvpCount
-    }
 }

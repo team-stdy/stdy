@@ -25,7 +25,7 @@ class TableView: UITableViewCell {
     var course: Course!
     
     func setCourse(course: Course) {
-        courseLabel.text = course.course
+        courseLabel.text = course.courseCode
         teacherLabel.text = course.teacher
     }
     
