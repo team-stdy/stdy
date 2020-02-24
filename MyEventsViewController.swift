@@ -70,6 +70,7 @@ class MyEventsViewController: UIViewController, UITableViewDataSource, UITableVi
                        Events(sectionHeader: day7String, sectionEvents:[])];
         
         for eventObject in receivedEventArray {
+            eventObject.assignRandomCourse();
             let dt = eventObject.date;
             let diffInDays = Calendar.current.dateComponents([.day], from: date1, to: dt).day;
             eventsArray[diffInDays!].sectionEvents.append(eventObject);
