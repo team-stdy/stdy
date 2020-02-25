@@ -132,7 +132,7 @@ class MyEventsViewController: UIViewController, UITableViewDataSource, UITableVi
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vcEventDetails = storyboard?.instantiateViewController(identifier: "EventDetailsViewController") as? EventDetailsViewController
+        let vcEventDetails = storyboard?.instantiateViewController(identifier: "UsersAttendingEventTable") as? UsersAttendingEventTable
         
         navigationController?.pushViewController(vcEventDetails!, animated: true)
     }
