@@ -63,14 +63,6 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sQW-yx-C9s">
-                                                    <rect key="frame" x="368" y="9" width="33" height="23"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="33" id="9rv-5i-PZp"/>
-                                                    </constraints>
-                                                    <color key="tintColor" red="0.67273253200000005" green="0.50265145300000003" blue="0.92945235969999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                    <state key="normal" image="gear" catalog="system"/>
-                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="7hu-WY-EHy" firstAttribute="top" secondItem="oof-Vy-DId" secondAttribute="topMargin" constant="-5" id="8uh-YA-Fug"/>
@@ -80,9 +72,6 @@
                                                 <constraint firstItem="kxk-kW-5cu" firstAttribute="leading" secondItem="oof-Vy-DId" secondAttribute="leading" constant="16" id="PrL-2k-RyS"/>
                                                 <constraint firstItem="WpM-m0-xvd" firstAttribute="top" secondItem="oof-Vy-DId" secondAttribute="top" constant="38" id="R6V-nx-4i0"/>
                                                 <constraint firstItem="WpM-m0-xvd" firstAttribute="trailing" secondItem="zbB-cC-oLh" secondAttribute="trailing" id="TuM-JO-oWD"/>
-                                                <constraint firstItem="sQW-yx-C9s" firstAttribute="top" secondItem="oof-Vy-DId" secondAttribute="topMargin" constant="-2" id="UYi-s4-SeZ"/>
-                                                <constraint firstItem="sQW-yx-C9s" firstAttribute="leading" secondItem="7hu-WY-EHy" secondAttribute="trailing" constant="8" symbolic="YES" id="UgR-sJ-GlA"/>
-                                                <constraint firstItem="sQW-yx-C9s" firstAttribute="centerY" secondItem="7hu-WY-EHy" secondAttribute="centerY" id="Wx7-sL-Kfa"/>
                                                 <constraint firstItem="WpM-m0-xvd" firstAttribute="baseline" secondItem="kxk-kW-5cu" secondAttribute="firstBaseline" id="Xgk-X3-tAS"/>
                                                 <constraint firstItem="zbB-cC-oLh" firstAttribute="top" secondItem="WpM-m0-xvd" secondAttribute="bottom" constant="8" symbolic="YES" id="Xv6-h9-qLL"/>
                                                 <constraint firstItem="WpM-m0-xvd" firstAttribute="leading" secondItem="kxk-kW-5cu" secondAttribute="trailing" constant="53" id="afv-cS-Eox"/>
@@ -140,7 +129,7 @@
         <!--Edit my Event-->
         <scene sceneID="uAS-fy-ZT2">
             <objects>
-                <viewController id="LdV-Zl-ZGh" userLabel="Edit my Event" customClass="EditEventViewController" customModule="Synapse" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EditEventViewController" id="LdV-Zl-ZGh" userLabel="Edit my Event" customClass="EditEventViewController" customModule="Synapse" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6QM-5G-bIq">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -493,6 +482,5 @@
     </scenes>
     <resources>
         <image name="calendar" catalog="system" width="64" height="52"/>
-        <image name="gear" catalog="system" width="64" height="58"/>
     </resources>
 </document>
