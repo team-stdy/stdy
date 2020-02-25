@@ -127,21 +127,42 @@ class MyEventsViewController: UIViewController, UITableViewDataSource, UITableVi
         cell.timeLabel.text = timeFormatter.string(from: eventsArray[indexPath.section].sectionEvents[indexPath.row].date)
         cell.locationLabel.text = eventsArray[indexPath.section].sectionEvents[indexPath.row].location
         cell.rsvpLabel.text = "RSVP Count: " + String(eventsArray[indexPath.section].sectionEvents[indexPath.row].rsvpCount)
-        
+        cell.accessoryType = .detailDisclosureButton
         return cell
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vcEventDetails = storyboard?.instantiateViewController(identifier: "EventDetailsViewController") as? EventDetailsViewController
+        
+        navigationController?.pushViewController(vcEventDetails!, animated: true)
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            currentEventsArray.remove(at: indexPath.row)
+            currentEventsArray[indexPath.section].sectionEvents.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
         }
     }
+    func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
+        let vcEditEvent = storyboard?.instantiateViewController(identifier: "EditEventViewController") as? EditEventViewController
+        /*
+        let course = currentEventsArray[indexPath.section].sectionEvents[indexPath.row].course
+        let purpose = currentEventsArray[indexPath.section].sectionEvents[indexPath.row].purpose
+        let date = currentEventsArray[indexPath.section].sectionEvents[indexPath.row].date
+        let location = currentEventsArray[indexPath.section].sectionEvents[indexPath.row].location
+        */
+        vcEditEvent?.classNameTextField?.text = "Class Name"
+        vcEditEvent?.eventNameTextField?.text = "Event Name"
+        vcEditEvent?.descriptionTextField?.text = "Description"
+        vcEditEvent?.dateTextField?.text = "Date"
+        vcEditEvent?.timeTextField?.text = "Time"
+        vcEditEvent?.durationTextField?.text = "Duration"
+        vcEditEvent?.locationTextField?.text = "Location"
+        navigationController?.pushViewController(vcEditEvent!, animated: true)
+    }
+    
     /*
     // MARK: - Navigation
 

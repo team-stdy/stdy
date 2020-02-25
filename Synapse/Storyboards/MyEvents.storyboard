@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Mao-MR-OFP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Mao-MR-OFP">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -63,18 +63,6 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sQW-yx-C9s">
-                                                    <rect key="frame" x="368" y="9" width="33" height="23"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="33" id="9rv-5i-PZp"/>
-                                                    </constraints>
-                                                    <color key="tintColor" red="0.67273253200000005" green="0.50265145300000003" blue="0.92945235969999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                    <state key="normal" image="gear" catalog="system"/>
-                                                    <connections>
-                                                        <action selector="myEventsButton:" destination="v68-CN-0pa" eventType="touchUpInside" id="sd6-OR-Thi"/>
-                                                        <segue destination="LdV-Zl-ZGh" kind="show" id="fGW-vR-P6i"/>
-                                                    </connections>
-                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="7hu-WY-EHy" firstAttribute="top" secondItem="oof-Vy-DId" secondAttribute="topMargin" constant="-5" id="8uh-YA-Fug"/>
@@ -84,9 +72,6 @@
                                                 <constraint firstItem="kxk-kW-5cu" firstAttribute="leading" secondItem="oof-Vy-DId" secondAttribute="leading" constant="16" id="PrL-2k-RyS"/>
                                                 <constraint firstItem="WpM-m0-xvd" firstAttribute="top" secondItem="oof-Vy-DId" secondAttribute="top" constant="38" id="R6V-nx-4i0"/>
                                                 <constraint firstItem="WpM-m0-xvd" firstAttribute="trailing" secondItem="zbB-cC-oLh" secondAttribute="trailing" id="TuM-JO-oWD"/>
-                                                <constraint firstItem="sQW-yx-C9s" firstAttribute="top" secondItem="oof-Vy-DId" secondAttribute="topMargin" constant="-2" id="UYi-s4-SeZ"/>
-                                                <constraint firstItem="sQW-yx-C9s" firstAttribute="leading" secondItem="7hu-WY-EHy" secondAttribute="trailing" constant="8" symbolic="YES" id="UgR-sJ-GlA"/>
-                                                <constraint firstItem="sQW-yx-C9s" firstAttribute="centerY" secondItem="7hu-WY-EHy" secondAttribute="centerY" id="Wx7-sL-Kfa"/>
                                                 <constraint firstItem="WpM-m0-xvd" firstAttribute="baseline" secondItem="kxk-kW-5cu" secondAttribute="firstBaseline" id="Xgk-X3-tAS"/>
                                                 <constraint firstItem="zbB-cC-oLh" firstAttribute="top" secondItem="WpM-m0-xvd" secondAttribute="bottom" constant="8" symbolic="YES" id="Xv6-h9-qLL"/>
                                                 <constraint firstItem="WpM-m0-xvd" firstAttribute="leading" secondItem="kxk-kW-5cu" secondAttribute="trailing" constant="53" id="afv-cS-Eox"/>
@@ -144,7 +129,7 @@
         <!--Edit my Event-->
         <scene sceneID="uAS-fy-ZT2">
             <objects>
-                <viewController id="LdV-Zl-ZGh" userLabel="Edit my Event" customClass="EditEventViewController" customModule="Synapse" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EditEventViewController" id="LdV-Zl-ZGh" userLabel="Edit my Event" customClass="EditEventViewController" customModule="Synapse" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6QM-5G-bIq">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -299,10 +284,25 @@
             </objects>
             <point key="canvasLocation" x="1587" y="46"/>
         </scene>
+        <!--Event Details View Controller-->
+        <scene sceneID="zBp-AV-H0f">
+            <objects>
+                <viewController storyboardIdentifier="EventDetailsViewController" id="f2h-dZ-Zcg" customClass="EventDetailsViewController" customModule="Synapse" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1kL-lZ-NWC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="6Ym-sK-dEc"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZH9-xV-7zG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2362" y="46"/>
+        </scene>
         <!--Users Attending Event Table-->
         <scene sceneID="hoY-n5-QdT">
             <objects>
-                <viewController id="4gp-fn-I8T" customClass="UsersAttendingEventTable" customModule="Synapse" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UsersAttendingEventTable" id="4gp-fn-I8T" customClass="UsersAttendingEventTable" customModule="Synapse" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Xw8-Rm-RjV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -477,11 +477,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuU-Tb-A3C" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="854" y="-658"/>
+            <point key="canvasLocation" x="461" y="-796"/>
         </scene>
     </scenes>
     <resources>
         <image name="calendar" catalog="system" width="64" height="52"/>
-        <image name="gear" catalog="system" width="64" height="58"/>
     </resources>
 </document>

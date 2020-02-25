@@ -14,4 +14,5 @@ class MyEventsTableViewCell: UITableViewCell {
     @IBOutlet weak var rsvpLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
+    
 }
