@@ -29,9 +29,19 @@ class NewEventViewController: UIViewController {
     
     @IBOutlet weak var locationTextField: UITextField!
     
+
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        classNameTextField.placeholder = "Class Name"
+        eventNameTextField.placeholder = "Event Name"
+        descriptionTextField.placeholder = "Description"
+        dateTextField.placeholder = "Date"
+        timeTextField.placeholder = "Time"
+        durationTextField.placeholder = "Duration"
+        locationTextField.placeholder = "Location"
         
         //add a date to the date textfield here
         datePicker = UIDatePicker()
@@ -110,11 +120,11 @@ class NewEventViewController: UIViewController {
             //let vcMyClasses = storyboard?.instantiateViewController(identifier: "ClassEventsViewController") as? ClassEventsViewController
                                         
             
-           // vcMyClasses?.courseName  = classNameTextField.text!
-            // vcMyClasses?.currentEventsArray = {descriptionTextField; dateTextField; timeTextField}
+            //vcMyClasses?.courseName  = classNameTextField.text!
+             //vcMyClasses?.currentEventsArray = {descriptionTextField; dateTextField; timeTextField}
                         
-            //          navigationController?.pushViewController(vcMyClasses!, animated: true)
-            
+            // navigationController?.pushViewController(vcMyClasses!, animated: true)
+
             
             
         }
