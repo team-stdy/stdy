@@ -31,13 +31,7 @@ class CreateEventViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        classNameTextField.placeholder = "Class Name"
-        eventNameTextField.placeholder = "Event Name"
-        descriptionTextField.placeholder = "Description"
-        dateTextField.placeholder = "Date"
-        timeTextField.placeholder = "Time"
-        durationTextField.placeholder = "Duration"
-        locationTextField.placeholder = "Location"
+      
         
         //add a date to the date textfield here
         datePicker = UIDatePicker()
