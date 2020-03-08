@@ -20,6 +20,9 @@ class MyEventsViewController: UIViewController, UITableViewDataSource, UITableVi
     var eventsArray = [Events]()
     var currentEventsArray = [Events]()
     
+    var purposeData = ""
+    var dateData = ""
+    var locationData = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,6 +61,7 @@ class MyEventsViewController: UIViewController, UITableViewDataSource, UITableVi
         receivedEventArray.append(Event(purpose: "Study for test", date: date1, location: "Rand"));
         receivedEventArray.append(Event(purpose: "Quiz each other with flashcards", date: date1, location: "A Mass Grave in France"));
         receivedEventArray.append(Event(purpose: "Go to office hours", date: date7, location: "FGH 323"));
+        receivedEventArray.append(Event(purpose: purposeData, date: date1, location: locationData));
         
         //Current date and time
         

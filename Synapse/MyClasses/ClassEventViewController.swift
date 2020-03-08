@@ -17,6 +17,10 @@ class ClassEventViewController: UIViewController, UITableViewDataSource, UITable
 
     var eventsArray = [Event]()
     
+    var purposeData = ""
+    var dateData = ""
+    var locationData = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpEvents()
@@ -33,6 +37,8 @@ class ClassEventViewController: UIViewController, UITableViewDataSource, UITable
         eventsArray.append(Event(purpose: "Go to office hours", date: date1, location: "Stevenson"))
         eventsArray.append(Event(purpose: "Go over homework 5", date: date1, location: "FGH"))
         eventsArray.append(Event(purpose: "Check answers for problem set", date: date1, location: "Marine One"))
+        eventsArray.append(Event(purpose: purposeData, date: date1, location: locationData))
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
