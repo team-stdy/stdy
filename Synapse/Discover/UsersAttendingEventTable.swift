@@ -11,11 +11,27 @@ import UIKit
 
 class UsersAttendingEventTable: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    @IBOutlet weak var TitleLabel: UILabel!
+    @IBOutlet weak var PurposeLabel: UILabel!
+    @IBOutlet weak var LocationLabel: UILabel!
+    @IBOutlet weak var TimeLabel: UILabel!
+    @IBOutlet weak var DateLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     var userArray: [User] = []
+    
+    var TitleText = ""
+    var PurposeText = ""
+    var LocationText = ""
+    var TimeText = ""
+    var DateText = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        TitleLabel.text = TitleText
+        PurposeLabel.text = PurposeText
+        DateLabel.text = DateText
+        TimeLabel.text = TimeText
+        LocationLabel.text = LocationText
         userArray = setUpProfiles()
         tableView.delegate = self
         tableView.dataSource = self

@@ -122,6 +122,32 @@ class DiscoverClassesViewController: UIViewController, UITableViewDataSource, UI
         return currentEventsArray[section].sectionEvents.count
     }
     
+    //Neil's Code
+    //************
+    //************
+    //************
+    //************
+    //************
+    
+    var passPurpose = ""
+    var passTime = ""
+    var passLocation = ""
+    var passDate = ""
+    var passTitle = ""
+    
+    
+    
+    @IBAction func passDate(_ sender: Any) {
+        performSegue(withIdentifier: "DiscoverEvent", sender: self)
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        var vc = segue.destination as! DiscoverEventTable
+        vc.TitleText = self.passTitle
+        vc.PurposeText = self.passPurpose
+        vc.DateText = self.passDate
+        vc.LocationText = self.passLocation
+        vc.TimeText = self.passTime
+    }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as? DiscoverTableViewCell else {
             return UITableViewCell()
@@ -150,6 +176,13 @@ class DiscoverClassesViewController: UIViewController, UITableViewDataSource, UI
         cell.purposeLabel.text = eventsArray[indexPath.section].sectionEvents[indexPath.row].course.courseCode
         cell.dateLabel.text = eventsArray[indexPath.section].sectionEvents[indexPath.row].purpose
         cell.timeLabel.text = timeFormatter.string(from: eventsArray[indexPath.section].sectionEvents[indexPath.row].date)
+        passTitle = cell.purposeLabel.text!
+        passPurpose = cell.purposeLabel.text!
+        passTime = cell.timeLabel.text!
+        passLocation = eventsArray[indexPath.section].sectionEvents[indexPath.row].location
+        passDate = cell.dateLabel.text!
+        
+        
         
         return cell
     }
