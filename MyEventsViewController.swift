@@ -11,6 +11,13 @@ import UIKit
 class MyEventsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
+    
+    var passTitle = ""
+    var passPurpose = ""
+    var passTime = ""
+    var passLocation = ""
+    var passDate = ""
+    
     struct Events {
         var sectionHeader: String!
         var sectionEvents = [Event]()
@@ -128,11 +135,35 @@ class MyEventsViewController: UIViewController, UITableViewDataSource, UITableVi
         cell.locationLabel.text = eventsArray[indexPath.section].sectionEvents[indexPath.row].location
         cell.rsvpLabel.text = "RSVP Count: " + String(eventsArray[indexPath.section].sectionEvents[indexPath.row].rsvpCount)
         cell.accessoryType = .detailDisclosureButton
+        
+        
         return cell
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vcEventDetails = storyboard?.instantiateViewController(identifier: "UsersAttendingEventTable") as? UsersAttendingEventTable
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .medium
+        dateFormatter.timeStyle = .none
+        dateFormatter.locale = Locale(identifier: "en_US")
+        
+        let timeFormatter = DateFormatter()
+        timeFormatter.dateStyle = .none
+        timeFormatter.timeStyle = .short
+        timeFormatter.locale = Locale(identifier: "en_US")
+        passTitle =
+            eventsArray[indexPath.section].sectionEvents[indexPath.row].purpose
+        passPurpose =
+            eventsArray[indexPath.section].sectionEvents[indexPath.row].purpose
+        passTime = timeFormatter.string(from: eventsArray[indexPath.section].sectionEvents[indexPath.row].date)
+        passDate = timeFormatter.string(from: eventsArray[indexPath.section].sectionEvents[indexPath.row].date)
+        passLocation =
+            eventsArray[indexPath.section].sectionEvents[indexPath.row].location
+        vcEventDetails?.TitleText = passTitle
+        vcEventDetails?.DateText = passDate
+        vcEventDetails?.TimeText = passTime
+        vcEventDetails?.LocationText = passLocation
+        vcEventDetails?.PurposeText = passPurpose
         
         navigationController?.pushViewController(vcEventDetails!, animated: true)
     }

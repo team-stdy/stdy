@@ -11,11 +11,28 @@ import UIKit
 
 class DiscoverEventTable: UIViewController{
 
+    @IBOutlet weak var TitleLabel: UILabel!
+    @IBOutlet weak var PurposeLabel: UILabel!
+    @IBOutlet weak var DateLabel: UILabel!
+    @IBOutlet weak var TimeLabel: UILabel!
+    @IBOutlet weak var LocationLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
+    var TitleText = ""
+    var PurposeText = ""
+    var DateText = ""
+    var TimeText = ""
+    var LocationText = ""
+    
+    
     
     var userArray: [User] = []
     override func viewDidLoad() {
         super.viewDidLoad()
+        TitleLabel.text = TitleText
+        PurposeLabel.text = PurposeText
+        DateLabel.text = DateText
+        TimeLabel.text = TimeText
+        LocationLabel.text = LocationText
         userArray = setUpProfiles()
         tableView.delegate = self
         tableView.dataSource = self

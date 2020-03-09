@@ -75,7 +75,8 @@
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
                                                     <connections>
-                                                        <segue destination="Q6J-UQ-6EE" kind="presentation" id="fkW-1A-Cn3"/>
+                                                        <action selector="passDate:" destination="5C3-ya-fBI" eventType="touchUpInside" id="c7o-lW-Mv3"/>
+                                                        <segue destination="Q6J-UQ-6EE" kind="presentation" identifier="DiscoverEvent" id="fkW-1A-Cn3"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -451,6 +452,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="1xr-Ce-eaJ"/>
                     <connections>
+                        <outlet property="DateLabel" destination="hu2-Qc-TXO" id="rkg-GI-4iD"/>
+                        <outlet property="LocationLabel" destination="Y2m-2d-vrQ" id="quM-pq-g59"/>
+                        <outlet property="PurposeLabel" destination="3OG-D8-iMQ" id="sD4-U1-Ewh"/>
+                        <outlet property="TimeLabel" destination="yv0-kc-rAy" id="g9h-qj-qYc"/>
+                        <outlet property="TitleLabel" destination="r1d-b6-P7k" id="f3y-hJ-rhG"/>
                         <outlet property="tableView" destination="uPz-tf-c78" id="9sC-hF-g4I"/>
                     </connections>
                 </viewController>

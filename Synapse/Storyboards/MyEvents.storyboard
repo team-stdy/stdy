@@ -434,6 +434,11 @@
                         <viewLayoutGuide key="safeArea" id="47O-K8-tHK"/>
                     </view>
                     <connections>
+                        <outlet property="DateLabel" destination="5wp-FS-Ic9" id="hg4-RT-rlX"/>
+                        <outlet property="LocationLabel" destination="XDy-IY-0i9" id="nJJ-lO-vfN"/>
+                        <outlet property="PurposeLabel" destination="cQb-Jk-aQ3" id="6oA-2v-Vyd"/>
+                        <outlet property="TimeLabel" destination="YxB-O6-IiS" id="QhJ-pa-Lcf"/>
+                        <outlet property="TitleLabel" destination="N7e-rF-kB2" id="Hwp-FA-j5n"/>
                         <outlet property="tableView" destination="dC8-lt-rik" id="Uix-0j-TY7"/>
                     </connections>
                 </viewController>
