@@ -24,6 +24,7 @@ class MyEventsViewController: UIViewController, UITableViewDataSource, UITableVi
     var dateData = ""
     var locationData = ""
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpEvents()
@@ -40,6 +41,7 @@ class MyEventsViewController: UIViewController, UITableViewDataSource, UITableVi
         let date5 = date4.addingTimeInterval(86400);
         let date6 = date5.addingTimeInterval(86400);
         let date7 = date6.addingTimeInterval(86400);
+        let date8 = date7.addingTimeInterval(86400);
         
         //Create Strings for the week's dates
         let dateFormatter = DateFormatter()
@@ -52,6 +54,7 @@ class MyEventsViewController: UIViewController, UITableViewDataSource, UITableVi
         let day5String = dateFormatter.string(from: date5)
         let day6String = dateFormatter.string(from: date6)
         let day7String = dateFormatter.string(from: date7)
+        let day8String = dateFormatter.string(from: date8)
         
         receivedEventArray.append(Event(purpose: "Go over homework 1", date: date4, location: "Stevenson"));
         receivedEventArray.append(Event(purpose: "Study for test", date: date3, location: "FGH"));
@@ -61,7 +64,7 @@ class MyEventsViewController: UIViewController, UITableViewDataSource, UITableVi
         receivedEventArray.append(Event(purpose: "Study for test", date: date1, location: "Rand"));
         receivedEventArray.append(Event(purpose: "Quiz each other with flashcards", date: date1, location: "A Mass Grave in France"));
         receivedEventArray.append(Event(purpose: "Go to office hours", date: date7, location: "FGH 323"));
-        receivedEventArray.append(Event(purpose: purposeData, date: date1, location: locationData));
+        receivedEventArray.append(Event(purpose: purposeData, date: date8, location: locationData));
         
         //Current date and time
         

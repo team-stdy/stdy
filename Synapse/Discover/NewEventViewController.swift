@@ -108,21 +108,33 @@ class NewEventViewController: UIViewController {
         }
         
         //when they click the create button
-        @IBAction func CreateTapped(_ sender: Any) {
-            //this is exactly what is done in the create class so im not sure what is wrong
-            
-            let vcMyClasses = storyboard?.instantiateViewController(identifier: "MyEventsViewController") as? MyEventsViewController
-                                        
-            
-            vcMyClasses?.purposeData  = eventNameTextField.text!
-            vcMyClasses?.locationData = locationTextField.text!
-            
-            navigationController?.pushViewController(vcMyClasses!, animated: true)
-            
-        }
+//    @IBAction func CreateTapped(_ sender: Any) {
+//            //this is exactly what is done in the create class so im not sure what is wrong
+//
+//            let vcMyClasses = storyboard?.instantiateViewController(identifier: "MyEventsViewController") as? MyEventsViewController
+//
+//
+//            vcMyClasses?.purposeData  = eventNameTextField.text!
+//            vcMyClasses?.locationData = locationTextField.text!
+//
+//            navigationController?.pushViewController(vcMyClasses!, animated: true)
+//
+//        }
         
         
-        /*
+    @IBAction func createButtonTapped(_ sender: Any) {
+            let storyboard = UIStoryboard(name: "MyEvents", bundle: nil)
+        let vcMyClasses = storyboard.instantiateViewController(withIdentifier: "MyEventsViewController") as! MyEventsViewController
+        
+        vcMyClasses.purposeData = eventNameTextField.text!
+        vcMyClasses.locationData = locationTextField.text!
+        vcMyClasses.courseData = classNameTextField.text!
+        
+        
+        navigationController?.pushViewController(vcMyClasses, animated: true)
+        
+    }
+    /*
         // MARK: - Navigation
 
         // In a storyboard-based application, you will often want to do a little preparation before navigation
