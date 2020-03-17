@@ -153,12 +153,6 @@ class DiscoverClassesViewController: UIViewController, UITableViewDataSource, UI
             return UITableViewCell()
         }
         
-        cell.RSVPButton.layer.cornerRadius = 10
-        cell.RSVPButton.layer.shadowColor = UIColor.black.cgColor
-        cell.RSVPButton.layer.shadowOffset = CGSize(width: 0.0, height: 4.0)
-        cell.RSVPButton.layer.shadowRadius = 4
-        cell.RSVPButton.layer.shadowOpacity = 0.5
-        cell.RSVPButton.layer.masksToBounds = false
         
         //Create the DateFormatter for the date field within a table cell
         let dateFormatter = DateFormatter()
@@ -176,11 +170,7 @@ class DiscoverClassesViewController: UIViewController, UITableViewDataSource, UI
         cell.purposeLabel.text = eventsArray[indexPath.section].sectionEvents[indexPath.row].course.courseCode
         cell.dateLabel.text = eventsArray[indexPath.section].sectionEvents[indexPath.row].purpose
         cell.timeLabel.text = timeFormatter.string(from: eventsArray[indexPath.section].sectionEvents[indexPath.row].date)
-        passTitle = cell.purposeLabel.text!
-        passPurpose = cell.purposeLabel.text!
-        passTime = cell.timeLabel.text!
-        passLocation = eventsArray[indexPath.section].sectionEvents[indexPath.row].location
-        passDate = cell.dateLabel.text!
+        
         
         
         
@@ -188,6 +178,31 @@ class DiscoverClassesViewController: UIViewController, UITableViewDataSource, UI
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vcEventDetails = storyboard?.instantiateViewController(identifier: "DiscoverEventTable") as? DiscoverEventTable
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .medium
+        dateFormatter.timeStyle = .none
+        dateFormatter.locale = Locale(identifier: "en_US")
+        
+        let timeFormatter = DateFormatter()
+        timeFormatter.dateStyle = .none
+        timeFormatter.timeStyle = .short
+        timeFormatter.locale = Locale(identifier: "en_US")
+        passTitle =
+            currentEventsArray[indexPath.section].sectionEvents[indexPath.row].purpose
+        passPurpose =
+            currentEventsArray[indexPath.section].sectionEvents[indexPath.row].purpose
+        passTime = timeFormatter.string(from: currentEventsArray[indexPath.section].sectionEvents[indexPath.row].date)
+        passDate = timeFormatter.string(from: currentEventsArray[indexPath.section].sectionEvents[indexPath.row].date)
+        passLocation =
+            currentEventsArray[indexPath.section].sectionEvents[indexPath.row].location
+        vcEventDetails?.TitleText = passTitle
+        vcEventDetails?.DateText = passDate
+        vcEventDetails?.TimeText = passTime
+        vcEventDetails?.LocationText = passLocation
+        vcEventDetails?.PurposeText = passPurpose
+        
+        navigationController?.pushViewController(vcEventDetails!, animated: true)
 
     }
     

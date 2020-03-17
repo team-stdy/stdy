@@ -45,7 +45,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Purpose" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nkj-SX-XAD">
-                                                    <rect key="frame" x="34" y="6" width="249" height="41"/>
+                                                    <rect key="frame" x="34" y="6" width="60" height="41"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -62,30 +62,9 @@
                                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cWe-ld-g1D">
-                                                    <rect key="frame" x="310" y="21" width="70" height="55"/>
-                                                    <color key="backgroundColor" red="0.67273253200000005" green="0.50265145300000003" blue="0.92945235969999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="70" id="Y8o-AP-GvC"/>
-                                                        <constraint firstAttribute="height" constant="50" id="ebT-pJ-YHh"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
-                                                    <size key="titleShadowOffset" width="4" height="0.0"/>
-                                                    <state key="normal" title="RSVP">
-                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    </state>
-                                                    <connections>
-                                                        <action selector="passDate:" destination="5C3-ya-fBI" eventType="touchUpInside" id="c7o-lW-Mv3"/>
-                                                        <segue destination="Q6J-UQ-6EE" kind="presentation" identifier="DiscoverEvent" id="fkW-1A-Cn3"/>
-                                                    </connections>
-                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="J4W-wb-cY9" firstAttribute="top" secondItem="nkj-SX-XAD" secondAttribute="bottom" constant="2.5" id="9bP-NC-ntR"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="cWe-ld-g1D" secondAttribute="bottom" constant="10" id="9gj-eM-kiD"/>
-                                                <constraint firstItem="cWe-ld-g1D" firstAttribute="leading" secondItem="nkj-SX-XAD" secondAttribute="trailing" constant="27" id="GRJ-kE-hPE"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="cWe-ld-g1D" secondAttribute="trailing" constant="14" id="GUF-xz-d5w"/>
-                                                <constraint firstItem="cWe-ld-g1D" firstAttribute="top" secondItem="jff-2t-Aeq" secondAttribute="topMargin" constant="10" id="JiP-NV-AcV"/>
                                                 <constraint firstItem="J4W-wb-cY9" firstAttribute="leading" secondItem="jff-2t-Aeq" secondAttribute="leading" constant="34" id="Ufa-R9-MEz"/>
                                                 <constraint firstAttribute="bottom" secondItem="3Hj-Yv-uJM" secondAttribute="bottom" constant="10" id="Vjb-f7-6ga"/>
                                                 <constraint firstItem="nkj-SX-XAD" firstAttribute="top" secondItem="jff-2t-Aeq" secondAttribute="top" constant="6" id="flQ-yf-J2g"/>
@@ -95,7 +74,6 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="RSVPButton" destination="cWe-ld-g1D" id="pdf-xA-mKq"/>
                                             <outlet property="dateLabel" destination="J4W-wb-cY9" id="5c3-BZ-gMh"/>
                                             <outlet property="purposeLabel" destination="nkj-SX-XAD" id="cbw-Dx-qBq"/>
                                             <outlet property="timeLabel" destination="3Hj-Yv-uJM" id="cwK-Uf-OJA"/>
@@ -295,13 +273,13 @@
         <!--Discover Event Table-->
         <scene sceneID="Xst-BF-66I">
             <objects>
-                <viewController id="Q6J-UQ-6EE" customClass="DiscoverEventTable" customModule="Synapse" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DiscoverEventTable" id="Q6J-UQ-6EE" customClass="DiscoverEventTable" customModule="Synapse" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Gww-Ot-Z8t">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uPz-tf-c78">
-                                <rect key="frame" x="50" y="385.5" width="314" height="300"/>
+                                <rect key="frame" x="50" y="364.5" width="314" height="300"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="300" id="eep-Af-dBb"/>
@@ -338,7 +316,7 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" adjustsImageSizeForAccessibilityContentSizeCategory="YES" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4IZ-Q8-VJp" userLabel="WillAttend">
-                                <rect key="frame" x="145" y="725.5" width="124" height="44"/>
+                                <rect key="frame" x="145" y="684.5" width="124" height="44"/>
                                 <color key="backgroundColor" red="0.73333333329999995" green="0.52549019610000003" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" button="YES" adjustable="YES"/>
@@ -357,25 +335,25 @@
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r1d-b6-P7k" userLabel="EventTitle">
-                                <rect key="frame" x="136.5" y="49" width="141.5" height="41"/>
+                                <rect key="frame" x="136.5" y="93" width="141.5" height="41"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Short description of event goals" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3OG-D8-iMQ" userLabel="EventDescription">
-                                <rect key="frame" x="91" y="140" width="232" height="20.5"/>
+                                <rect key="frame" x="91" y="154" width="232" height="20.5"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Students Attending" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6qQ-or-saW" userLabel="TableLabel">
-                                <rect key="frame" x="50" y="345" width="164" height="20.5"/>
+                                <rect key="frame" x="50" y="334" width="164" height="20.5"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-BoldItalic" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="QBl-fv-goe" userLabel="Information">
-                                <rect key="frame" x="50" y="210.5" width="314" height="84.5"/>
+                                <rect key="frame" x="50" y="199.5" width="314" height="84.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="sDJ-ZT-SXl">
                                         <rect key="frame" x="0.0" y="0.0" width="100" height="84.5"/>
@@ -432,18 +410,18 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="4IZ-Q8-VJp" firstAttribute="centerX" secondItem="Gww-Ot-Z8t" secondAttribute="centerX" id="2gv-Cj-QgS"/>
+                            <constraint firstItem="3OG-D8-iMQ" firstAttribute="top" secondItem="r1d-b6-P7k" secondAttribute="bottom" constant="20" id="42k-PY-otz"/>
                             <constraint firstItem="uPz-tf-c78" firstAttribute="leading" secondItem="jXZ-HO-RGh" secondAttribute="leading" constant="50" id="5Hp-cK-Dvd"/>
-                            <constraint firstItem="uPz-tf-c78" firstAttribute="top" secondItem="6qQ-or-saW" secondAttribute="bottom" constant="20" id="5Px-RP-KtQ"/>
                             <constraint firstItem="jXZ-HO-RGh" firstAttribute="trailing" secondItem="uPz-tf-c78" secondAttribute="trailing" constant="50" id="8gN-rp-beT"/>
-                            <constraint firstItem="4IZ-Q8-VJp" firstAttribute="top" secondItem="uPz-tf-c78" secondAttribute="bottom" constant="40" id="J2H-lP-uc2"/>
+                            <constraint firstItem="4IZ-Q8-VJp" firstAttribute="top" secondItem="uPz-tf-c78" secondAttribute="bottom" constant="20" id="O8A-CB-vgQ"/>
                             <constraint firstItem="r1d-b6-P7k" firstAttribute="centerX" secondItem="Gww-Ot-Z8t" secondAttribute="centerX" id="OcE-6v-PuK"/>
                             <constraint firstItem="jXZ-HO-RGh" firstAttribute="trailing" secondItem="6qQ-or-saW" secondAttribute="trailing" constant="200" id="Rre-Mx-hdr"/>
                             <constraint firstItem="r1d-b6-P7k" firstAttribute="top" secondItem="jXZ-HO-RGh" secondAttribute="top" constant="49" id="THo-9Q-jfD"/>
+                            <constraint firstItem="uPz-tf-c78" firstAttribute="top" secondItem="6qQ-or-saW" secondAttribute="bottom" constant="10" id="Vvh-km-ldp"/>
                             <constraint firstItem="QBl-fv-goe" firstAttribute="leading" secondItem="jXZ-HO-RGh" secondAttribute="leading" constant="50" id="a66-fC-yDo"/>
-                            <constraint firstItem="3OG-D8-iMQ" firstAttribute="top" secondItem="r1d-b6-P7k" secondAttribute="bottom" constant="50" id="byH-Pl-Pcz"/>
                             <constraint firstItem="QBl-fv-goe" firstAttribute="centerX" secondItem="Gww-Ot-Z8t" secondAttribute="centerX" id="cIh-kx-6Wu"/>
                             <constraint firstItem="jXZ-HO-RGh" firstAttribute="trailing" secondItem="QBl-fv-goe" secondAttribute="trailing" constant="50" id="cXN-1j-1iv"/>
-                            <constraint firstItem="QBl-fv-goe" firstAttribute="top" secondItem="3OG-D8-iMQ" secondAttribute="bottom" constant="50" id="hw9-dY-qGO"/>
+                            <constraint firstItem="QBl-fv-goe" firstAttribute="top" secondItem="3OG-D8-iMQ" secondAttribute="bottom" constant="25" id="p2k-BD-3OM"/>
                             <constraint firstItem="3OG-D8-iMQ" firstAttribute="centerX" secondItem="Gww-Ot-Z8t" secondAttribute="centerX" id="qNj-mA-8IO"/>
                             <constraint firstItem="6qQ-or-saW" firstAttribute="top" secondItem="QBl-fv-goe" secondAttribute="bottom" constant="50" id="sjH-wn-FH0"/>
                             <constraint firstItem="6qQ-or-saW" firstAttribute="leading" secondItem="jXZ-HO-RGh" secondAttribute="leading" constant="50" id="tWN-ZD-NaT"/>
