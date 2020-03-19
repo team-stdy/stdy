@@ -85,15 +85,38 @@ class ProfileViewController: UIViewController {
     
     //started this but it needs to transition to the login page after a user signs out so please update this method
     @objc func handleLogout() {
-                let firebaseAuth = Auth.auth()
-        do {
-            try firebaseAuth.signOut()
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//                let firebaseAuth = Auth.auth()
+//        do {
+//            try firebaseAuth.signOut()
+//            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//            let login = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+//            self.present(login, animated: false)
+//        } catch let signOutError as NSError {
+//            print ("Error signing out: %@", signOutError)
+//        }
+        
+        //declare alert controller
+        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        
+        //add alert action
+        alertController.addAction(UIAlertAction(title: "Log Out", style: .destructive, handler: { (UIAlertAction) in
+            do {
+                //attempt to sign out
+                try Auth.auth().signOut()
+//                let loginVC = LoginViewController()
+                            let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let login = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
             self.present(login, animated: false)
-        } catch let signOutError as NSError {
-            print ("Error signing out: %@", signOutError)
-        }
+                
+            } catch {
+                //handle error
+                print("Failed Sign Out")
+            }
+        }))
+        
+        alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
+        present(alertController, animated: true, completion: nil)
         
     }
     
