@@ -20,75 +20,103 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var universityLabel: UILabel!
     
-   // let storage =  Storage.storage()
-
+    // let storage =  Storage.storage()
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addVerticalGradientLayer(topColor: primaryColor!, bottomColor: secondaryColor!)
         
-//        checkIfUserIsLoggedIn()
+        //        checkIfUserIsLoggedIn()
         setUpProfile()
-//        setUpImage()
+        //        setUpImage()
         
         
     }
     
-//    func checkIfUserIsLoggedIn(){
-//        if Auth.auth().currentUser?.uid == nil {
-//            perform(#selector(handleLogout), with: nil, afterDelay: 0)
-//        } else {
-//            let uid = Auth.auth().currentUser?.uid
-//            Database.database().reference().child("users").child(uid!).observeSingleEvent(of: .value, with: { (snapshot) in
-//                print(snapshot)
-//                if let dictionary = snapshot.value as? [String: AnyObject]{
-//                    self.firstNameLabel.text! = "First Name: "
-//                    self.firstNameLabel.text! += (dictionary["firstName"] as? String)!
-//
-//                    self.lastNameLabel.text! = "Last Name: "
-//                    self.lastNameLabel.text! += (dictionary["lastName"] as? String)!
-//
-//                    self.lastNameLabel.text! = "University: "
-//                    self.universityLabel.text! += (dictionary["university"] as? String)!
-//                }
-//            }, withCancel: nil)
-//        }
-//    }
+    //    func checkIfUserIsLoggedIn(){
+    //        if Auth.auth().currentUser?.uid == nil {
+    //            perform(#selector(handleLogout), with: nil, afterDelay: 0)
+    //        } else {
+    //            let uid = Auth.auth().currentUser?.uid
+    //            Database.database().reference().child("users").child(uid!).observeSingleEvent(of: .value, with: { (snapshot) in
+    //                print(snapshot)
+    //                if let dictionary = snapshot.value as? [String: AnyObject]{
+    //                    self.firstNameLabel.text! = "First Name: "
+    //                    self.firstNameLabel.text! += (dictionary["firstName"] as? String)!
+    //
+    //                    self.lastNameLabel.text! = "Last Name: "
+    //                    self.lastNameLabel.text! += (dictionary["lastName"] as? String)!
+    //
+    //                    self.lastNameLabel.text! = "University: "
+    //                    self.universityLabel.text! += (dictionary["university"] as? String)!
+    //                }
+    //            }, withCancel: nil)
+    //        }
+    //    }
     
     func setUpProfile(){
-        if let userId = Auth.auth().currentUser?.uid {
-            let db = Firestore.firestore()
-             
-            print(userId)
-            db.collection("users").document(userId).getDocument { (snapshot, error) in
-                if let err = error {
-                    print(err.localizedDescription)
-                    return
-                }
+        //        if let userId = Auth.auth().currentUser?.uid {
+        //            let db = Firestore.firestore()
+        //
+        //            print(userId)
+        //            db.collection("users").document(userId)
+        //               .getDocument { (snapshot, error ) in
+        //
+        //                    if let document = snapshot {
+        //
+        //                    let user = User.transformUser(dict: document.data()!, key: document.documentID)
+        //                    completion(user)
+        //
+        //                     } else {
+        //
+        //                      print("Document does not exist")
+        //
+        //                    }
+        //            }
+        //        }
+        
+        let docRef = Firestore.firestore().collection("users").whereField("uid", isEqualTo: Auth.auth().currentUser?.uid ?? "")
+        
+        // Get data
+        docRef.getDocuments { (querySnapshot, err) in
+            if let err = err {
+                print(err.localizedDescription)
+                return
+            }
+            else if querySnapshot!.documents.count != 1 {
+                print("More than one documents or none")
+            } else {
+                let document = querySnapshot!.documents.first
+                let dataDescription = document?.data()
+                guard let firstname = dataDescription?["firstName"] else { return }
+                guard let lastname = dataDescription?["lastName"] else { return }
+                guard let university = dataDescription?["university"] else { return }
                 
-                if let data = snapshot?.data(){
-                    print(data)
-                }
+                print(dataDescription)
                 
+                self.firstNameLabel.text = firstname as? String
+                self.lastNameLabel.text = lastname as? String
+                self.universityLabel.text = university as? String
             }
         }
- 
-
         
-
-//        let currentUid = "D653qB1WbPRfhpWhFfOQ"
-//
-//        Database.database().reference().child("users").observeSingleEvent(of: .value, with: { (snapshot)
-//            in
-//            print(snapshot)
-////            if let dict = snapshot.value as? (AnyObject) {
-////                self.firstNameLabel.text = dict["firstName" as NSString] as? [String : Any]
-////                self.lastNameLabel.text = dict["lastName" as NSString] as? [String : Any]
-////                self.emailLabel.text = dict["email" as NSString] as? [String : Any]
-////                self.universityLabel.text = dict["university" as NSString] as? [String : Any]
-////            }
-//        })
+        
+        
+        
+        //        let currentUid = "D653qB1WbPRfhpWhFfOQ"
+        //
+        //        Database.database().reference().child("users").observeSingleEvent(of: .value, with: { (snapshot)
+        //            in
+        //            print(snapshot)
+        ////            if let dict = snapshot.value as? (AnyObject) {
+        //                self.firstNameLabel.text = dict["firstName" as NSString] as? [String : Any]
+        //                self.lastNameLabel.text = dict["lastName" as NSString] as? [String : Any]
+        //                self.emailLabel.text = dict["email" as NSString] as? [String : Any]
+        //                self.universityLabel.text = dict["university" as NSString] as? [String : Any]
+        ////            }
+        //        })
     }
     
     func setUpImage(){
@@ -107,7 +135,7 @@ class ProfileViewController: UIViewController {
     
     //started this but it needs to transition to the login page after a user signs out so please update this method
     @objc func handleLogout() {
-                let firebaseAuth = Auth.auth()
+        let firebaseAuth = Auth.auth()
         do {
             try firebaseAuth.signOut()
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -117,28 +145,28 @@ class ProfileViewController: UIViewController {
             print ("Error signing out: %@", signOutError)
         }
         
-//        //declare alert controller
-//        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-//        
-//        //add alert action
-//        alertController.addAction(UIAlertAction(title: "Log Out", style: .destructive, handler: { (UIAlertAction) in
-//            do {
-//                //attempt to sign out
-//                try Auth.auth().signOut()
-////                let loginVC = LoginViewController()
-//                            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//            let login = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
-//            self.present(login, animated: false)
-//                
-//            } catch {
-//                //handle error
-//                print("Failed Sign Out")
-//            }
-//        }))
-//        
-//        alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-//        
-//        present(alertController, animated: true, completion: nil)
+        //        //declare alert controller
+        //        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        //
+        //        //add alert action
+        //        alertController.addAction(UIAlertAction(title: "Log Out", style: .destructive, handler: { (UIAlertAction) in
+        //            do {
+        //                //attempt to sign out
+        //                try Auth.auth().signOut()
+        ////                let loginVC = LoginViewController()
+        //                            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        //            let login = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+        //            self.present(login, animated: false)
+        //
+        //            } catch {
+        //                //handle error
+        //                print("Failed Sign Out")
+        //            }
+        //        }))
+        //
+        //        alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        //
+        //        present(alertController, animated: true, completion: nil)
         
     }
     
