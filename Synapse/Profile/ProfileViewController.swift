@@ -8,7 +8,7 @@
 
 import UIKit
 import FirebaseAuth
-import Firebase
+import FirebaseFirestore
 import FirebaseDatabase
 
 class ProfileViewController: UIViewController {
@@ -29,8 +29,8 @@ class ProfileViewController: UIViewController {
         view.addVerticalGradientLayer(topColor: primaryColor!, bottomColor: secondaryColor!)
         
 //        checkIfUserIsLoggedIn()
-//        setUpProfile()
-        setUpImage()
+        setUpProfile()
+//        setUpImage()
         
         
     }
@@ -57,15 +57,37 @@ class ProfileViewController: UIViewController {
 //    }
     
     func setUpProfile(){
-//        let uid = Auth.auth().currentUser?.uid
-//        db.child("users").child(uid!).observeSingleEvent(of: .value, with: { (snapshot)
+        if let userId = Auth.auth().currentUser?.uid {
+            let db = Firestore.firestore()
+             
+            print(userId)
+            db.collection("users").document(userId).getDocument { (snapshot, error) in
+                if let err = error {
+                    print(err.localizedDescription)
+                    return
+                }
+                
+                if let data = snapshot?.data(){
+                    print(data)
+                }
+                
+            }
+        }
+ 
+
+        
+
+//        let currentUid = "D653qB1WbPRfhpWhFfOQ"
+//
+//        Database.database().reference().child("users").observeSingleEvent(of: .value, with: { (snapshot)
 //            in
-//            if let dict = snapshot.value as? (AnyObject) {
-//                self.firstNameLabel.text = dict["firstName" as NSString] as? [String : Any]
-//                self.lastNameLabel.text = dict["lastName" as NSString] as? [String : Any]
-//                self.emailLabel.text = dict["email" as NSString] as? [String : Any]
-//                self.universityLabel.text = dict["university" as NSString] as? [String : Any]
-//            }
+//            print(snapshot)
+////            if let dict = snapshot.value as? (AnyObject) {
+////                self.firstNameLabel.text = dict["firstName" as NSString] as? [String : Any]
+////                self.lastNameLabel.text = dict["lastName" as NSString] as? [String : Any]
+////                self.emailLabel.text = dict["email" as NSString] as? [String : Any]
+////                self.universityLabel.text = dict["university" as NSString] as? [String : Any]
+////            }
 //        })
     }
     
@@ -85,38 +107,38 @@ class ProfileViewController: UIViewController {
     
     //started this but it needs to transition to the login page after a user signs out so please update this method
     @objc func handleLogout() {
-//                let firebaseAuth = Auth.auth()
-//        do {
-//            try firebaseAuth.signOut()
-//            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//            let login = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
-//            self.present(login, animated: false)
-//        } catch let signOutError as NSError {
-//            print ("Error signing out: %@", signOutError)
-//        }
-        
-        //declare alert controller
-        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-        
-        //add alert action
-        alertController.addAction(UIAlertAction(title: "Log Out", style: .destructive, handler: { (UIAlertAction) in
-            do {
-                //attempt to sign out
-                try Auth.auth().signOut()
-//                let loginVC = LoginViewController()
-                            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let firebaseAuth = Auth.auth()
+        do {
+            try firebaseAuth.signOut()
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let login = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
             self.present(login, animated: false)
-                
-            } catch {
-                //handle error
-                print("Failed Sign Out")
-            }
-        }))
+        } catch let signOutError as NSError {
+            print ("Error signing out: %@", signOutError)
+        }
         
-        alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-        
-        present(alertController, animated: true, completion: nil)
+//        //declare alert controller
+//        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+//        
+//        //add alert action
+//        alertController.addAction(UIAlertAction(title: "Log Out", style: .destructive, handler: { (UIAlertAction) in
+//            do {
+//                //attempt to sign out
+//                try Auth.auth().signOut()
+////                let loginVC = LoginViewController()
+//                            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//            let login = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+//            self.present(login, animated: false)
+//                
+//            } catch {
+//                //handle error
+//                print("Failed Sign Out")
+//            }
+//        }))
+//        
+//        alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+//        
+//        present(alertController, animated: true, completion: nil)
         
     }
     
