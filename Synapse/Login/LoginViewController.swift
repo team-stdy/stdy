@@ -47,7 +47,19 @@ class LoginViewController: UIViewController {
                    self.showError(error!.localizedDescription)
                }
                else {
-                   self.transitionToHome()
+                
+                //handle success
+//                guard let mainTabVC = UIApplication.shared.currentWindow?.rootViewController as? HomeViewController else {return}
+                
+                //configure view controllers in main tab
+//                mainTabVC.configureViewControllers()
+//
+                //dismiss login controller
+                
+//                HomeViewController()
+                self.dismiss(animated: true, completion: nil)
+                                   self.transitionToHome()
+                
                }
            }
         }
@@ -98,3 +110,14 @@ class LoginViewController: UIViewController {
     }
 }
 
+
+extension UIApplication {
+    var currentWindow: UIWindow? {
+        connectedScenes
+        .filter({$0.activationState == .foregroundActive})
+        .map({$0 as? UIWindowScene})
+        .compactMap({$0})
+        .first?.windows
+        .filter({$0.isKeyWindow}).first
+    }
+}
