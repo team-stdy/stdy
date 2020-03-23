@@ -57,25 +57,6 @@ class ProfileViewController: UIViewController {
     //    }
     
     func setUpProfile(){
-        //        if let userId = Auth.auth().currentUser?.uid {
-        //            let db = Firestore.firestore()
-        //
-        //            print(userId)
-        //            db.collection("users").document(userId)
-        //               .getDocument { (snapshot, error ) in
-        //
-        //                    if let document = snapshot {
-        //
-        //                    let user = User.transformUser(dict: document.data()!, key: document.documentID)
-        //                    completion(user)
-        //
-        //                     } else {
-        //
-        //                      print("Document does not exist")
-        //
-        //                    }
-        //            }
-        //        }
         
         let docRef = Firestore.firestore().collection("users").whereField("uid", isEqualTo: Auth.auth().currentUser?.uid ?? "")
         
@@ -89,34 +70,25 @@ class ProfileViewController: UIViewController {
                 print("More than one documents or none")
             } else {
                 let document = querySnapshot!.documents.first
+                //dictionary
                 let dataDescription = document?.data()
+                guard let uid = dataDescription?["uid"] else { return }
                 guard let firstname = dataDescription?["firstName"] else { return }
                 guard let lastname = dataDescription?["lastName"] else { return }
                 guard let university = dataDescription?["university"] else { return }
                 
-                print(dataDescription)
-                
                 self.firstNameLabel.text = firstname as? String
                 self.lastNameLabel.text = lastname as? String
                 self.universityLabel.text = university as? String
+//                self.profileImage.loadImage(with: user?.profileImageUrl)
+                
+//                           let user = User(uid: uid, dictionary: dictionary)
+                //            self.user = user
+                //                self.profileImage.loadImage(with: user?.profileImageUrl)
+
+
             }
         }
-        
-        
-        
-        
-        //        let currentUid = "D653qB1WbPRfhpWhFfOQ"
-        //
-        //        Database.database().reference().child("users").observeSingleEvent(of: .value, with: { (snapshot)
-        //            in
-        //            print(snapshot)
-        ////            if let dict = snapshot.value as? (AnyObject) {
-        //                self.firstNameLabel.text = dict["firstName" as NSString] as? [String : Any]
-        //                self.lastNameLabel.text = dict["lastName" as NSString] as? [String : Any]
-        //                self.emailLabel.text = dict["email" as NSString] as? [String : Any]
-        //                self.universityLabel.text = dict["university" as NSString] as? [String : Any]
-        ////            }
-        //        })
     }
     
     func setUpImage(){

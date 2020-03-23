@@ -45,7 +45,7 @@ class UsersAttendingEventTable: UIViewController, UITableViewDataSource, UITable
         
         let user1 = User(username: "danin1", email: "indra.n.dan@vanderbilt.edu", university: "Vanderbilt");
         let user2 = User(username: "Gabigre", email: "gabi@vanderbilt.edu", university: "Vanderbilt" );
-        let user3 = User(username: "Allison123", email: "allsion@vanderbilt.edu", university: "Vanderbilt" );
+        let user3 = User(username: "Allison123", email: "allison@vanderbilt.edu", university: "Vanderbilt" );
         tempUser.append( user1)
         tempUser.append( user2)
         tempUser.append( user3)

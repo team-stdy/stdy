@@ -119,7 +119,7 @@ class SignUpViewController: UIViewController {
                                     let db = Firestore.firestore()
                                     let profileImageUrl = url!.absoluteString
                                     db.collection("users").addDocument(data:
-                                    ["firstName": firstName, "lastName": lastName, "university": university, "profileImage": profileImageUrl, "uid": result!.user.uid]) { (error) in
+                                    ["firstName": firstName, "lastName": lastName, "university": university, "profileImageUrl": profileImageUrl, "uid": result!.user.uid]) { (error) in
                                         if error != nil {
                                             self.showError("Error saving user data")
                                         }

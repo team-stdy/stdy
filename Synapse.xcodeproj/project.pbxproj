@@ -34,6 +34,7 @@
 		B502D5EE23F0C71E00229AEF /* MyEvents.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B502D5ED23F0C71E00229AEF /* MyEvents.storyboard */; };
 		B51E36CF23F312170087C813 /* ClassEventsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51E36CE23F312170087C813 /* ClassEventsTableViewCell.swift */; };
 		B51E36D123F322090087C813 /* ClassEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51E36D023F322090087C813 /* ClassEventViewController.swift */; };
+		B541084924292F18000F602C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B541084824292F18000F602C /* Extensions.swift */; };
 		B561EE7F23FB69FE00EA5CE6 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B561EE7723FB69FE00EA5CE6 /* SignUpViewController.swift */; };
 		B561EE8023FB69FE00EA5CE6 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B561EE7823FB69FE00EA5CE6 /* InitialViewController.swift */; };
 		B561EE8123FB69FE00EA5CE6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B561EE7923FB69FE00EA5CE6 /* HomeViewController.swift */; };
@@ -111,6 +112,7 @@
 		B502D5ED23F0C71E00229AEF /* MyEvents.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyEvents.storyboard; sourceTree = "<group>"; };
 		B51E36CE23F312170087C813 /* ClassEventsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassEventsTableViewCell.swift; sourceTree = "<group>"; };
 		B51E36D023F322090087C813 /* ClassEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassEventViewController.swift; sourceTree = "<group>"; };
+		B541084824292F18000F602C /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		B561EE7723FB69FE00EA5CE6 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		B561EE7823FB69FE00EA5CE6 /* InitialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		B561EE7923FB69FE00EA5CE6 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -175,14 +177,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		146401452403671A005EB0F4 /* Data Structures */ = {
+		146401452403671A005EB0F4 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				1464014624036B99005EB0F4 /* Event.swift */,
 				1464014824036BED005EB0F4 /* Course.swift */,
 				1464014A24036DE9005EB0F4 /* User.swift */,
 			);
-			path = "Data Structures";
+			path = Models;
 			sourceTree = "<group>";
 		};
 		18631995696D6C615BD5AC26 /* Frameworks */ = {
@@ -278,6 +280,7 @@
 			children = (
 				B561EE8823FB6B6000EA5CE6 /* Utilities.swift */,
 				B561EE8923FB6B6000EA5CE6 /* RoundedWhiteButton.swift */,
+				B541084824292F18000F602C /* Extensions.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -307,7 +310,7 @@
 		B57D104123D5527100BCA8C6 /* Synapse */ = {
 			isa = PBXGroup;
 			children = (
-				146401452403671A005EB0F4 /* Data Structures */,
+				146401452403671A005EB0F4 /* Models */,
 				B574219123FC88F900503278 /* Synapse.entitlements */,
 				B561EE8723FB6B6000EA5CE6 /* Helpers */,
 				B561EE7623FB69FE00EA5CE6 /* Login */,
@@ -610,6 +613,7 @@
 				1447766A23EAA56500BD21F5 /* TableViewCell.swift in Sources */,
 				4F270EC423FB435100EEDABD /* NewEventViewController.swift in Sources */,
 				5B6D7EEC23FB7977005E2CE9 /* UsersAttendingEventTable.swift in Sources */,
+				B541084924292F18000F602C /* Extensions.swift in Sources */,
 				B58E68D9241EBFE300CEE632 /* ForgotPasswordViewController.swift in Sources */,
 				14007AA223DFEABA0006B92D /* ClassNotFoundViewController.swift in Sources */,
 				5B6D7EEE23FB7998005E2CE9 /* SpecificEventCell.swift in Sources */,
