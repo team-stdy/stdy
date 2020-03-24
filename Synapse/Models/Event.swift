@@ -13,7 +13,7 @@ class Event {
     var course: Course
     let users: [User]
     let rsvpCount: Int
-    let creator: User
+//    let creator: User
     
     let purpose: String
     let date: Date  //holds the date and time. Use timeFormatter to display time, dateFormatter to display date
@@ -23,7 +23,7 @@ class Event {
         self.course = Course(course: "AADS 1010", teacher: "Taffe");    //When we have actual Courses, this will be course object
         self.users = [User]();
         self.rsvpCount = Int.random(in: 0 ... 30);  //When we have a user list, we will change this to length(users)
-        self.creator = User(username: "gabigresenz", email: "gabriela.r.gresenz@vanderbilt.edu", university: "Vanderbilt");  //When we have User objects, this will be the user that made the event (and can edit the event)
+//        self.creator = User(username: "gabigresenz", email: "gabriela.r.gresenz@vanderbilt.edu", university: "Vanderbilt");  //When we have User objects, this will be the user that made the event (and can edit the event)
         
         self.purpose = purpose
         self.date = date

@@ -9,6 +9,7 @@
 import UIKit
 import FirebaseAuth
 import FirebaseFirestore
+import Firebase
 
 class LoginViewController: UIViewController {
 
@@ -47,16 +48,7 @@ class LoginViewController: UIViewController {
                    self.showError(error!.localizedDescription)
                }
                else {
-                
-                //handle success
-//                guard let mainTabVC = UIApplication.shared.currentWindow?.rootViewController as? HomeViewController else {return}
-                
-                //configure view controllers in main tab
-//                mainTabVC.configureViewControllers()
-//
-                //dismiss login controller
-                
-//                HomeViewController()
+        
                 self.dismiss(animated: true, completion: nil)
                                    self.transitionToHome()
                 

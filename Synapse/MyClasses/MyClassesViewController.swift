@@ -7,10 +7,15 @@
 //
 
 import UIKit
+import FirebaseAuth
+import FirebaseFirestore
+import FirebaseDatabase
 
 class MyClassesViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    
+    var courses = [Course]()
     
     var myCoursesArray = [Course]()
     var newCourseName = ""
@@ -64,10 +69,31 @@ extension MyClassesViewController: UITableViewDataSource, UITableViewDelegate {
         let courseName = myCoursesArray[indexPath.row].courseCode
         let teacherName = myCoursesArray[indexPath.row].teacher
 
-        vcClassEvents?.courseName = courseName
-        vcClassEvents?.courseTeacher = teacherName
+        vcClassEvents?.courseName = courseName!
+        vcClassEvents?.courseTeacher = teacherName!
         
         navigationController?.pushViewController(vcClassEvents!, animated: true)
     }
+    
+// https://www.udemy.com/course/instagram-clone-w-swift-4-firebase-and-push-notifications/learn/lecture/10411698#questions
+//    func fetchClasses(){
+//        Database.database().reference().child("courses").observe(.childAdded){ (snapshot) in
+//            
+//            // uid
+//            let uid = snapshot.key
+//
+//            //snapshot value cast as dictionary
+//            guard let dictionary = snapshot.value as? Dictionary<String, AnyObject> else {return}
+//                        
+//            //construct user
+//            let course = Course(uid: uid, dictionary: dictionary)
+//            
+//            self.courses.append(course)
+//            
+//            self.tableView.reloadData()
+//            
+//        }
+//        
+//    }
 }
 

@@ -7,13 +7,14 @@
 //
 
 import Foundation
-import UIKit
+import Firebase
 
 class Course {
-    let courseCode: String
-    let teacher: String
-    let section: String
-    let university: String
+    var courseCode: String!
+    var teacher: String!
+    var section: String!
+    var university: String!
+    var user: User?
     
     init(course: String, teacher: String) {
         self.courseCode = course
@@ -21,4 +22,29 @@ class Course {
         self.section = "00"
         self.university = "Vanderbilt"
     }
+    
+//    init(user: User, dictionary: Dictionary<String, AnyObject>) {
+//
+//        self.user = user
+//
+//        if let uid = dictionary["uid"] as? String {
+//            self.uid = uid
+//        }
+//
+//        if let courseCode = dictionary["courseCode"] as? String {
+//            self.courseCode = courseCode
+//        }
+//
+//        if let teacher = dictionary["teacher"] as? String {
+//            self.teacher = teacher
+//        }
+//
+//        if let section = dictionary["section"] as? String {
+//            self.section = section
+//        }
+//
+//        //not sure about this part
+//        self.university = user.university
+//
+//    }
 }
