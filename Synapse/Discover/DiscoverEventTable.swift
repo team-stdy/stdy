@@ -41,12 +41,17 @@ class DiscoverEventTable: UIViewController{
     private func setUpProfiles() -> [User]{
         var tempUser:[User]  = []
        
-        let user1 = User(username: "danin1", email: "indra.n.dan@vanderbilt.edu", university: "Vanderbilt");
-        let user2 = User(username: "Gabigre", email: "gabi@vanderbilt.edu", university: "Vanderbilt" );
-        let user3 = User(username: "Allison123", email: "allsion@vanderbilt.edu", university: "Vanderbilt" );
+        let user1 = User(username: "Bob Smith", email: "indra.n.dan@vanderbilt.edu", university: "Vanderbilt");
+        let user2 = User(username: "Mary Joe", email: "gabi@vanderbilt.edu", university: "Vanderbilt" );
+        let user3 = User(username: "Tom Brown", email: "allsion@vanderbilt.edu", university: "Vanderbilt" );
+        let user4 = User(username: "Sydney Lee", email: "sydney@vanderbilt.edu", university: "Vanderbilt" );
+        let user5 = User(username: "Susan Silverman", email: "susan@vanderbilt.edu", university: "Vanderbilt" );
+        let user6 = User(username: "Ben Gold", email: "ben@vanderbilt.edu", university: "Vanderbilt" );
         tempUser.append(user1)
         tempUser.append(user2)
         tempUser.append(user3)
+        tempUser.append(user4)
+        tempUser.append(user5)
         
         return tempUser
     }

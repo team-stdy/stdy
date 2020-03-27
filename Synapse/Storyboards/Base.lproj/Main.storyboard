@@ -152,7 +152,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="PYm-p3-4pb">
-                                <rect key="frame" x="40" y="40" width="334" height="491"/>
+                                <rect key="frame" x="40" y="40" width="334" height="431"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log In" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z6Q-cu-CoC">
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="41"/>
@@ -176,12 +176,8 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NTo-GU-VYl">
-                                        <rect key="frame" x="0.0" y="211" width="334" height="30"/>
-                                        <state key="normal" title="Forgot Password?"/>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LGN-uI-ntJ" customClass="RoundedWhiteButton" customModule="Synapse" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="271" width="334" height="50"/>
+                                        <rect key="frame" x="0.0" y="211" width="334" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="0ay-q8-jRB"/>
                                         </constraints>
@@ -193,14 +189,16 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mA9-nb-bBM">
-                                        <rect key="frame" x="0.0" y="351" width="334" height="30"/>
-                                        <state key="normal" title="Don't have an account? SIgn Up"/>
+                                        <rect key="frame" x="0.0" y="291" width="334" height="30"/>
+                                        <state key="normal" title="Don't have an account? SIgn Up">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
                                         <connections>
                                             <segue destination="ge9-Jm-y0h" kind="show" id="qih-5D-7gk"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mLl-LM-1FA">
-                                        <rect key="frame" x="0.0" y="411" width="334" height="80"/>
+                                        <rect key="frame" x="0.0" y="351" width="334" height="80"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="Zde-1I-jiG"/>
                                         </constraints>
@@ -344,7 +342,9 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uan-lc-jio">
                                         <rect key="frame" x="0.0" y="645" width="334" height="30"/>
-                                        <state key="normal" title="Already have an account? Sign In"/>
+                                        <state key="normal" title="Already have an account? Sign In">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
                                         <connections>
                                             <segue destination="toV-6d-Ury" kind="show" id="Jul-QA-G4O"/>
                                         </connections>

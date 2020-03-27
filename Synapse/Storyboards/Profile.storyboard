@@ -32,16 +32,21 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="fza-B6-njw">
-                                <rect key="frame" x="32" y="373" width="350" height="210"/>
+                                <rect key="frame" x="32" y="373" width="350" height="151"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YGV-Ku-X7c">
-                                        <rect key="frame" x="0.0" y="0.0" width="350" height="50"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1pM-2o-EIR">
+                                        <rect key="frame" x="0.0" y="0.0" width="350" height="20.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YGV-Ku-X7c">
+                                                <rect key="frame" x="0.0" y="0.0" width="350" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TKe-rd-y2C">
-                                        <rect key="frame" x="0.0" y="80" width="350" height="50"/>
+                                        <rect key="frame" x="0.0" y="50.5" width="350" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="LTT-mP-Nrj"/>
                                         </constraints>
@@ -50,16 +55,14 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="University" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xCW-JI-Xei">
-                                        <rect key="frame" x="0.0" y="160" width="350" height="50"/>
+                                        <rect key="frame" x="0.0" y="130.5" width="350" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="TKe-rd-y2C" firstAttribute="height" secondItem="YGV-Ku-X7c" secondAttribute="height" id="5tw-Vy-Gea"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="350" id="VZG-67-7gS"/>
-                                    <constraint firstItem="xCW-JI-Xei" firstAttribute="height" secondItem="YGV-Ku-X7c" secondAttribute="height" id="Zre-Wl-tXa"/>
                                 </constraints>
                             </stackView>
                         </subviews>
