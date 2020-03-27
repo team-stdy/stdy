@@ -11,23 +11,39 @@ import UIKit
 
 class Event {
     var course: Course
-    let users: [User]
-    let rsvpCount: Int
+    var users: [User]
+    var rsvpCount: Int
     let creator: User
     
     let purpose: String
     let date: Date  //holds the date and time. Use timeFormatter to display time, dateFormatter to display date
     let location: String
     
-    init(purpose: String, date: Date, location: String) {
-        self.course = Course(course: "AADS 1010", teacher: "Taffe");    //When we have actual Courses, this will be course object
+    init(purpose: String, date: Date, location: String, course: Course) {
         self.users = [User]();
-        self.rsvpCount = Int.random(in: 0 ... 30);  //When we have a user list, we will change this to length(users)
+        self.rsvpCount = 0;
+        
         self.creator = User(username: "gabigresenz", email: "gabriela.r.gresenz@vanderbilt.edu", university: "Vanderbilt");  //When we have User objects, this will be the user that made the event (and can edit the event)
         
         self.purpose = purpose
         self.date = date
         self.location = location
+        self.course = course
+    }
+    
+    func addUser(user: User){
+        users.append(user);
+        self.rsvpCount += 1;
+    }
+    
+    //Check if a specific user has RSVP'ed to this event
+    func hasUser(user: User) -> Bool{
+        for userObject in users{
+            if(userObject.email == user.email){
+                return true;
+            }
+        }
+        return false;
     }
     
     public func assignRandomCourse(){

@@ -23,4 +23,25 @@ class User{
         self.courses = [Course]()
         //self.pic = pic
     }
+    
+    func getCourses() -> [Course]{
+        return courses;
+    }
+    
+    func addCourse(c: Course){
+        courses.append(c)
+    }
+    
+    func hasCourse(c1: Course) -> Bool{
+        for c2 in courses{
+            if(c1.courseCode == c2.courseCode
+                && c1.teacher == c2.teacher
+                && c1.section == c2.section
+                && c1.university == c2.university){
+                return true;
+            }
+        }
+        return false;
+    }
+
 }

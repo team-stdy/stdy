@@ -10,6 +10,10 @@ import UIKit
 
 class MyClassesViewController: UIViewController {
     
+    //HOLDS ALL THE DATA
+    //NEED THIS IN EVERY FILE THAT ACCESSES USERS, EVENTS, OR COURSES
+    let masterData = MasterData()
+    
     @IBOutlet weak var tableView: UITableView!
     
     var myCoursesArray = [Course]()
@@ -24,11 +28,9 @@ class MyClassesViewController: UIViewController {
         setUpCourses()
     }
     private func setUpCourses() {
-        myCoursesArray.append(Course(course: "MATH 1011", teacher: "Stalin"))
-        myCoursesArray.append(Course(course: "ARTS 2349", teacher: "Zedong"))
-        myCoursesArray.append(Course(course: "CS 3493", teacher: "Mussolini"))
-        myCoursesArray.append(Course(course: "SOC 1930", teacher: "Churchill"))
-        myCoursesArray.append(Course(course: "MGMT 3401", teacher: "Il Sung"))
+        for courseObject in masterData.currentUser.getCourses(){
+            myCoursesArray.append(courseObject)
+        }
         myCoursesArray.append(Course(course: courseName, teacher: courseTeacher))
         myCoursesArray.append(Course(course: newCourseName, teacher: newCourseTeacher))
     }

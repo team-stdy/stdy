@@ -11,6 +11,12 @@ import UIKit
 
 class DiscoverEventTable: UIViewController{
 
+    //HOLDS ALL THE DATA
+    //NEED THIS IN EVERY FILE THAT ACCESSES USERS, EVENTS, OR COURSES
+    let masterData = MasterData()
+    
+    var usersAttending = [User]()
+    
     @IBOutlet weak var TitleLabel: UILabel!
     @IBOutlet weak var PurposeLabel: UILabel!
     @IBOutlet weak var DateLabel: UILabel!
@@ -23,9 +29,6 @@ class DiscoverEventTable: UIViewController{
     var TimeText = ""
     var LocationText = ""
     
-    
-    
-    var userArray: [User] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         TitleLabel.text = TitleText
@@ -33,40 +36,39 @@ class DiscoverEventTable: UIViewController{
         DateLabel.text = DateText
         TimeLabel.text = TimeText
         LocationLabel.text = LocationText
-        userArray = setUpProfiles()
         tableView.delegate = self
         tableView.dataSource = self
+        findUsersFromMasterData()
     }
     
-    private func setUpProfiles() -> [User]{
-        var tempUser:[User]  = []
-       
-        let user1 = User(username: "Bob Smith", email: "indra.n.dan@vanderbilt.edu", university: "Vanderbilt");
-        let user2 = User(username: "Mary Joe", email: "gabi@vanderbilt.edu", university: "Vanderbilt" );
-        let user3 = User(username: "Tom Brown", email: "allsion@vanderbilt.edu", university: "Vanderbilt" );
-        let user4 = User(username: "Sydney Lee", email: "sydney@vanderbilt.edu", university: "Vanderbilt" );
-        let user5 = User(username: "Susan Silverman", email: "susan@vanderbilt.edu", university: "Vanderbilt" );
-        let user6 = User(username: "Ben Gold", email: "ben@vanderbilt.edu", university: "Vanderbilt" );
-        tempUser.append(user1)
-        tempUser.append(user2)
-        tempUser.append(user3)
-        tempUser.append(user4)
-        tempUser.append(user5)
-        
-        return tempUser
+    //Use the Event information passed in to find the actual Event object
+    //  in MasterData.
+    //This Event object has a list of users attending-- populate usersAttending
+    //  with the User objects from this list.
+    func findUsersFromMasterData(){
+        for eventObject in masterData.getEvents(){
+            if(eventObject.course.courseCode == TitleText
+                && eventObject.location == LocationText
+                && eventObject.purpose == PurposeText){
+                for userObject in eventObject.users{
+                    usersAttending.append(userObject);
+                }
+                return;
+            }
+        }
     }
            
 }
 
 extension DiscoverEventTable: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-               return userArray.count
+               return usersAttending.count
            }
            
            func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
                
-               let user = userArray[indexPath.row]
-               
+               let user = usersAttending[indexPath.row]
+
                let cell = tableView.dequeueReusableCell(withIdentifier: "DiscoverEventCell") as! DiscoverEventCell
                
                cell.setCell(user: user)

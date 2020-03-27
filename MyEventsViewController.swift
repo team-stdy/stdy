@@ -10,6 +10,10 @@ import UIKit
 
 class MyEventsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    //HOLDS ALL THE DATA
+    //NEED THIS IN EVERY FILE THAT ACCESSES USERS, EVENTS, OR COURSES
+    let masterData = MasterData()
+    
     @IBOutlet weak var tableView: UITableView!
     
     var passTitle = ""
@@ -23,10 +27,8 @@ class MyEventsViewController: UIViewController, UITableViewDataSource, UITableVi
         var sectionEvents = [Event]()
     }
     
-    var receivedEventArray = [Event]()
     var eventsArray = [Events]()
     var currentEventsArray = [Events]()
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,15 +59,6 @@ class MyEventsViewController: UIViewController, UITableViewDataSource, UITableVi
         let day6String = dateFormatter.string(from: date6)
         let day7String = dateFormatter.string(from: date7)
         
-        receivedEventArray.append(Event(purpose: "Go over homework 1", date: date4, location: "Stevenson"));
-        receivedEventArray.append(Event(purpose: "Study for test", date: date3, location: "FGH"));
-        receivedEventArray.append(Event(purpose: "Work on programming assignment 4 with study team", date: date6, location: "Normandy"));
-        receivedEventArray.append(Event(purpose: "Make studyguide", date: date2, location: "West London"));
-        receivedEventArray.append(Event(purpose: "Go over homework 1", date: date5, location: "Trump Tower"));
-        receivedEventArray.append(Event(purpose: "Study for test", date: date1, location: "Rand"));
-        receivedEventArray.append(Event(purpose: "Quiz each other with flashcards", date: date1, location: "A Mass Grave in France"));
-        receivedEventArray.append(Event(purpose: "Go to office hours", date: date7, location: "FGH 323"));
-        
         //Current date and time
         
         eventsArray = [Events(sectionHeader: "Today", sectionEvents:[]),
@@ -76,11 +69,13 @@ class MyEventsViewController: UIViewController, UITableViewDataSource, UITableVi
                        Events(sectionHeader: day6String, sectionEvents:[]),
                        Events(sectionHeader: day7String, sectionEvents:[])];
         
-        for eventObject in receivedEventArray {
-            eventObject.assignRandomCourse();
-            let dt = eventObject.date;
-            let diffInDays = Calendar.current.dateComponents([.day], from: date1, to: dt).day;
-            eventsArray[diffInDays!].sectionEvents.append(eventObject);
+        for eventObject in masterData.getEvents() {
+            if(eventObject.hasUser(user: masterData.currentUser)
+                && masterData.currentUser.hasCourse(c1: eventObject.course)){
+                let dt = eventObject.date;
+                let diffInDays = Calendar.current.dateComponents([.day], from: date1, to: dt).day;
+                eventsArray[diffInDays!].sectionEvents.append(eventObject);
+            }
         }
         
         currentEventsArray = eventsArray
@@ -152,7 +147,7 @@ class MyEventsViewController: UIViewController, UITableViewDataSource, UITableVi
         timeFormatter.timeStyle = .short
         timeFormatter.locale = Locale(identifier: "en_US")
         passTitle =
-            eventsArray[indexPath.section].sectionEvents[indexPath.row].purpose
+            eventsArray[indexPath.section].sectionEvents[indexPath.row].course.courseCode
         passPurpose =
             eventsArray[indexPath.section].sectionEvents[indexPath.row].purpose
         passTime = timeFormatter.string(from: eventsArray[indexPath.section].sectionEvents[indexPath.row].date)

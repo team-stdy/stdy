@@ -14,7 +14,10 @@ import UIKit
 
 class DiscoverClassesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
 
-
+    //HOLDS ALL THE DATA
+    //NEED THIS IN EVERY FILE THAT ACCESSES USERS, EVENTS, OR COURSES
+    let masterData = MasterData()
+    
     @IBOutlet weak var searchBar: UITableView!
     @IBOutlet weak var tableView: UITableView!
     
@@ -23,10 +26,8 @@ class DiscoverClassesViewController: UIViewController, UITableViewDataSource, UI
         var sectionEvents = [Event]()
     }
     
-    var receivedEventArray = [Event]()
     var eventsArray = [Events]()
     var currentEventsArray = [Events]()
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,34 +66,18 @@ class DiscoverClassesViewController: UIViewController, UITableViewDataSource, UI
                        Events(sectionHeader: day5String, sectionEvents:[]),
                        Events(sectionHeader: day6String, sectionEvents:[]),
                        Events(sectionHeader: day7String, sectionEvents:[])];
-        
-        receivedEventArray.append(Event(purpose: "Go over homework 1", date: date4, location: "Featheringhill"));
-        receivedEventArray.append(Event(purpose: "Study for test", date: date3, location: "Mars"));
-        receivedEventArray.append(Event(purpose: "Work on programming assignment 4 with study team", date: date6, location: "Stevenson"));
-        receivedEventArray.append(Event(purpose: "Go to office hours", date: date7, location: "Rand"));
-        receivedEventArray.append(Event(purpose: "Make studyguide", date: date2, location: "Stevenson"));
-        receivedEventArray.append(Event(purpose: "Quiz each other with flashcards", date: date6, location: "MGM Resort & Casino"));
-        receivedEventArray.append(Event(purpose: "Go over homework 1", date: date2, location: "Disney"));
-        receivedEventArray.append(Event(purpose: "Study for test", date: date2, location: "CIA Headquarters"));
-        receivedEventArray.append(Event(purpose: "Go over homework 1", date: date5, location: "Rand"));
-        receivedEventArray.append(Event(purpose: "Study for test", date: date1, location: "Buttrick"));
-        receivedEventArray.append(Event(purpose: "Go over homework 1", date: date3, location: "Stevenson"));
-        receivedEventArray.append(Event(purpose: "Quiz each other with flashcards", date: date1, location: "Calhoun"));
-        receivedEventArray.append(Event(purpose: "Go to office hours", date: date7, location: "North House"));
-        receivedEventArray.append(Event(purpose: "Make studyguide", date: date3, location: "Stairwell"));
-        receivedEventArray.append(Event(purpose: "Quiz each other with flashcards", date: date4, location: "North Korea"));
-        
-        //Current date and time
-        
-        for eventObject in receivedEventArray{
-            eventObject.assignRandomCourse();
-            let dt = eventObject.date;
-            let diffInDays = Calendar.current.dateComponents([.day], from: date1, to: dt).day;
-            eventsArray[diffInDays!].sectionEvents.append(eventObject);
+
+        //Go through each event that has been created
+        //If the current user has the course tied to the Event, show the Event on the Discover page
+        for eventObject in masterData.getEvents(){
+            if(masterData.currentUser.hasCourse(c1: eventObject.course)){
+                let dt = eventObject.date;
+                let diffInDays = Calendar.current.dateComponents([.day], from: date1, to: dt).day;
+                eventsArray[diffInDays!].sectionEvents.append(eventObject);
+            }
         }
         
         currentEventsArray = eventsArray
-        
     }
     
     private func setUpSearchBar() {
@@ -122,20 +107,11 @@ class DiscoverClassesViewController: UIViewController, UITableViewDataSource, UI
         return currentEventsArray[section].sectionEvents.count
     }
     
-    //Neil's Code
-    //************
-    //************
-    //************
-    //************
-    //************
-    
     var passPurpose = ""
     var passTime = ""
     var passLocation = ""
     var passDate = ""
     var passTitle = ""
-    
-    
     
     @IBAction func passDate(_ sender: Any) {
         performSegue(withIdentifier: "DiscoverEvent", sender: self)
@@ -171,9 +147,6 @@ class DiscoverClassesViewController: UIViewController, UITableViewDataSource, UI
         cell.dateLabel.text = eventsArray[indexPath.section].sectionEvents[indexPath.row].purpose
         cell.timeLabel.text = timeFormatter.string(from: eventsArray[indexPath.section].sectionEvents[indexPath.row].date)
         
-        
-        
-        
         return cell
     }
     
@@ -189,7 +162,7 @@ class DiscoverClassesViewController: UIViewController, UITableViewDataSource, UI
         timeFormatter.timeStyle = .short
         timeFormatter.locale = Locale(identifier: "en_US")
         passTitle =
-            currentEventsArray[indexPath.section].sectionEvents[indexPath.row].purpose
+            currentEventsArray[indexPath.section].sectionEvents[indexPath.row].course.courseCode
         passPurpose =
             currentEventsArray[indexPath.section].sectionEvents[indexPath.row].purpose
         passTime = timeFormatter.string(from: currentEventsArray[indexPath.section].sectionEvents[indexPath.row].date)

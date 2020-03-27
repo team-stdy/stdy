@@ -10,6 +10,10 @@ import UIKit
 
 class ClassEventViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
     
+    //HOLDS ALL THE DATA
+    //NEED THIS IN EVERY FILE THAT ACCESSES USERS, EVENTS, OR COURSES
+    let masterData = MasterData()
+    
     @IBOutlet weak var tableView: UITableView!
     
     var courseName = ""
@@ -23,16 +27,12 @@ class ClassEventViewController: UIViewController, UITableViewDataSource, UITable
     }
     
     private func setUpEvents() {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy/MM/dd"
-        let date1 = formatter.date(from: "2020/02/13")!;
-        
-        eventsArray.append(Event(purpose: "Go over homework 1", date: date1, location: "Taylor Swift's Apartment"))
-        eventsArray.append(Event(purpose: "Study for test", date: date1, location: "A basement in Georgia"))
-        eventsArray.append(Event(purpose: "Work on programming assignment 4 with study team", date: date1, location: "Rand"))
-        eventsArray.append(Event(purpose: "Go to office hours", date: date1, location: "Stevenson"))
-        eventsArray.append(Event(purpose: "Go over homework 5", date: date1, location: "FGH"))
-        eventsArray.append(Event(purpose: "Check answers for problem set", date: date1, location: "Marine One"))
+        for eventObject in masterData.getEvents(){
+            if(eventObject.course.courseCode == courseName
+                && eventObject.course.teacher == courseTeacher){
+                eventsArray.append(eventObject);
+            }
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
