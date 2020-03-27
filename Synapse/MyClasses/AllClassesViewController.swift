@@ -10,6 +10,10 @@ import UIKit
 
 class AllClassesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, TableViewNew {
     
+    //HOLDS ALL THE DATA
+    //NEED THIS IN EVERY FILE THAT ACCESSES USERS, EVENTS, OR COURSES
+    let masterData = MasterData()
+    
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     
@@ -33,39 +37,9 @@ class AllClassesViewController: UIViewController, UITableViewDataSource, UITable
     
     
     private func setUpCourses() {
-        coursesArray.append(Course(course: "AADS 1010", teacher: "Taffe"))
-        coursesArray.append(Course(course: "AMER 1002", teacher: "Jacobs"))
-        coursesArray.append(Course(course: "AMER 3200", teacher: "Torres Colon"))
-        coursesArray.append(Course(course: "ANTH 1301", teacher: "Tung"))
-        coursesArray.append(Course(course: "ANT 2160W", teacher: "Erbel"))
-        coursesArray.append(Course(course: "ARTS 1001", teacher: "Warren"))
-        coursesArray.append(Course(course: "ARTS 1300", teacher: "Cusomato"))
-        coursesArray.append(Course(course: "ARTS 1700", teacher: "Warren"))
-        coursesArray.append(Course(course: "ARTS 2500", teacher: "Ziegler"))
-        coursesArray.append(Course(course: "ASIA 2302", teacher: "Chaudhry"))
-        coursesArray.append(Course(course: "ASIA 2630 ", teacher: "Rogaski"))
-        coursesArray.append(Course(course: "ASTR 1010", teacher: "Weintraub"))
-        coursesArray.append(Course(course: "ASTR 2130", teacher: "Weintraub"))
-        coursesArray.append(Course(course: "BSCI 1100", teacher: "Woelfle"))
-        coursesArray.append(Course(course: "BME 1015", teacher: "Del Bosque"))
-        coursesArray.append(Course(course: "BSCI 1100", teacher: "Woelfle"))
-        coursesArray.append(Course(course: "BME 1015", teacher: "Del Bosque"))
-        coursesArray.append(Course(course: "BME 2002", teacher: "Anderson"))
-        coursesArray.append(Course(course: "BME 2002", teacher: "Lowery"))
-        coursesArray.append(Course(course: "BME 3890", teacher: "Bowden"))
-        coursesArray.append(Course(course: "CHBE 2200", teacher: "Laibinis"))
-        coursesArray.append(Course(course: "CE 2200", teacher: "Statics"))
-        coursesArray.append(Course(course: "CS 1101", teacher: "Arena"))
-        coursesArray.append(Course(course: "CS 1151", teacher: "Turner"))
-        coursesArray.append(Course(course: "CS 1151", teacher: "Singh"))
-        coursesArray.append(Course(course: "CS 2201", teacher: "Roth"))
-        coursesArray.append(Course(course: "CS 2201", teacher: "Fisher"))
-        coursesArray.append(Course(course: "MATH 2300", teacher: "Ahner"))
-        coursesArray.append(Course(course: "MATH 2300", teacher: "Medri"))
-        coursesArray.append(Course(course: "MATH 2600", teacher: "Suvaina"))
-        coursesArray.append(Course(course: "MATH 2600", teacher: "Mark"))
-//        coursesArray.append(Course(course: newCourseName, teacher: newCourseTeacher))
-        
+        for courseObject in masterData.getCourses(){
+            coursesArray.append(courseObject);
+        }
         currentCoursesArray = coursesArray
         
     }
