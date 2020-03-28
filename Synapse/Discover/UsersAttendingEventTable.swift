@@ -33,29 +33,40 @@ class UsersAttendingEventTable: UIViewController, UITableViewDataSource, UITable
         super.viewDidLoad()
         TitleLabel.text = TitleText
         PurposeLabel.text = PurposeText
-        DateLabel.text = DateText
+        DateLabel.text = findDateAndUsersFromMasterData()
         TimeLabel.text = TimeText
         LocationLabel.text = LocationText
         tableView.delegate = self
         tableView.dataSource = self
-        findUsersFromMasterData()
     }
     
-    //Use the Event information passed in to find the actual Event object
-    //  in MasterData.
-    //This Event object has a list of users attending-- populate usersAttending
-    //  with the User objects from this list.
-    func findUsersFromMasterData(){
+    //This method has two functionalites. From the passed in data (course, location,
+    //  purpose), it identifies the corresponding Event object that originally populated
+    //  the cell. It then:
+    //  1. Populates the usersAttending array with the user list for that Event
+    //  2. Returns the Date from the Event object as a String
+    func findDateAndUsersFromMasterData() -> String{
         for eventObject in masterData.getEvents(){
+            //Search for the Event matching the passed data
             if(eventObject.course.courseCode == TitleText
                 && eventObject.location == LocationText
                 && eventObject.purpose == PurposeText){
+                
+                //1. Populate usersAttending
                 for userObject in eventObject.users{
-                    usersAttending.append(userObject);
+                    usersAttending.append(userObject)
                 }
-                return;
+                
+                //2. Return the formatted Date string
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateStyle = .medium
+                dateFormatter.timeStyle = .none
+                dateFormatter.locale = Locale(identifier: "en_US")
+                
+                return dateFormatter.string(from: eventObject.date)
             }
         }
+        return ""
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
