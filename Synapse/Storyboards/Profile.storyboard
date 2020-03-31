@@ -15,8 +15,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" misplaced="YES" image="Profile01-RoundedWhite-512" translatesAutoresizingMaskIntoConstraints="NO" id="K6K-LL-4TP">
-                                <rect key="frame" x="124" y="150" width="140" height="140"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UUM-JY-Wgg">
+                                <rect key="frame" x="0.0" y="88" width="414" height="257"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.67273253200000005" green="0.50265145300000003" blue="0.92945235969999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" misplaced="YES" image="Profile01-RoundedWhite-512" translatesAutoresizingMaskIntoConstraints="NO" id="K6K-LL-4TP">
+                                <rect key="frame" x="112" y="240" width="191" height="191"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cjp-Bc-FXW" customClass="RoundedWhiteButton" customModule="Synapse" customModuleProvider="target">
                                 <rect key="frame" x="32" y="711" width="350" height="50"/>
@@ -60,6 +65,11 @@
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="350" id="VZG-67-7gS"/>
                                 </constraints>
                             </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RZH-aZ-Rx4">
+                                <rect key="frame" x="0.0" y="691" width="414" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.67273253200000005" green="0.50265145300000003" blue="0.92945235969999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -77,6 +87,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Profile" id="eN3-Zp-34t"/>
                     <connections>
+                        <outlet property="backgroundImage" destination="UUM-JY-Wgg" id="a5G-5b-pFP"/>
                         <outlet property="firstNameLabel" destination="YGV-Ku-X7c" id="Y8z-So-JKy"/>
                         <outlet property="lastNameLabel" destination="TKe-rd-y2C" id="Nrq-Xe-Kke"/>
                         <outlet property="profileImage" destination="K6K-LL-4TP" id="WYF-mx-vEm"/>

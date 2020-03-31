@@ -33,6 +33,7 @@
 		B502D5EA23F0C0F100229AEF /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B502D5E923F0C0F100229AEF /* Profile.storyboard */; };
 		B502D5EC23F0C10300229AEF /* Discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B502D5EB23F0C10300229AEF /* Discover.storyboard */; };
 		B502D5EE23F0C71E00229AEF /* MyEvents.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B502D5ED23F0C71E00229AEF /* MyEvents.storyboard */; };
+		B50C951E2433A88200F76BF5 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B50C951D2433A88200F76BF5 /* icon.png */; };
 		B51E36CF23F312170087C813 /* ClassEventsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51E36CE23F312170087C813 /* ClassEventsTableViewCell.swift */; };
 		B51E36D123F322090087C813 /* ClassEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51E36D023F322090087C813 /* ClassEventViewController.swift */; };
 		B561EE7F23FB69FE00EA5CE6 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B561EE7723FB69FE00EA5CE6 /* SignUpViewController.swift */; };
@@ -111,6 +112,7 @@
 		B502D5E923F0C0F100229AEF /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		B502D5EB23F0C10300229AEF /* Discover.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Discover.storyboard; sourceTree = "<group>"; };
 		B502D5ED23F0C71E00229AEF /* MyEvents.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyEvents.storyboard; sourceTree = "<group>"; };
+		B50C951D2433A88200F76BF5 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		B51E36CE23F312170087C813 /* ClassEventsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassEventsTableViewCell.swift; sourceTree = "<group>"; };
 		B51E36D023F322090087C813 /* ClassEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassEventViewController.swift; sourceTree = "<group>"; };
 		B561EE7723FB69FE00EA5CE6 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -325,6 +327,7 @@
 				B57D104B23D5527200BCA8C6 /* Assets.xcassets */,
 				B57D104D23D5527200BCA8C6 /* LaunchScreen.storyboard */,
 				B57D105023D5527300BCA8C6 /* Info.plist */,
+				B50C951D2433A88200F76BF5 /* icon.png */,
 				B57D107223D5579400BCA8C6 /* GoogleService-Info.plist */,
 			);
 			path = Synapse;
@@ -471,6 +474,7 @@
 			files = (
 				B502D5EA23F0C0F100229AEF /* Profile.storyboard in Resources */,
 				B57D104F23D5527200BCA8C6 /* LaunchScreen.storyboard in Resources */,
+				B50C951E2433A88200F76BF5 /* icon.png in Resources */,
 				B57D107323D5579400BCA8C6 /* GoogleService-Info.plist in Resources */,
 				B502D5E723F0C0D600229AEF /* MyClasses.storyboard in Resources */,
 				B57D104C23D5527200BCA8C6 /* Assets.xcassets in Resources */,

@@ -258,7 +258,7 @@
                                         <rect key="frame" x="0.0" y="61" width="334" height="120"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="120" id="JkM-Bb-jbU"/>
-                                            <constraint firstAttribute="width" constant="120" id="TEw-dP-ad8"/>
+                                            <constraint firstAttribute="width" constant="40" id="heS-h5-xGF"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Photo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uYD-bs-ThH">
