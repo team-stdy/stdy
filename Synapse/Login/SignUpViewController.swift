@@ -10,6 +10,7 @@ import UIKit
 import FirebaseAuth
 import FirebaseFirestore
 import FirebaseStorage
+import Firebase
 
 class SignUpViewController: UIViewController {
     
@@ -100,40 +101,63 @@ class SignUpViewController: UIViewController {
             Auth.auth().createUser(withEmail: email, password: password) { (result, err) in
                 //Check for errors
                 if err != nil {
-                    self.showError("Error creating user.")
+                    self.showError("Error creaitng user info")
                 } else {
-                    let storageRef = Storage.storage().reference(forURL: "gs://synapse-bbfb2.appspot.com").child("profile_image").child(result!.user.uid)
-                    if let profileImg = self.selectedImage, let imageData = profileImg.jpegData(compressionQuality: 0.1) {
-                        storageRef.putData(imageData, metadata: nil) { (metadata, error) in
-                            if error != nil {
-                                self.showError("Error saving photo")
+                    guard let profileImg = self.selectedImage else {return}
+                    guard let uploadData = profileImg.jpegData(compressionQuality: 0.1) else {return}
+                    let filename = NSUUID().uuidString
+                    let storageRef2 = Storage.storage().reference().child("profile_images").child(filename)
+                    storageRef2.putData(uploadData, metadata: nil) { (metadata, error) in
+                        if let error = error {
+                            self.showError("Failed to upload image")
+                           print(error.localizedDescription)
+                            return
+                        }
+                        
+                        storageRef2.downloadURL { (downloadUrl, error) in
+                            guard let profileImageUrl = downloadUrl?.absoluteString else {
+                                print("DEBUG: profile image url is nil")
                                 return
                             }
                             
-                            storageRef.downloadURL { (url, error) in
-                                if error != nil {
-                                    print(error!)
-                                    return
-                                }
-                                if url != nil {
-                                    let db = Firestore.firestore()
-                                    let profileImageUrl = url!.absoluteString
-                                    db.collection("users").addDocument(data:
-                                    ["firstName": firstName, "lastName": lastName, "university": university, "profileImage": profileImageUrl, "uid": result!.user.uid]) { (error) in
-                                        if error != nil {
-                                            self.showError("Error saving user data")
-                                        }
-                                    }
-                                }
+                            guard let uid = result?.user.uid else {return}
+                            
+                            let dictionaryValues = ["firstName": firstName, "lastName": lastName, "university": university, "profileImageUrl": profileImageUrl]
+                            
+                            let values = [uid: dictionaryValues]
+                            
+                            Database.database().reference().child("users").updateChildValues(values) { (error, ref) in
+                                self.transitionToHome()
                             }
                         }
                     }
-                    
-                    
-//                    db.collection("users").addDocument(data:
-//                    ["firstName": firstName, "lastName": lastName, "university": university, "uid": result!.user.uid]) { (error) in
-//                        if error != nil {
-//                            self.showError("Error saving user data")
+//                if err != nil {
+//                    self.showError("Error creating user.")
+//                } else {
+//                    let storageRef = Storage.storage().reference(forURL: "gs://synapse-bbfb2.appspot.com").child("profile_image").child(result!.user.uid)
+//                    if let profileImg = self.selectedImage, let imageData = profileImg.jpegData(compressionQuality: 0.1) {
+//                        storageRef.putData(imageData, metadata: nil) { (metadata, error) in
+//                            if error != nil {
+//                                self.showError("Error saving photo")
+//                                return
+//                            }
+//
+//                            storageRef.downloadURL { (url, error) in
+//                                if error != nil {
+//                                    print(error!)
+//                                    return
+//                                }
+//                                if url != nil {
+//                                    let db = Firestore.firestore()
+//                                    let profileImageUrl = url!.absoluteString
+//                                    db.collection("users").addDocument(data:
+//                                    ["firstName": firstName, "lastName": lastName, "university": university, "profileImage": profileImageUrl, "uid": result!.user.uid]) { (error) in
+//                                        if error != nil {
+//                                            self.showError("Error saving user data")
+//                                        }
+//                                    }
+//                                }
+//                            }
 //                        }
 //                    }
                 }
