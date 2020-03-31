@@ -177,7 +177,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		146401452403671A005EB0F4 /* Data Structures */ = {
+		146401452403671A005EB0F4 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				1464014624036B99005EB0F4 /* Event.swift */,
@@ -185,7 +185,7 @@
 				1464014A24036DE9005EB0F4 /* User.swift */,
 				14F5F411242E9BCC0033902D /* MasterData.swift */,
 			);
-			path = "Data Structures";
+			path = Models;
 			sourceTree = "<group>";
 		};
 		18631995696D6C615BD5AC26 /* Frameworks */ = {
@@ -310,7 +310,7 @@
 		B57D104123D5527100BCA8C6 /* Synapse */ = {
 			isa = PBXGroup;
 			children = (
-				146401452403671A005EB0F4 /* Data Structures */,
+				146401452403671A005EB0F4 /* Models */,
 				B574219123FC88F900503278 /* Synapse.entitlements */,
 				B561EE8723FB6B6000EA5CE6 /* Helpers */,
 				B561EE7623FB69FE00EA5CE6 /* Login */,
