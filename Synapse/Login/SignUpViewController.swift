@@ -164,7 +164,7 @@ class SignUpViewController: UIViewController {
             }
             
             //Transition to home screen
-            self.transitionToHome()
+//            self.transitionToHome()
         }
     }
     
