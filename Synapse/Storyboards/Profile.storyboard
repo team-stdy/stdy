@@ -79,7 +79,7 @@
                     <connections>
                         <outlet property="firstNameLabel" destination="YGV-Ku-X7c" id="Y8z-So-JKy"/>
                         <outlet property="lastNameLabel" destination="TKe-rd-y2C" id="Nrq-Xe-Kke"/>
-                        <outlet property="profileImage" destination="K6K-LL-4TP" id="teW-FA-fF3"/>
+                        <outlet property="profileImage" destination="K6K-LL-4TP" id="WYF-mx-vEm"/>
                         <outlet property="universityLabel" destination="xCW-JI-Xei" id="2fz-mc-bwy"/>
                     </connections>
                 </viewController>
