@@ -21,7 +21,12 @@
                                 <color key="backgroundColor" red="0.67273253200000005" green="0.50265145300000003" blue="0.92945235969999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" misplaced="YES" image="Profile01-RoundedWhite-512" translatesAutoresizingMaskIntoConstraints="NO" id="K6K-LL-4TP">
-                                <rect key="frame" x="112" y="240" width="191" height="191"/>
+                                <rect key="frame" x="127" y="227" width="161" height="161"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RZH-aZ-Rx4">
+                                <rect key="frame" x="0.0" y="656" width="414" height="157"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.1579117179" green="0.01156340074" blue="0.61572426560000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cjp-Bc-FXW" customClass="RoundedWhiteButton" customModule="Synapse" customModuleProvider="target">
                                 <rect key="frame" x="32" y="711" width="350" height="50"/>
@@ -36,8 +41,8 @@
                                     <action selector="logOutTapped:" destination="xev-F9-lTz" eventType="touchUpInside" id="Qnr-wO-SPH"/>
                                 </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="fza-B6-njw">
-                                <rect key="frame" x="32" y="466" width="350" height="151"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="fza-B6-njw">
+                                <rect key="frame" x="32" y="410" width="350" height="172"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YGV-Ku-X7c">
                                         <rect key="frame" x="0.0" y="0.0" width="350" height="20.5"/>
@@ -46,16 +51,19 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TKe-rd-y2C">
-                                        <rect key="frame" x="0.0" y="50.5" width="350" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="LTT-mP-Nrj"/>
-                                        </constraints>
+                                        <rect key="frame" x="0.0" y="50.5" width="350" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yxd-W4-7hm">
+                                        <rect key="frame" x="0.0" y="101" width="350" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="University" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xCW-JI-Xei">
-                                        <rect key="frame" x="0.0" y="130.5" width="350" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="151.5" width="350" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -65,11 +73,6 @@
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="350" id="VZG-67-7gS"/>
                                 </constraints>
                             </stackView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RZH-aZ-Rx4">
-                                <rect key="frame" x="0.0" y="691" width="414" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.67273253200000005" green="0.50265145300000003" blue="0.92945235969999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -88,6 +91,7 @@
                     <navigationItem key="navigationItem" title="Profile" id="eN3-Zp-34t"/>
                     <connections>
                         <outlet property="backgroundImage" destination="UUM-JY-Wgg" id="a5G-5b-pFP"/>
+                        <outlet property="emailLabel" destination="Yxd-W4-7hm" id="R2b-oM-bOX"/>
                         <outlet property="firstNameLabel" destination="YGV-Ku-X7c" id="Y8z-So-JKy"/>
                         <outlet property="lastNameLabel" destination="TKe-rd-y2C" id="Nrq-Xe-Kke"/>
                         <outlet property="profileImage" destination="K6K-LL-4TP" id="WYF-mx-vEm"/>

@@ -33,37 +33,56 @@ class ProfileViewController: UIViewController {
     }
 
     func setUpProfile(){
-        
-        let docRef = Firestore.firestore().collection("users").whereField("uid", isEqualTo: Auth.auth().currentUser?.uid ?? "")
-        
-        // Get data
-        docRef.getDocuments { (querySnapshot, err) in
-            if let err = err {
-                print(err.localizedDescription)
-                return
-            }
-            else if querySnapshot!.documents.count != 1 {
-                print("More than one documents or none")
-            } else {
-                let document = querySnapshot!.documents.first
-                let dataDescription = document?.data()
-                guard let firstname = dataDescription?["firstName"] else { return }
-                guard let lastname = dataDescription?["lastName"] else { return }
-                guard let university = dataDescription?["university"] else { return }
-                let profileUrl = dataDescription?["profileImage"] as! String
-
-                let storageRef = Storage.storage().reference(forURL: profileUrl)
-                storageRef.downloadURL(completion: { (url, error) in
-                    let data = NSData(contentsOf: url!)
-                    let image = UIImage(data: data! as Data)
-                    self.profileImage.image = image
-                })
-                
-                self.firstNameLabel.text = firstname as? String
-                self.lastNameLabel.text = lastname as? String
-                self.universityLabel.text = university as? String
-            }
+        guard let currentUid = Auth.auth().currentUser?.uid else {return}
+        Database.database().reference().child("users").child(currentUid).observeSingleEvent(of: .value) { (snapshot) in
+            guard let dictionary = snapshot.value as? Dictionary<String, AnyObject> else {return}
+            let uid = snapshot.key
+            //can't do this until we figure out mock data
+//            let user = User(uid: uid, dictionary: dictionary)
+            self.firstNameLabel.text = dictionary["firstName"] as? String
+            self.lastNameLabel.text = dictionary["lastName"] as? String
+            self.universityLabel.text = dictionary["university"] as? String
+            self.emailLabel.text = dictionary["email"] as? String
+            let profileUrl = dictionary["profileImageUrl"] as? String
+            
+            let storageRef = Storage.storage().reference(forURL: profileUrl!)
+            storageRef.downloadURL(completion: { (url, error) in
+                let data = NSData(contentsOf: url!)
+                let image = UIImage(data: data! as Data)
+                self.profileImage.image = image
+            })
         }
+        
+//        let docRef = Firestore.firestore().collection("users").whereField("uid", isEqualTo: Auth.auth().currentUser?.uid ?? "")
+//
+//        // Get data
+//        docRef.getDocuments { (querySnapshot, err) in
+//            if let err = err {
+//                print(err.localizedDescription)
+//                return
+//            }
+//            else if querySnapshot!.documents.count != 1 {
+//                print("More than one documents or none")
+//            } else {
+//                let document = querySnapshot!.documents.first
+//                let dataDescription = document?.data()
+//                guard let firstname = dataDescription?["firstName"] else { return }
+//                guard let lastname = dataDescription?["lastName"] else { return }
+//                guard let university = dataDescription?["university"] else { return }
+//                let profileUrl = dataDescription?["profileImage"] as! String
+//
+//                let storageRef = Storage.storage().reference(forURL: profileUrl)
+//                storageRef.downloadURL(completion: { (url, error) in
+//                    let data = NSData(contentsOf: url!)
+//                    let image = UIImage(data: data! as Data)
+//                    self.profileImage.image = image
+//                })
+//
+//                self.firstNameLabel.text = firstname as? String
+//                self.lastNameLabel.text = lastname as? String
+//                self.universityLabel.text = university as? String
+//            }
+//        }
     }
     
     func setUpImage(){
