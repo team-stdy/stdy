@@ -10,6 +10,7 @@ import UIKit
 import FirebaseAuth
 import FirebaseFirestore
 import FirebaseStorage
+import Firebase
 
 class SignUpViewController: UIViewController {
     
@@ -96,41 +97,90 @@ class SignUpViewController: UIViewController {
 
             //Create user
             Auth.auth().createUser(withEmail: email, password: password) { (result, err) in
-                //Check for errors
-                if err != nil {
-                    self.showError("Error creating user.")
-                } else {
-                    let storageRef = Storage.storage().reference(forURL: "gs://synapse-bbfb2.appspot.com").child("profile_image").child(result!.user.uid)
-                    if let profileImg = self.selectedImage, let imageData = profileImg.jpegData(compressionQuality: 0.1) {
-                        storageRef.putData(imageData, metadata: nil) { (metadata, error) in
-                            if error != nil {
-                                self.showError("Error saving photo")
-                                return
-                            }
-                            
-                            storageRef.downloadURL { (url, error) in
-                                if error != nil {
-                                    print(error!)
-                                    return
-                                }
-                                if url != nil {
-                                    let db = Firestore.firestore()
-                                    let profileImageUrl = url!.absoluteString
-                                    db.collection("users").addDocument(data:
-                                    ["firstName": firstName, "lastName": lastName, "university": university, "profileImage": profileImageUrl, "uid": result!.user.uid]) { (error) in
-                                        if error != nil {
-                                            self.showError("Error saving user data")
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
+                
+                // handle error
+                if let error = error {
+                    print("DEBUG: Failed to create user with error: ", error)
+                    return
                 }
+                
+                guard let profileImg = self.selectedImage else { return }
+                guard let uploadData = profileImg.jpegData(compressionQuality: 0.3) else { return }
+                
+                let filename = NSUUID().uuidString
+                
+                // UPDATE: - In order to get download URL must add filename to storage ref like this
+                let storageRef = Storage.storage().reference().child("profile_images").child(filename)
+                
+                storageRef.putData(uploadData, metadata: nil, completion: { (metadata, error) in
+                    
+                    // handle error
+                    if let error = error {
+                        print("Failed to upload image to Firebase Storage with error", error.localizedDescription)
+                        return
+                    }
+                    
+                    // UPDATE: - Firebase 5 must now retrieve download url
+                    storageRef.downloadURL(completion: { (downloadURL, error) in
+                        guard let profileImageUrl = downloadURL?.absoluteString else {
+                            print("DEBUG: Profile image url is nil")
+                            return
+                        }
+                        
+                        // user id
+                        guard let uid = result?.user.uid else { return }
+                        
+                        let dictionaryValues = ["firstName": firstName,
+                                                "lastName": lastName,
+                            "email": email,
+                            "university": university,
+                            "profileImageUrl": profileImageUrl]
+                        
+                        let values = [uid: dictionaryValues]
+                        
+                        // save user info to database
+                        Database.database().reference().child("users").updateChildValues(values, withCompletionBlock: { (error, ref) in
+                            self.transitionToHome()
+                        })
+                    })
+                })
+                
+                
+                //Check for errors
+//                if err != nil {
+//                    self.showError("Error creating user.")
+//                } else {
+//                    let storageRef = Storage.storage().reference(forURL: "gs://synapse-bbfb2.appspot.com").child("profile_image").child(result!.user.uid)
+//                    if let profileImg = self.selectedImage, let imageData = profileImg.jpegData(compressionQuality: 0.1) {
+//                        storageRef.putData(imageData, metadata: nil) { (metadata, error) in
+//                            if error != nil {
+//                                self.showError("Error saving photo")
+//                                return
+//                            }
+//
+//                            storageRef.downloadURL { (url, error) in
+//                                if error != nil {
+//                                    print(error!)
+//                                    return
+//                                }
+//                                if url != nil {
+//                                    let db = Firestore.firestore()
+//                                    let profileImageUrl = url!.absoluteString
+//                                    db.collection("users").addDocument(data:
+//                                    ["firstName": firstName, "lastName": lastName, "university": university, "profileImage": profileImageUrl, "uid": result!.user.uid]) { (error) in
+//                                        if error != nil {
+//                                            self.showError("Error saving user data")
+//                                        }
+//                                    }
+//                                }
+//                            }
+//                        }
+//                    }
+//                }
             }
-            
+
             //Transition to home screen
-            self.transitionToHome()
+//            self.transitionToHome()
         }
     }
     
